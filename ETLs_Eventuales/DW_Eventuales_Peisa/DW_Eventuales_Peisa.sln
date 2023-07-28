@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33920.266
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DW_Eventuales_Peisa", "DW_Eventuales_Peisa\DW_Eventuales_Peisa.dtproj", "{338FA7E7-AD78-47AF-A9B1-EF19C1C47305}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{338FA7E7-AD78-47AF-A9B1-EF19C1C47305}.Development|Default.ActiveCfg = Development
+		{338FA7E7-AD78-47AF-A9B1-EF19C1C47305}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A354A3D7-EB77-40D4-885C-6D837D02C4C3}
+	EndGlobalSection
+EndGlobal

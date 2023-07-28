@@ -1,0 +1,2049 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2023 1:05:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYSPOT05"
+  DTS:CreatorName="MYSPOT05\Thiago"
+  DTS:DTSID="{5EB200EC-D54C-46B2-BD2F-779DA81B5D2F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="268"
+  DTS:VersionGUID="{D1D96F96-BD11-475F-939C-AE12FA32F0BD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{C813702A-5A78-4924-8D45-EB002A5A1F48}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\fe-files01\DW_OnDemand\Publicaciones ML\Mercado Libre Real Trends.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{5D62B4A8-0349-412F-B767-93B92F876867}"
+      DTS:ObjectName="ExcelConnectionManager_ConnectionString">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\ETLs\MeLi\PublicacionesML\Mercado Libre del  23-03 A 05-04 Real Trends.xlsx;Extended Properties="Excel 12.0 XML;HDR=YES";</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{01ADC9E1-AC7B-42D9-8408-849EA1AF740B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExcelFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\Mercado Libre Real Trends.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6A29C5C9-F67E-44FA-ACEE-4334855E68D1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Existe_int">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A652F0E7-C3E6-4DA9-AF91-50C537CF3932}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderProcesado">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\PROCESADOS</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0EFB5594-5AC9-4BCE-A079-602E7CA71A78}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FolderProcesado] + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\PROCESADOS\Procesado_20230728102100</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{49AD2189-53D7-4147-BCE9-B105C9FC785D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carpeta procesado"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{0F1FE0AB-446A-4D7F-894F-ED4A274B64B8}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carpeta procesado">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{196E090A-56B5-4FC3-8490-2AAD94DAEBFF}"
+        DTS:ObjectName="{196E090A-56B5-4FC3-8490-2AAD94DAEBFF}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::SourceFolder]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\fe-files01\DW_OnDemand\Publicaciones ML" />
+            <FEFEProperty
+              FileSpec="*.xlsx" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Carpeta procesado\Create directory"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{45FBCC6A-EC1F-4C43-B0A4-131380F87C4C}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create directory"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="CreateDirectory"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::NewFolder"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Carpeta procesado\Move file"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{D5B4B948-3495-47BF-8C4B-37A6F5808D6A}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move file"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::ExcelFilePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::NewFolder"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Carpeta procesado.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F1B24506-6215-4A3E-A869-D47EA849A510}"
+          DTS:From="Package\Carpeta procesado\Create directory"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Carpeta procesado\Move file" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{CAED0F8E-B71B-4C11-AA23-D6C836264C3E}"
+          DTS:ObjectName="{CAED0F8E-B71B-4C11-AA23-D6C836264C3E}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cleansing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{22A7C199-EE69-44EB-AA4A-2E3A1AFB7D08}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cleansing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec ML_CLEANSING_PUBLICACIONES;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Existe"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EC343B48-E6E3-45BB-B9A1-DDA02D827526}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Existe"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Existe\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'REAL TRENDS$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM OPENROWSET(BULK 'C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\ETLs\MeLi\PublicacionesML') AS Data</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::SourceFolder</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Existe\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Existe\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
+                      name="Distribuidor"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
+                      name="Fecha"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
+                      name="Tienda oficial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
+                      name="Nro# publicación"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Título]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Título]"
+                      name="Título"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
+                      name="Tipo de publicación"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
+                      name="Unidades vendidas"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
+                      name="Precio por unidad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Total]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Total]"
+                      name="Total"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      name="F10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
+                      dataType="wstr"
+                      length="255"
+                      name="Distribuidor" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tienda oficial" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nro# publicación" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
+                      dataType="wstr"
+                      length="255"
+                      name="Título" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tipo de publicación" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
+                      dataType="r8"
+                      name="Unidades vendidas" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
+                      dataType="cy"
+                      name="Precio por unidad" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
+                      dataType="cy"
+                      name="Total" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      dataType="cy"
+                      name="F10" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                      dataType="wstr"
+                      length="255"
+                      name="F11" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
+                      name="Distribuidor" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
+                      name="Fecha" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
+                      name="Tienda oficial" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
+                      name="Nro# publicación" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
+                      name="Título" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
+                      name="Tipo de publicación" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
+                      dataType="r8"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
+                      name="Unidades vendidas" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
+                      dataType="cy"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
+                      name="Precio por unidad" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
+                      dataType="cy"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
+                      name="Total" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      dataType="cy"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      name="F10" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Existe\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[publicaciones_internet]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Existe\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Distribuidor"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total]"
+                      cachedDataType="cy"
+                      cachedName="Total"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Total]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Fecha]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tienda oficial]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tienda oficial"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nro# publicación]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nro# publicación"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Título]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Título"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Título]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de publicación]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tipo de publicación"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unidades vendidas]"
+                      cachedDataType="r8"
+                      cachedName="Unidades vendidas"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]" />
+                    <inputColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precio por unidad]"
+                      cachedDataType="cy"
+                      cachedName="Precio por unidad"
+                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
+                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
+                      dataType="i4"
+                      name="row_id" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
+                      dataType="wstr"
+                      length="100"
+                      name="distribuidor" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
+                      dataType="wstr"
+                      length="50"
+                      name="fecha_publicacion" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
+                      dataType="wstr"
+                      length="100"
+                      name="tienda_oficial" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
+                      dataType="wstr"
+                      length="50"
+                      name="nro_publicacion" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                      dataType="wstr"
+                      length="255"
+                      name="titulo" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
+                      dataType="wstr"
+                      length="50"
+                      name="destaque" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
+                      dataType="wstr"
+                      length="50"
+                      name="unidades_vendidas" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
+                      dataType="wstr"
+                      length="50"
+                      name="precio_por_unidad" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      dataType="wstr"
+                      length="50"
+                      name="total" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[identificador]"
+                      dataType="wstr"
+                      length="100"
+                      name="identificador" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Existe.Paths[Excel Source Output]"
+              endId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Existe\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fallo carga sta"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E040F927-6E17-4705-9029-A6AB947DB14F}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fallo carga sta"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fallo cleansing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5354BAC8-46B2-433B-839D-4AC59C4EAC93}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fallo cleansing"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 10&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fallo Mover archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4A0194D5-A7D3-4C47-8545-DC03D6056F9B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fallo Mover archivo"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 11&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fallo SP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{403533D3-7043-49F8-9163-520762A46F8D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fallo SP"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 5&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finalizo OK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{743F328A-E169-408A-91DA-CCE5BFF73034}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finalizo OK"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 2&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\No Existe"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D1120034-2EBC-4C34-9616-89566267B173}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="No Existe"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 8 &#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Publicacione_hits_old"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D10D30CB-4791-4E60-9FDD-C3799B16DA59}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Publicacione_hits_old"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec ML_PUBLICACIONES_HITS_OLD" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script Task"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{D9F56242-C03F-4E4F-9C33-6D6FE234FE3F}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_4b9b74f66c3d4e25b4b407bc870b5129"
+          VSTAMajorVersion="16"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::ExcelFilePath,User::SourceFolder"
+          ReadWriteVariables="User::Existe_int">
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="ST_4b9b74f66c3d4e25b4b407bc870b5129.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{fdc9df58-b8db-48b3-80d3-a3f20b1b6774}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_4b9b74f66c3d4e25b4b407bc870b5129</RootNamespace>
+    <AssemblyName>ST_4b9b74f66c3d4e25b4b407bc870b5129</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" />
+        <Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host>
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.IO;
+#endregion
+
+namespace ST_4b9b74f66c3d4e25b4b407bc870b5129
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+        {
+
+            // TODO: Add your code here
+
+            // Ruta y nombre del archivo que deber�a existir
+            //string ExcelFilePath = Dts.Variables["User::ExcelFilePath"].Value.ToString();
+
+            //// Ruta de la carpeta que contiene el archivo
+            //string SourceFolder = Dts.Variables["User::SourceFolder"].Value.ToString();
+
+            //// Verificar si el archivo existe en la carpeta
+            //if (File.Exists(Path.Combine(SourceFolder, Path.GetFileName(ExcelFilePath))))
+            //{
+            //    // El archivo existe
+            //    Dts.Variables["Existe_int"].Value = 0;
+            //}
+            //else
+            //{
+            //    // El archivo no existe
+            //    Dts.Variables["Existe_int"].Value = 1;
+            //}
+
+            //Dts.TaskResult = (int)ScriptResults.Success;
+
+
+            string sourceFolderPath = Dts.Variables["SourceFolder"].Value.ToString();
+            DirectoryInfo directoryInfo = new DirectoryInfo(sourceFolderPath);
+            FileInfo[] Files = directoryInfo.GetFiles("*.xlsx");
+
+            if (Files.Length > 0)
+            {
+                Dts.Variables["Existe_int"].Value = 0;
+
+            }
+            else
+            {
+                Dts.Variables["Existe_int"].Value = 1;
+            }
+
+            Dts.TaskResult = (int)ScriptResults.Success; // Establecer como Success
+        }
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_4b9b74f66c3d4e25b4b407bc870b5129</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_4b9b74f66c3d4e25b4b407bc870b5129</msb:DisplayName>
+    <msb:ProjectId>{29D61555-E984-40B5-8E8B-4DACAB10324B}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_4b9b74f66c3d4e25b4b407bc870b5129.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Settings.get_Default():ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Sett" +
+    "ings")]
+
+namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_4b9b74f66c3d4e25b4b407bc870b5129.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGTAw2QAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAXi4A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAwuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAZA4AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABA
+LgAAAAAAAEgAAAACAAUARCEAABAMAAABAAAAAAAAAFQtAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwAgCAAAAAAAAAAAIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAApzFQAACnIbAABwbxYAAAqOLCICKBAAAApvEQAACnIpAABwbxIAAAoWjB0AAAFvFwAA
+CisgAigQAAAKbxEAAApyKQAAcG8SAAAKF4wdAAABbxcAAAoCKBAAAAoWbxgAAAoqHgIoGQAACioe
+AigaAAAKKq5+AQAABC0ecj8AAHDQAwAAAigbAAAKbxwAAApzHQAACoABAAAEfgEAAAQqGn4CAAAE
+Kh4CgAIAAAQqGn4DAAAEKh4CKB4AAAoqLnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAMAAAAdjQu
+MC4zMDMxOQAAAAAFAGwAAADcAwAAI34AAEgEAACYBQAAI1N0cmluZ3MAAAAA4AkAALQAAAAjVVMA
+lAoAABAAAAAjR1VJRAAAAKQKAABsAQAAI0Jsb2IAAAAAAAAAAgAAAVcdoAEJAwAAAPoBMwAWAAAB
+AAAAIAAAAAUAAAAGAAAACQAAAAEAAAAeAAAAAgAAABAAAAACAAAAAwAAAAQAAAABAAAABAAAAAEA
+AAABAAAAAACPAwEAAAAAAAYANQJ2BAYAxAJ2BAYAgQFjBA8A6gQAAAYArgENBAYAGAINBAYA+QEN
+BAYAqwINBAYAVQINBAYAbgINBAYAxQENBAYA4AH8AgoAiQI+AwoAAAE+AwYAxwPAAwYAZAFjBAYA
+ZgXAAwYARgSWBAYAKAT4Aw4ANAF5Aw4AlQF5Aw4AHAHjAwYASQF2BAoAZwM+AxIALAWrABIAfgCr
+AAYANAQ0AAYAHwQ0AAYAAQDAAwYAywDAAwYAhwDAAwYAjAUNBAAAAAArAAAAAAABAAEAAQAQANgD
+BwA5AAEAAQAAABAAnQT5BEUAAQADAAABEAA/BfkEWQADAAcAAwEAAFgFAAA9AAQACgARAMwDcAAR
+APAAdAARAG4AeAAGBl0AfABWgEgFfwBWgNAAfwBQIAAAAACGAN4DBgABANwgAAAAAIYYVgQGAAEA
+5CAAAAAAgxhWBAYAAQDsIAAAAACTCEIEgwABABghAAAAAJMI2ACIAAEAHyEAAAAAkwjkAI0AAQAn
+IQAAAACWCG0FkwACAC4hAAAAAIYYVgQGAAIANiEAAAAAkRhcBJgAAgAAAAEA9gIJAFYEAQARAFYE
+BgAZAFYECgApAFYEEAAxAFYEEAA5AFYEEABBAFYEEABJAFYEEABRAFYEEABZAFYEEABhAFYEEABp
+AFYEBgCBAFYEBgCpAFYEFQC5AFYEBgBxAFAFGwDBACgFIADJALcDJQDRAOICKwCJABYDLwDZAFYE
+EADZADYFMwDRAOwCOgDBAHkFAQBxAFYEBgCJAFYEBgDxAJkAPwDxAIgFRgCRAFYETACxAFYEBgAI
+ABQAZgAIABgAawApAHMA0wAuAAsAqwAuABMAtAAuABsA0wAuACMA3AAuACsABQEuADMABQEuADsA
+BQEuAEMA3AAuAEsACwEuAFMABQEuAFsAIgFDAGMAawBJAHMA0wBhAHsAawBjAGsAawADAAEABAAD
+AAAARgScAAAA+AChAAAAcQWmAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAoSGaSAAA
+AAAAAAcAAAAEAAAAAAAAAAAAAABUAGUAAAAAABAAAAAAAAAAAAAAAF0AHwMAAAAABAAAAAAAAAAA
+AAAAVADAAwAAAAAQAAAAAAAAAAAAAABdAD4AAAAAAAAAAAABAAAApwQAAAUAAgAAAAAAAEludDMy
+AFNUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5ADxNb2R1bGU+AFN5c3RlbS5JTwBN
+aWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBkZWZhdWx0SW5z
+dGFuY2UAVmFyaWFibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUATWljcm9z
+b2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1
+bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNh
+dGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0
+dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUA
+RWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlU
+cmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmln
+dXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9u
+UmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29w
+eXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJs
+eUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVl
+AHNldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5T
+Y3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF80Yjli
+NzRmNjZjM2Q0ZTI1YjRiNDA3YmM4NzBiNTEyOS5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVz
+b3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXph
+dGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBGaWxlSW5mbwBDdWx0dXJlSW5mbwBEaXJlY3RvcnlJbmZv
+AGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0
+ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfNGI5Yjc0ZjY2
+YzNkNGUyNWI0YjQwN2JjODcwYjUxMjkuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERl
+YnVnZ2luZ01vZGVzAFNUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5LlByb3BlcnRp
+ZXMAZ2V0X1ZhcmlhYmxlcwBHZXRGaWxlcwBTZXR0aW5ncwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0
+UmVzdWx0cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AAAA
+AAAZUwBvAHUAcgBjAGUARgBvAGwAZABlAHIAAA0qAC4AeABsAHMAeAAAFUUAeABpAHMAdABlAF8A
+aQBuAHQAAHFTAFQAXwA0AGIAOQBiADcANABmADYANgBjADMAZAA0AGUAMgA1AGIANABiADQAMAA3
+AGIAYwA4ADcAMABiADUAMQAyADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIA
+YwBlAHMAAAAAAMsK7yq+4qpNoDzUURqCTqEABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEEIAAS
+YQQgABJlBSABEmkcAyAAHAMgAA4GIAEdEnEOBCABARwGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pc
+Vhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEB
+Ek0EAAASEAMAAAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRp
+b25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5
+AAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249
+djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43tAAAAM7K774B
+AAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lv
+bj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUw
+ODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQ
+tAAAADQuAAAAAAAAAAAAAE4uAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABALgAAAAAAAAAAAAAA
+AF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQCaSKEhAAABAJpIoSE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcAYgBj
+ADgANwAwAGIANQAxADIAOQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA4ADYAMAA5AC4AMQA4ADUAOAA2AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcAYgBjADgA
+NwAwAGIANQAxADIAOQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8ANABiADkAYgA3ADQAZgA2ADYAYwAzAGQANABlADIANQBiADQAYgA0ADAA
+NwBiAGMAOAA3ADAAYgA1ADEAMgA5AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcA
+YgBjADgANwAwAGIANQAxADIAOQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4AOAA2ADAAOQAuADEAOAA1ADgANgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA2ADAAOQAuADEAOAA1ADgANgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABgPgAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{74F81459-6912-4E59-A91E-173FCDDDF19A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FCAE9FA0-15E9-492F-8B80-99738302D602}"
+          SQLTask:SqlStatementSource="truncate table publicaciones_internet;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B93E358-C7DE-48BE-AD4B-7B6E1E3C4ED8}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe_int &gt; 0"
+      DTS:From="Package\Script Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\No Existe" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9FB20A8C-A3BA-4313-B5A8-282945B5AFA9}"
+      DTS:From="Package\Existe"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Cleansing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{7AD841D7-689C-4D41-99E3-F8ABBF0C5B62}"
+      DTS:From="Package\Carpeta procesado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Finalizo OK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{B3385B29-E000-4D1C-8839-46A4A4F59D03}"
+      DTS:From="Package\Cleansing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Publicacione_hits_old" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{8834C84C-2390-491F-8F2F-7080272EB279}"
+      DTS:From="Package\Publicacione_hits_old"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Carpeta procesado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{0D03B6C1-4D4D-4B34-95D4-5488C783E3C8}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe_int == 0"
+      DTS:From="Package\Script Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Existe" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{2EBDF442-BC57-4912-9988-FAAF9809FDDC}"
+      DTS:From="Package\Truncate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Script Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{201B3D85-460B-467A-81A2-761F59C62C5A}"
+      DTS:From="Package\Cleansing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Fallo cleansing"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{B9F5C18A-368D-40CF-A0FF-1B3341BE77FE}"
+      DTS:From="Package\Publicacione_hits_old"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Fallo SP"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC592E54-C5F1-4A36-B210-F65CA2F13A70}"
+      DTS:From="Package\Carpeta procesado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Fallo Mover archivo"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{203DAF80-6A2C-4EC2-9A5C-4F1D97AD6D76}"
+      DTS:From="Package\Existe"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Fallo carga sta"
+      DTS:Value="1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\Carpeta procesado\Create directory"
+          TopLeft="56.0833236165343,9.72221536470772" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Carpeta procesado\Move file"
+          TopLeft="67.3750000217315,91.6833319114642" />
+        <EdgeLayout
+          Id="Package\Carpeta procesado.PrecedenceConstraints[Constraint]"
+          TopLeft="131.729161819133,52.3888820313744">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.2944498800898"
+              Start="0,0"
+              End="0,31.7944498800898">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7944498800898" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.333333333333336"
+          IsExpanded="False"
+          PanelSize="272,187.333333333334"
+          Size="272,43.3333333333334"
+          Id="Package\Carpeta procesado"
+          TopLeft="446.187494108055,680.942651817898" />
+        <NodeLayout
+          Size="125.333333333334,42.6666666666667"
+          Id="Package\Cleansing"
+          TopLeft="512.866560125968,509.050585825617" />
+        <NodeLayout
+          Size="106.666666666667,42.6666666666667"
+          Id="Package\Existe"
+          TopLeft="520.458325985198,410.295237172047" />
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Fallo carga sta"
+          TopLeft="717.834810731999,410.061706128418" />
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Fallo cleansing"
+          TopLeft="757.14284586055,502.190470412232" />
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\Fallo Mover archivo"
+          TopLeft="788.392845394888,680.023803562919" />
+        <NodeLayout
+          Size="116,42.6666666666667"
+          Id="Package\Fallo SP"
+          TopLeft="770.535702803838,594.119040196992" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Finalizo OK"
+          TopLeft="512.916659719,761.933326445931" />
+        <NodeLayout
+          Size="124,42.6666666666667"
+          Id="Package\No Existe"
+          TopLeft="308.928566825177,413.369043592541" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Publicacione_hits_old"
+          TopLeft="497.685508466859,592.75277238798" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Script Task"
+          TopLeft="394.541664850588,315.966665713589" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Truncate"
+          TopLeft="394.019836302493,238.448408553832" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="460.541664850588,358.633332380255">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-89.6130980254106,54.7357112122858"
+              Start="0,0"
+              End="-89.6130980254106,47.2357112122858">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3678556061429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3678556061429"
+                    Point2="0,27.3678556061429"
+                    Point3="-4,27.3678556061429" />
+                  <mssgle:LineSegment
+                    End="-85.6130980254106,27.3678556061429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-85.6130980254106,27.3678556061429"
+                    Point2="-89.6130980254106,27.3678556061429"
+                    Point3="-89.6130980254106,31.3678556061429" />
+                  <mssgle:LineSegment
+                    End="-89.6130980254106,47.2357112122858" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-52.8065490127053,32.3678556061429,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="574.662443055583,452.961903838714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.0886819869036"
+              Start="0,0"
+              End="0,48.5886819869036">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5886819869036" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="580.552076913528,724.275985151231">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.6573412946997"
+              Start="0,0"
+              End="0,30.1573412946997">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.1573412946997" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="577.609367629747,551.717252492284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0355198956963"
+              Start="0,0"
+              End="0,33.5355198956963">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5355198956963" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="580.936501287457,635.419439054647">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5232127632509"
+              Start="0,0"
+              End="0,38.0232127632509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0232127632509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="481.208331517254,358.633332380255">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.5833278012772,51.6619047917918"
+              Start="0,0"
+              End="92.5833278012772,44.1619047917918">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0359851846817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.0359851846817"
+                    Point2="0,21.0359851846817"
+                    Point3="4,21.0359851846817" />
+                  <mssgle:LineSegment
+                    End="88.5833278012772,21.0359851846817" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.5833278012772,21.0359851846817"
+                    Point2="92.5833278012772,21.0359851846817"
+                    Point3="92.5833278012772,25.0359851846817" />
+                  <mssgle:LineSegment
+                    End="92.5833278012772,44.1619047917918" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="38.2916639006386,26.0359851846817,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="457.614083909874,281.115075220499">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.8515904930895"
+              Start="0,0"
+              End="0,27.3515904930895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.3515904930895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="638.199893459302,526.953861452258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.942952401248,0"
+              Start="0,0"
+              End="111.442952401248,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="111.442952401248,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="40.480128544374,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="661.685508466859,614.76923962582">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.850194336978,0"
+              Start="0,0"
+              End="101.350194336978,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="101.350194336978,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.4337495122392,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="718.187494108055,701.983227690409">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.2053512868335,0"
+              Start="0,0"
+              End="62.7053512868335,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.7053512868335,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.1113279871668,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="627.124992651865,431.511804983566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.7098180801344,0"
+              Start="0,0"
+              End="83.2098180801344,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="83.2098180801344,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="26.3635613838172,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Existe">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Existe\OLE DB Destination"
+          TopLeft="434.471153985853,143.523077341502" />
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Existe\Excel Source"
+          TopLeft="226.45192301173,151.026923042054" />
+        <EdgeLayout
+          Id="Package\Existe.Paths[Excel Source Output]"
+          TopLeft="365.785256345063,168.608333525111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.6858976407896,0"
+              Start="0,0"
+              End="61.1858976407896,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="61.1858976407896,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Existe\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Existe\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

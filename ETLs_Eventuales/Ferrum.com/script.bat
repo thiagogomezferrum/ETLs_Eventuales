@@ -1,0 +1,1 @@
+"C:\Users\thiag\AppData\Local\Microsoft\WindowsApps\python.exe" "C:\Users\thiag\F.V.S.A\Equipo BI - General\Proyectos Visual Studio\DW_OD_Eventuales\Ferrum.com\ferrum_web.py"
