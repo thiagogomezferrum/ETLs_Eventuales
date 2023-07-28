@@ -1,0 +1,3011 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/28/2023 11:56:36 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYSPOT05"
+  DTS:CreatorName="MYSPOT05\Thiago"
+  DTS:DTSID="{01CB9E0D-6896-4663-8CA7-7A4A24767BF4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{91214008-91E9-4FA6-B3F4-177D9EF625AF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{FA8EF935-5D49-49F2-B0C7-80E7433C5C9F}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\HRS.PROD.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=NO&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CAB4AA89-959A-47A6-89BB-01C22BE4F057}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExcelFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\HRS.PROD.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{772497F8-AE59-4034-A768-288FD1A8EDF6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Existe_int">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1521D973-CC37-448F-8EC8-EF2296865484}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EE94B3D2-BBD3-4D08-9EC4-DECDFDD90F5E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SourceFolder] + &quot;\\&quot; +  @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C0C19388-86FE-4CB9-A628-B8BBF8802ED3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::SourceFolder] + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NewFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\Procesado_20230728132331</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0B7BE7BD-98EC-4AD3-8A60-03EC25ECBA24}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\1-Existencia de archivo"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{d32f712c-2e81-4f88-b1b5-1573cdf6392b}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="1-Existencia de archivo"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_5ea9020f9cdb46f79eda4664f0ad4248"
+          VSTAMajorVersion="16"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::ExcelFilePath,User::SourceFolder"
+          ReadWriteVariables="User::Existe_int">
+          <ProjectItem
+            Name="ST_5ea9020f9cdb46f79eda4664f0ad4248.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{fdc9df58-b8db-48b3-80d3-a3f20b1b6774}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>ST_4b9b74f66c3d4e25b4b407bc870b5129</RootNamespace><AssemblyName>ST_5ea9020f9cdb46f79eda4664f0ad4248</AssemblyName><TargetFrameworkVersion>v4.7</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch><TargetFrameworkProfile></TargetFrameworkProfile></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile><Compile Include="ScriptMain.cs"><SubType>Code</SubType></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="ScriptTask" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" DebugInfoCommandLine="" DebugInfoWorkingDir="" IconImageList="" /><Host Name="ScriptTask" GeneratedNamespace="$safeprojectname" IconIndex=""></Host><ProjectClient><HostIdentifier>SSIS_ST160</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+using System.IO;
+#endregion
+
+namespace ST_4b9b74f66c3d4e25b4b407bc870b5129
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+        {
+
+            // TODO: Add your code here
+
+            // Ruta y nombre del archivo que deber�a existir
+            //string ExcelFilePath = Dts.Variables["User::ExcelFilePath"].Value.ToString();
+
+            //// Ruta de la carpeta que contiene el archivo
+            //string SourceFolder = Dts.Variables["User::SourceFolder"].Value.ToString();
+
+            //// Verificar si el archivo existe en la carpeta
+            //if (File.Exists(Path.Combine(SourceFolder, Path.GetFileName(ExcelFilePath))))
+            //{
+            //    // El archivo existe
+            //    Dts.Variables["Existe_int"].Value = 0;
+            //}
+            //else
+            //{
+            //    // El archivo no existe
+            //    Dts.Variables["Existe_int"].Value = 1;
+            //}
+
+            //Dts.TaskResult = (int)ScriptResults.Success;
+
+
+            string sourceFolderPath = Dts.Variables["SourceFolder"].Value.ToString();
+            DirectoryInfo directoryInfo = new DirectoryInfo(sourceFolderPath);
+            FileInfo[] Files = directoryInfo.GetFiles("*.xlsx");
+
+            if (Files.Length > 0)
+            {
+                Dts.Variables["Existe_int"].Value = 0;
+
+            }
+            else
+            {
+                Dts.Variables["Existe_int"].Value = 1;
+            }
+
+            Dts.TaskResult = (int)ScriptResults.Success; // Establecer como Success
+        }
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_4b9b74f66c3d4e25b4b407bc870b5129</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_4b9b74f66c3d4e25b4b407bc870b5129</msb:DisplayName>
+    <msb:ProjectId>{29D61555-E984-40B5-8E8B-4DACAB10324B}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_5ea9020f9cdb46f79eda4664f0ad4248.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Settings.get_Default():ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Sett" +
+    "ings")]
+
+namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_4b9b74f66c3d4e25b4b407bc870b5129.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGTAw2QAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAXi4A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAwuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAZA4AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABA
+LgAAAAAAAEgAAAACAAUARCEAABAMAAABAAAAAAAAAFQtAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwAgCAAAAAAAAAAAIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKbxQAAApzFQAACnIbAABwbxYAAAqOLCICKBAAAApvEQAACnIpAABwbxIAAAoWjB0AAAFvFwAA
+CisgAigQAAAKbxEAAApyKQAAcG8SAAAKF4wdAAABbxcAAAoCKBAAAAoWbxgAAAoqHgIoGQAACioe
+AigaAAAKKq5+AQAABC0ecj8AAHDQAwAAAigbAAAKbxwAAApzHQAACoABAAAEfgEAAAQqGn4CAAAE
+Kh4CgAIAAAQqGn4DAAAEKh4CKB4AAAoqLnMIAAAGgAMAAAQqAABCU0pCAQABAAAAAAAMAAAAdjQu
+MC4zMDMxOQAAAAAFAGwAAADcAwAAI34AAEgEAACYBQAAI1N0cmluZ3MAAAAA4AkAALQAAAAjVVMA
+lAoAABAAAAAjR1VJRAAAAKQKAABsAQAAI0Jsb2IAAAAAAAAAAgAAAVcdoAEJAwAAAPoBMwAWAAAB
+AAAAIAAAAAUAAAAGAAAACQAAAAEAAAAeAAAAAgAAABAAAAACAAAAAwAAAAQAAAABAAAABAAAAAEA
+AAABAAAAAACPAwEAAAAAAAYANQJ2BAYAxAJ2BAYAgQFjBA8A6gQAAAYArgENBAYAGAINBAYA+QEN
+BAYAqwINBAYAVQINBAYAbgINBAYAxQENBAYA4AH8AgoAiQI+AwoAAAE+AwYAxwPAAwYAZAFjBAYA
+ZgXAAwYARgSWBAYAKAT4Aw4ANAF5Aw4AlQF5Aw4AHAHjAwYASQF2BAoAZwM+AxIALAWrABIAfgCr
+AAYANAQ0AAYAHwQ0AAYAAQDAAwYAywDAAwYAhwDAAwYAjAUNBAAAAAArAAAAAAABAAEAAQAQANgD
+BwA5AAEAAQAAABAAnQT5BEUAAQADAAABEAA/BfkEWQADAAcAAwEAAFgFAAA9AAQACgARAMwDcAAR
+APAAdAARAG4AeAAGBl0AfABWgEgFfwBWgNAAfwBQIAAAAACGAN4DBgABANwgAAAAAIYYVgQGAAEA
+5CAAAAAAgxhWBAYAAQDsIAAAAACTCEIEgwABABghAAAAAJMI2ACIAAEAHyEAAAAAkwjkAI0AAQAn
+IQAAAACWCG0FkwACAC4hAAAAAIYYVgQGAAIANiEAAAAAkRhcBJgAAgAAAAEA9gIJAFYEAQARAFYE
+BgAZAFYECgApAFYEEAAxAFYEEAA5AFYEEABBAFYEEABJAFYEEABRAFYEEABZAFYEEABhAFYEEABp
+AFYEBgCBAFYEBgCpAFYEFQC5AFYEBgBxAFAFGwDBACgFIADJALcDJQDRAOICKwCJABYDLwDZAFYE
+EADZADYFMwDRAOwCOgDBAHkFAQBxAFYEBgCJAFYEBgDxAJkAPwDxAIgFRgCRAFYETACxAFYEBgAI
+ABQAZgAIABgAawApAHMA0wAuAAsAqwAuABMAtAAuABsA0wAuACMA3AAuACsABQEuADMABQEuADsA
+BQEuAEMA3AAuAEsACwEuAFMABQEuAFsAIgFDAGMAawBJAHMA0wBhAHsAawBjAGsAawADAAEABAAD
+AAAARgScAAAA+AChAAAAcQWmAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAAoSGaSAAA
+AAAAAAcAAAAEAAAAAAAAAAAAAABUAGUAAAAAABAAAAAAAAAAAAAAAF0AHwMAAAAABAAAAAAAAAAA
+AAAAVADAAwAAAAAQAAAAAAAAAAAAAABdAD4AAAAAAAAAAAABAAAApwQAAAUAAgAAAAAAAEludDMy
+AFNUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5ADxNb2R1bGU+AFN5c3RlbS5JTwBN
+aWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAdmFsdWVfXwBtc2NvcmxpYgBkZWZhdWx0SW5z
+dGFuY2UAVmFyaWFibGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUATWljcm9z
+b2Z0LlNxbFNlcnZlci5EdHMuUnVudGltZQBUeXBlAEZhaWx1cmUAZ2V0X0N1bHR1cmUAc2V0X0N1
+bHR1cmUAcmVzb3VyY2VDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNh
+dGlvblNldHRpbmdzQmFzZQBFZGl0b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0
+dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUA
+RWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlU
+cmFkZW1hcmtBdHRyaWJ1dGUAVGFyZ2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmln
+dXJhdGlvbkF0dHJpYnV0ZQBBc3NlbWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9u
+UmVsYXhhdGlvbnNBdHRyaWJ1dGUAQXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29w
+eXJpZ2h0QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJs
+eUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAZ2V0X1ZhbHVl
+AHNldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5T
+Y3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF80Yjli
+NzRmNjZjM2Q0ZTI1YjRiNDA3YmM4NzBiNTEyOS5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVz
+b3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXph
+dGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBGaWxlSW5mbwBDdWx0dXJlSW5mbwBEaXJlY3RvcnlJbmZv
+AGdldF9SZXNvdXJjZU1hbmFnZXIALmN0b3IALmNjdG9yAFN5c3RlbS5EaWFnbm9zdGljcwBTeXN0
+ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1RfNGI5Yjc0ZjY2
+YzNkNGUyNWI0YjQwN2JjODcwYjUxMjkuUHJvcGVydGllcy5SZXNvdXJjZXMucmVzb3VyY2VzAERl
+YnVnZ2luZ01vZGVzAFNUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5LlByb3BlcnRp
+ZXMAZ2V0X1ZhcmlhYmxlcwBHZXRGaWxlcwBTZXR0aW5ncwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0
+UmVzdWx0cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AAAA
+AAAZUwBvAHUAcgBjAGUARgBvAGwAZABlAHIAAA0qAC4AeABsAHMAeAAAFUUAeABpAHMAdABlAF8A
+aQBuAHQAAHFTAFQAXwA0AGIAOQBiADcANABmADYANgBjADMAZAA0AGUAMgA1AGIANABiADQAMAA3
+AGIAYwA4ADcAMABiADUAMQAyADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIA
+YwBlAHMAAAAAAMsK7yq+4qpNoDzUURqCTqEABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEEIAAS
+YQQgABJlBSABEmkcAyAAHAMgAA4GIAEdEnEOBCABARwGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pc
+Vhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEB
+Ek0EAAASEAMAAAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRp
+b25UaHJvd3MBCAEAAgAAAAAAKAEAI1NUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5
+AAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249
+djQuNwEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43tAAAAM7K774B
+AAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lv
+bj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUw
+ODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQ
+tAAAADQuAAAAAAAAAAAAAE4uAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABALgAAAAAAAAAAAAAA
+AF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQCaSKEhAAABAJpIoSE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcAYgBj
+ADgANwAwAGIANQAxADIAOQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA4ADYAMAA5AC4AMQA4ADUAOAA2AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcAYgBjADgA
+NwAwAGIANQAxADIAOQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8ANABiADkAYgA3ADQAZgA2ADYAYwAzAGQANABlADIANQBiADQAYgA0ADAA
+NwBiAGMAOAA3ADAAYgA1ADEAMgA5AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcA
+YgBjADgANwAwAGIANQAxADIAOQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4AOAA2ADAAOQAuADEAOAA1ADgANgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA2ADAAOQAuADEAOAA1ADgANgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABgPgAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2-Truncate STA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{02f48e1b-c28e-4ff0-a168-a547a531ed48}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2-Truncate STA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
+          SQLTask:SqlStatementSource="truncate table Int_RRHH_Hs_Produccion;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\3-Comienza Ejecución"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D7C2325E-80E1-4483-84D9-880560250AC5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="3-Comienza Ejecución"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\4-Carga Int"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{c6ff98b6-5ac8-49f5-bc9d-8e98c3b16bdd}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="4-Carga Int"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\4-Carga Int\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">'Reporte Informe Hs de Producció$'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [Reporte Informe Hs de Producció$] OFFSET 6 ROWS</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\4-Carga Int\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F1]"
+                      name="F1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F2]"
+                      name="F2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F3]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F3]"
+                      name="F3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F4]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F4]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F4]"
+                      name="F4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F5]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F5]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F5]"
+                      name="F5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      name="F6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F9]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F9]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F9]"
+                      name="F9"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F7]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F7]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F7]"
+                      name="F7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F8]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F8]"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F8]"
+                      name="F8"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      dataType="wstr"
+                      length="255"
+                      name="F1" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      dataType="wstr"
+                      length="255"
+                      name="F2" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F3]"
+                      dataType="wstr"
+                      length="255"
+                      name="F3" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F4]"
+                      dataType="wstr"
+                      length="255"
+                      name="F4" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F5]"
+                      dataType="wstr"
+                      length="255"
+                      name="F5" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
+                      dataType="wstr"
+                      length="255"
+                      name="F6" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F9]"
+                      dataType="wstr"
+                      length="255"
+                      name="F9" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      dataType="wstr"
+                      length="255"
+                      name="F10" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                      dataType="wstr"
+                      length="255"
+                      name="F11" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F12]"
+                      dataType="wstr"
+                      length="255"
+                      name="F12" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F13]"
+                      dataType="wstr"
+                      length="255"
+                      name="F13" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F14]"
+                      dataType="wstr"
+                      length="255"
+                      name="F14" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F15]"
+                      dataType="wstr"
+                      length="255"
+                      name="F15" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F16]"
+                      dataType="wstr"
+                      length="255"
+                      name="F16" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F17]"
+                      dataType="wstr"
+                      length="255"
+                      name="F17" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F18]"
+                      dataType="wstr"
+                      length="255"
+                      name="F18" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F19]"
+                      dataType="wstr"
+                      length="255"
+                      name="F19" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F20]"
+                      dataType="wstr"
+                      length="255"
+                      name="F20" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F21]"
+                      dataType="wstr"
+                      length="255"
+                      name="F21" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F22]"
+                      dataType="wstr"
+                      length="255"
+                      name="F22" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F23]"
+                      dataType="wstr"
+                      length="255"
+                      name="F23" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F24]"
+                      dataType="wstr"
+                      length="255"
+                      name="F24" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F25]"
+                      dataType="wstr"
+                      length="255"
+                      name="F25" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F26]"
+                      dataType="wstr"
+                      length="255"
+                      name="F26" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F27]"
+                      dataType="wstr"
+                      length="255"
+                      name="F27" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F28]"
+                      dataType="wstr"
+                      length="255"
+                      name="F28" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F29]"
+                      dataType="wstr"
+                      length="255"
+                      name="F29" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F30]"
+                      dataType="wstr"
+                      length="255"
+                      name="F30" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F31]"
+                      dataType="wstr"
+                      length="255"
+                      name="F31" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F32]"
+                      dataType="wstr"
+                      length="255"
+                      name="F32" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F33]"
+                      dataType="wstr"
+                      length="255"
+                      name="F33" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F34]"
+                      dataType="wstr"
+                      length="255"
+                      name="F34" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F35]"
+                      dataType="wstr"
+                      length="255"
+                      name="F35" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F36]"
+                      dataType="wstr"
+                      length="255"
+                      name="F36" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F37]"
+                      dataType="wstr"
+                      length="255"
+                      name="F37" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F38]"
+                      dataType="wstr"
+                      length="255"
+                      name="F38" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F39]"
+                      dataType="wstr"
+                      length="255"
+                      name="F39" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F40]"
+                      dataType="wstr"
+                      length="255"
+                      name="F40" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F41]"
+                      dataType="wstr"
+                      length="255"
+                      name="F41" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F42]"
+                      dataType="wstr"
+                      length="255"
+                      name="F42" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F43]"
+                      dataType="wstr"
+                      length="255"
+                      name="F43" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F44]"
+                      dataType="wstr"
+                      length="255"
+                      name="F44" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F45]"
+                      dataType="wstr"
+                      length="255"
+                      name="F45" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F46]"
+                      dataType="wstr"
+                      length="255"
+                      name="F46" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F47]"
+                      dataType="wstr"
+                      length="255"
+                      name="F47" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F48]"
+                      dataType="wstr"
+                      length="255"
+                      name="F48" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F49]"
+                      dataType="wstr"
+                      length="255"
+                      name="F49" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F50]"
+                      dataType="wstr"
+                      length="255"
+                      name="F50" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F51]"
+                      dataType="wstr"
+                      length="255"
+                      name="F51" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F52]"
+                      dataType="wstr"
+                      length="255"
+                      name="F52" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F53]"
+                      dataType="wstr"
+                      length="255"
+                      name="F53" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F54]"
+                      dataType="wstr"
+                      length="255"
+                      name="F54" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F55]"
+                      dataType="wstr"
+                      length="255"
+                      name="F55" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F56]"
+                      dataType="wstr"
+                      length="255"
+                      name="F56" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F57]"
+                      dataType="wstr"
+                      length="255"
+                      name="F57" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F58]"
+                      dataType="wstr"
+                      length="255"
+                      name="F58" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F59]"
+                      dataType="wstr"
+                      length="255"
+                      name="F59" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F60]"
+                      dataType="wstr"
+                      length="255"
+                      name="F60" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F61]"
+                      dataType="wstr"
+                      length="255"
+                      name="F61" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F62]"
+                      dataType="wstr"
+                      length="255"
+                      name="F62" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F63]"
+                      dataType="wstr"
+                      length="255"
+                      name="F63" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F64]"
+                      dataType="wstr"
+                      length="255"
+                      name="F64" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F65]"
+                      dataType="wstr"
+                      length="255"
+                      name="F65" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F66]"
+                      dataType="wstr"
+                      length="255"
+                      name="F66" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F67]"
+                      dataType="wstr"
+                      length="255"
+                      name="F67" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F68]"
+                      dataType="wstr"
+                      length="255"
+                      name="F68" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F69]"
+                      dataType="wstr"
+                      length="255"
+                      name="F69" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F70]"
+                      dataType="wstr"
+                      length="255"
+                      name="F70" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F71]"
+                      dataType="wstr"
+                      length="255"
+                      name="F71" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F72]"
+                      dataType="wstr"
+                      length="255"
+                      name="F72" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F73]"
+                      dataType="wstr"
+                      length="255"
+                      name="F73" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F74]"
+                      dataType="wstr"
+                      length="255"
+                      name="F74" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F75]"
+                      dataType="wstr"
+                      length="255"
+                      name="F75" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F76]"
+                      dataType="wstr"
+                      length="255"
+                      name="F76" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F77]"
+                      dataType="wstr"
+                      length="255"
+                      name="F77" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F78]"
+                      dataType="wstr"
+                      length="255"
+                      name="F78" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F79]"
+                      dataType="wstr"
+                      length="255"
+                      name="F79" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F80]"
+                      dataType="wstr"
+                      length="255"
+                      name="F80" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F81]"
+                      dataType="wstr"
+                      length="255"
+                      name="F81" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F82]"
+                      dataType="wstr"
+                      length="255"
+                      name="F82" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F83]"
+                      dataType="wstr"
+                      length="255"
+                      name="F83" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F84]"
+                      dataType="wstr"
+                      length="255"
+                      name="F84" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F85]"
+                      dataType="wstr"
+                      length="255"
+                      name="F85" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F86]"
+                      dataType="wstr"
+                      length="255"
+                      name="F86" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F87]"
+                      dataType="wstr"
+                      length="255"
+                      name="F87" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F88]"
+                      dataType="wstr"
+                      length="255"
+                      name="F88" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F89]"
+                      dataType="wstr"
+                      length="255"
+                      name="F89" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F90]"
+                      dataType="wstr"
+                      length="255"
+                      name="F90" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F91]"
+                      dataType="wstr"
+                      length="255"
+                      name="F91" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F92]"
+                      dataType="wstr"
+                      length="255"
+                      name="F92" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F93]"
+                      dataType="wstr"
+                      length="255"
+                      name="F93" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F94]"
+                      dataType="wstr"
+                      length="255"
+                      name="F94" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F95]"
+                      dataType="wstr"
+                      length="255"
+                      name="F95" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F96]"
+                      dataType="wstr"
+                      length="255"
+                      name="F96" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F97]"
+                      dataType="wstr"
+                      length="255"
+                      name="F97" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F98]"
+                      dataType="wstr"
+                      length="255"
+                      name="F98" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F99]"
+                      dataType="wstr"
+                      length="255"
+                      name="F99" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F100]"
+                      dataType="wstr"
+                      length="255"
+                      name="F100" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F101]"
+                      dataType="wstr"
+                      length="255"
+                      name="F101" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F102]"
+                      dataType="wstr"
+                      length="255"
+                      name="F102" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F103]"
+                      dataType="wstr"
+                      length="255"
+                      name="F103" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F104]"
+                      dataType="wstr"
+                      length="255"
+                      name="F104" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F105]"
+                      dataType="wstr"
+                      length="255"
+                      name="F105" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F106]"
+                      dataType="wstr"
+                      length="255"
+                      name="F106" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F107]"
+                      dataType="wstr"
+                      length="255"
+                      name="F107" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F108]"
+                      dataType="wstr"
+                      length="255"
+                      name="F108" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F109]"
+                      dataType="wstr"
+                      length="255"
+                      name="F109" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F110]"
+                      dataType="wstr"
+                      length="255"
+                      name="F110" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F111]"
+                      dataType="wstr"
+                      length="255"
+                      name="F111" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F112]"
+                      dataType="wstr"
+                      length="255"
+                      name="F112" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F113]"
+                      dataType="wstr"
+                      length="255"
+                      name="F113" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F114]"
+                      dataType="wstr"
+                      length="255"
+                      name="F114" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F115]"
+                      dataType="wstr"
+                      length="255"
+                      name="F115" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F116]"
+                      dataType="wstr"
+                      length="255"
+                      name="F116" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F117]"
+                      dataType="wstr"
+                      length="255"
+                      name="F117" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F118]"
+                      dataType="wstr"
+                      length="255"
+                      name="F118" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F119]"
+                      dataType="wstr"
+                      length="255"
+                      name="F119" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F120]"
+                      dataType="wstr"
+                      length="255"
+                      name="F120" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F121]"
+                      dataType="wstr"
+                      length="255"
+                      name="F121" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F122]"
+                      dataType="wstr"
+                      length="255"
+                      name="F122" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F123]"
+                      dataType="wstr"
+                      length="255"
+                      name="F123" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F124]"
+                      dataType="wstr"
+                      length="255"
+                      name="F124" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F125]"
+                      dataType="wstr"
+                      length="255"
+                      name="F125" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F126]"
+                      dataType="wstr"
+                      length="255"
+                      name="F126" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F127]"
+                      dataType="wstr"
+                      length="255"
+                      name="F127" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F128]"
+                      dataType="wstr"
+                      length="255"
+                      name="F128" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F129]"
+                      dataType="wstr"
+                      length="255"
+                      name="F129" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F130]"
+                      dataType="wstr"
+                      length="255"
+                      name="F130" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F131]"
+                      dataType="wstr"
+                      length="255"
+                      name="F131" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F132]"
+                      dataType="wstr"
+                      length="255"
+                      name="F132" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F133]"
+                      dataType="wstr"
+                      length="255"
+                      name="F133" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F134]"
+                      dataType="wstr"
+                      length="255"
+                      name="F134" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F135]"
+                      dataType="wstr"
+                      length="255"
+                      name="F135" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F136]"
+                      dataType="wstr"
+                      length="255"
+                      name="F136" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F137]"
+                      dataType="wstr"
+                      length="255"
+                      name="F137" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F138]"
+                      dataType="wstr"
+                      length="255"
+                      name="F138" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F139]"
+                      dataType="wstr"
+                      length="255"
+                      name="F139" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F140]"
+                      dataType="wstr"
+                      length="255"
+                      name="F140" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F141]"
+                      dataType="wstr"
+                      length="255"
+                      name="F141" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F142]"
+                      dataType="wstr"
+                      length="255"
+                      name="F142" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F143]"
+                      dataType="wstr"
+                      length="255"
+                      name="F143" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F144]"
+                      dataType="wstr"
+                      length="255"
+                      name="F144" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F145]"
+                      dataType="wstr"
+                      length="255"
+                      name="F145" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F146]"
+                      dataType="wstr"
+                      length="255"
+                      name="F146" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F147]"
+                      dataType="wstr"
+                      length="255"
+                      name="F147" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F148]"
+                      dataType="wstr"
+                      length="255"
+                      name="F148" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F149]"
+                      dataType="wstr"
+                      length="255"
+                      name="F149" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F150]"
+                      dataType="wstr"
+                      length="255"
+                      name="F150" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F151]"
+                      dataType="wstr"
+                      length="255"
+                      name="F151" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F152]"
+                      dataType="wstr"
+                      length="255"
+                      name="F152" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F153]"
+                      dataType="wstr"
+                      length="255"
+                      name="F153" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F154]"
+                      dataType="wstr"
+                      length="255"
+                      name="F154" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F155]"
+                      dataType="wstr"
+                      length="255"
+                      name="F155" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F156]"
+                      dataType="wstr"
+                      length="255"
+                      name="F156" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F157]"
+                      dataType="wstr"
+                      length="255"
+                      name="F157" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F158]"
+                      dataType="wstr"
+                      length="255"
+                      name="F158" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F159]"
+                      dataType="wstr"
+                      length="255"
+                      name="F159" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F160]"
+                      dataType="wstr"
+                      length="255"
+                      name="F160" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F161]"
+                      dataType="wstr"
+                      length="255"
+                      name="F161" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F162]"
+                      dataType="wstr"
+                      length="255"
+                      name="F162" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F163]"
+                      dataType="wstr"
+                      length="255"
+                      name="F163" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F164]"
+                      dataType="wstr"
+                      length="255"
+                      name="F164" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F165]"
+                      dataType="wstr"
+                      length="255"
+                      name="F165" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F166]"
+                      dataType="wstr"
+                      length="255"
+                      name="F166" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F167]"
+                      dataType="wstr"
+                      length="255"
+                      name="F167" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F168]"
+                      dataType="wstr"
+                      length="255"
+                      name="F168" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F169]"
+                      dataType="wstr"
+                      length="255"
+                      name="F169" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F170]"
+                      dataType="wstr"
+                      length="255"
+                      name="F170" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F171]"
+                      dataType="wstr"
+                      length="255"
+                      name="F171" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F172]"
+                      dataType="wstr"
+                      length="255"
+                      name="F172" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F173]"
+                      dataType="wstr"
+                      length="255"
+                      name="F173" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F174]"
+                      dataType="wstr"
+                      length="255"
+                      name="F174" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F175]"
+                      dataType="wstr"
+                      length="255"
+                      name="F175" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F176]"
+                      dataType="wstr"
+                      length="255"
+                      name="F176" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F177]"
+                      dataType="wstr"
+                      length="255"
+                      name="F177" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F178]"
+                      dataType="wstr"
+                      length="255"
+                      name="F178" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F179]"
+                      dataType="wstr"
+                      length="255"
+                      name="F179" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F180]"
+                      dataType="wstr"
+                      length="255"
+                      name="F180" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F181]"
+                      dataType="wstr"
+                      length="255"
+                      name="F181" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F182]"
+                      dataType="wstr"
+                      length="255"
+                      name="F182" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F183]"
+                      dataType="wstr"
+                      length="255"
+                      name="F183" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F184]"
+                      dataType="wstr"
+                      length="255"
+                      name="F184" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F185]"
+                      dataType="wstr"
+                      length="255"
+                      name="F185" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F186]"
+                      dataType="wstr"
+                      length="255"
+                      name="F186" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F187]"
+                      dataType="wstr"
+                      length="255"
+                      name="F187" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F188]"
+                      dataType="wstr"
+                      length="255"
+                      name="F188" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F189]"
+                      dataType="wstr"
+                      length="255"
+                      name="F189" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F190]"
+                      dataType="wstr"
+                      length="255"
+                      name="F190" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F191]"
+                      dataType="wstr"
+                      length="255"
+                      name="F191" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F192]"
+                      dataType="wstr"
+                      length="255"
+                      name="F192" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F193]"
+                      dataType="wstr"
+                      length="255"
+                      name="F193" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F194]"
+                      dataType="wstr"
+                      length="255"
+                      name="F194" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F195]"
+                      dataType="wstr"
+                      length="255"
+                      name="F195" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F196]"
+                      dataType="wstr"
+                      length="255"
+                      name="F196" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F197]"
+                      dataType="wstr"
+                      length="255"
+                      name="F197" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F198]"
+                      dataType="wstr"
+                      length="255"
+                      name="F198" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F199]"
+                      dataType="wstr"
+                      length="255"
+                      name="F199" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F200]"
+                      dataType="wstr"
+                      length="255"
+                      name="F200" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F201]"
+                      dataType="wstr"
+                      length="255"
+                      name="F201" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F202]"
+                      dataType="wstr"
+                      length="255"
+                      name="F202" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F203]"
+                      dataType="wstr"
+                      length="255"
+                      name="F203" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F204]"
+                      dataType="wstr"
+                      length="255"
+                      name="F204" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F205]"
+                      dataType="wstr"
+                      length="255"
+                      name="F205" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F206]"
+                      dataType="wstr"
+                      length="255"
+                      name="F206" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F207]"
+                      dataType="wstr"
+                      length="255"
+                      name="F207" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F208]"
+                      dataType="wstr"
+                      length="255"
+                      name="F208" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F209]"
+                      dataType="wstr"
+                      length="255"
+                      name="F209" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F210]"
+                      dataType="wstr"
+                      length="255"
+                      name="F210" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F211]"
+                      dataType="wstr"
+                      length="255"
+                      name="F211" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F212]"
+                      dataType="wstr"
+                      length="255"
+                      name="F212" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F213]"
+                      dataType="wstr"
+                      length="255"
+                      name="F213" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F214]"
+                      dataType="wstr"
+                      length="255"
+                      name="F214" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F215]"
+                      dataType="wstr"
+                      length="255"
+                      name="F215" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F216]"
+                      dataType="wstr"
+                      length="255"
+                      name="F216" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F217]"
+                      dataType="wstr"
+                      length="255"
+                      name="F217" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F218]"
+                      dataType="wstr"
+                      length="255"
+                      name="F218" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F219]"
+                      dataType="wstr"
+                      length="255"
+                      name="F219" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F220]"
+                      dataType="wstr"
+                      length="255"
+                      name="F220" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F221]"
+                      dataType="wstr"
+                      length="255"
+                      name="F221" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F222]"
+                      dataType="wstr"
+                      length="255"
+                      name="F222" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F223]"
+                      dataType="wstr"
+                      length="255"
+                      name="F223" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F224]"
+                      dataType="wstr"
+                      length="255"
+                      name="F224" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F225]"
+                      dataType="wstr"
+                      length="255"
+                      name="F225" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F226]"
+                      dataType="wstr"
+                      length="255"
+                      name="F226" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F227]"
+                      dataType="wstr"
+                      length="255"
+                      name="F227" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F228]"
+                      dataType="wstr"
+                      length="255"
+                      name="F228" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F229]"
+                      dataType="wstr"
+                      length="255"
+                      name="F229" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F230]"
+                      dataType="wstr"
+                      length="255"
+                      name="F230" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F231]"
+                      dataType="wstr"
+                      length="255"
+                      name="F231" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F232]"
+                      dataType="wstr"
+                      length="255"
+                      name="F232" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F233]"
+                      dataType="wstr"
+                      length="255"
+                      name="F233" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F234]"
+                      dataType="wstr"
+                      length="255"
+                      name="F234" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F235]"
+                      dataType="wstr"
+                      length="255"
+                      name="F235" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F236]"
+                      dataType="wstr"
+                      length="255"
+                      name="F236" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F237]"
+                      dataType="wstr"
+                      length="255"
+                      name="F237" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F238]"
+                      dataType="wstr"
+                      length="255"
+                      name="F238" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F239]"
+                      dataType="wstr"
+                      length="255"
+                      name="F239" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F240]"
+                      dataType="wstr"
+                      length="255"
+                      name="F240" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F241]"
+                      dataType="wstr"
+                      length="255"
+                      name="F241" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F242]"
+                      dataType="wstr"
+                      length="255"
+                      name="F242" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F243]"
+                      dataType="wstr"
+                      length="255"
+                      name="F243" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F244]"
+                      dataType="wstr"
+                      length="255"
+                      name="F244" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F245]"
+                      dataType="wstr"
+                      length="255"
+                      name="F245" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F246]"
+                      dataType="wstr"
+                      length="255"
+                      name="F246" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F247]"
+                      dataType="wstr"
+                      length="255"
+                      name="F247" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F248]"
+                      dataType="wstr"
+                      length="255"
+                      name="F248" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F249]"
+                      dataType="wstr"
+                      length="255"
+                      name="F249" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F250]"
+                      dataType="wstr"
+                      length="255"
+                      name="F250" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F251]"
+                      dataType="wstr"
+                      length="255"
+                      name="F251" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F252]"
+                      dataType="wstr"
+                      length="255"
+                      name="F252" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F253]"
+                      dataType="wstr"
+                      length="255"
+                      name="F253" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F254]"
+                      dataType="wstr"
+                      length="255"
+                      name="F254" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F255]"
+                      dataType="wstr"
+                      length="255"
+                      name="F255" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      name="F7" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].ExternalColumns[F8]"
+                      dataType="wstr"
+                      length="255"
+                      name="F8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F1]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F1]"
+                      name="F1" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F2]"
+                      name="F2" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F3]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F3]"
+                      name="F3" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F4]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F4]"
+                      name="F4" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F7]"
+                      name="F7" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F8]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F8]"
+                      name="F8" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F5]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F5]"
+                      name="F5" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F6]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F6]"
+                      name="F6" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F9]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Error Output].Columns[F9]"
+                      name="F9" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\4-Carga Int\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_RRHH_Hs_Produccion]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\4-Carga Int\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F5]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F5"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Horas_Normales]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F5]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F6]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F6"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Horas_Extras]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F6]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F9]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F9"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cantidad_Empleados]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F9]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F1]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F1"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Gerencia]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F2"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Des_Gerencia]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F2]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F3]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F3"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Centro_Coste]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F3]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F4]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F4"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Desc_C_Coste]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F4]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F7]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F7"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Almuerzo]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F7]" />
+                    <inputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[F8]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F8"
+                      externalMetadataColumnId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Neto]"
+                      lineageId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output].Columns[F8]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tiempo_key]"
+                      dataType="wstr"
+                      length="10"
+                      name="Tiempo_key" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id_Gerencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="Id_Gerencia" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Des_Gerencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="Des_Gerencia" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Centro_Coste]"
+                      dataType="wstr"
+                      length="50"
+                      name="Centro_Coste" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Desc_C_Coste]"
+                      dataType="wstr"
+                      length="50"
+                      name="Desc_C_Coste" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Horas_Normales]"
+                      dataType="wstr"
+                      length="50"
+                      name="Horas_Normales" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Horas_Extras]"
+                      dataType="wstr"
+                      length="50"
+                      name="Horas_Extras" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Almuerzo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Almuerzo" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Neto]"
+                      dataType="wstr"
+                      length="50"
+                      name="Neto" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cantidad_Empleados]"
+                      dataType="wstr"
+                      length="50"
+                      name="Cantidad_Empleados" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[periodo]"
+                      dataType="wstr"
+                      length="50"
+                      name="periodo" />
+                    <externalMetadataColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\4-Carga Int\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\4-Carga Int\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\4-Carga Int\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\4-Carga Int\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\4-Carga Int.Paths[Excel Source Output]"
+              endId="Package\4-Carga Int\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\4-Carga Int\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\5-Cleansing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{c2eab7d6-410e-431a-b50f-5b7a88d76b8c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="5-Cleansing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
+          SQLTask:SqlStatementSource="exec SP_Carga_Fact_RRHH_Hs_Produccion" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\6- Mover a Carpeta procesado"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{9b9b33e6-5818-4cd7-9872-7be7e5a742c1}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="6- Mover a Carpeta procesado">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{f6dfbb16-010f-4827-8152-513613829395}"
+        DTS:ObjectName="{10DA49B3-7F92-49B1-8D8A-718AE50EFBB6}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::SourceFolder]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD" />
+            <FEFEProperty
+              FileSpec="*.xlsx" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\6- Mover a Carpeta procesado\Create directory"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{bd935014-7b51-4f94-a183-85fdc4ad1db2}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create directory"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="CreateDirectory"
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::NewFolder"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\6- Mover a Carpeta procesado\Move file"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{40d18c22-8601-4c3b-84c3-91c16407dc18}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Move file"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::FilePath"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::NewFolder"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\6- Mover a Carpeta procesado.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6047bcef-382d-4b68-99a9-01df9157ae11}"
+          DTS:From="Package\6- Mover a Carpeta procesado\Create directory"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\6- Mover a Carpeta procesado\Move file" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{D2A70497-0DCD-44BF-9C7E-97E42138378E}"
+          DTS:ObjectName="{D2A70497-0DCD-44BF-9C7E-97E42138378E}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::FileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Error cleansing"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{55526419-F25F-4CC9-AD73-73C4C07D0F0E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Error cleansing"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 14" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finaliza en error"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{E6626203-E791-41F1-B01D-09E29B00E27B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finaliza en error"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 15" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sin archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{AD38857E-0CC9-4F7F-A0E6-F6922EEFF5A2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sin archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{58813547-0974-4954-9BD9-8AEEC0B98264}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe_int == 0"
+      DTS:From="Package\1-Existencia de archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\2-Truncate STA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BBB8D0F9-7EB8-49A1-8D9C-ACE9F46C0695}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe_int &gt; 0"
+      DTS:From="Package\1-Existencia de archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Sin archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BE19C116-317D-42CA-9BEA-C6E36B846E25}"
+      DTS:From="Package\2-Truncate STA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\3-Comienza Ejecución" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{7A0B47B3-A714-44DD-B6CF-5496137BAAF1}"
+      DTS:From="Package\3-Comienza Ejecución"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\4-Carga Int" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{099C6E6E-3B92-4AE5-A907-01015D8CF77C}"
+      DTS:From="Package\4-Carga Int"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Finaliza en error"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{D7D3A30B-8C44-4051-8C7A-8C5686A52DBE}"
+      DTS:From="Package\4-Carga Int"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\5-Cleansing" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{ECBFCB6B-FE5B-4CD3-AFD4-88F640EA310E}"
+      DTS:From="Package\5-Cleansing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Error cleansing"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD84CADC-7311-40CA-A89C-36ECE9DB9D98}"
+      DTS:From="Package\5-Cleansing"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\6- Mover a Carpeta procesado" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="153.333333333334,42.6666666666667"
+          Id="Package\2-Truncate STA"
+          TopLeft="243.124997271225,149.699998396039" />
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\1-Existencia de archivo"
+          TopLeft="224.374997550622,64.250003583729" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="319.083330744257,106.916670250396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.7833281456432"
+              Start="0,0"
+              End="0,35.2833281456432">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2833281456432" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,9.6416640728216,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.333333333334,42.6666666666667"
+          Id="Package\Sin archivo"
+          TopLeft="33.124999506399,66.9499988028407" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="224.374997550622,86.9333345266182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.9166647108894,0"
+              Start="0,0"
+              End="-52.4166647108894,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-52.4166647108894,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.2083323554447,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\4-Carga Int"
+          TopLeft="251.666662916541,312.44999442488" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\3-Comienza Ejecución"
+          TopLeft="224.999996647239,231.83332918783" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="318.062496959232,192.366665062706">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4666641251247"
+              Start="0,0"
+              End="0,31.9666641251247">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9666641251247" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="317.33332978189,274.499995854497">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.9499985703828"
+              Start="0,0"
+              End="0,30.4499985703828">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.4499985703828" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Finaliza en error"
+          TopLeft="49.3055548208455,311.999994421005" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="251.666662916541,333.558327756276">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-46.3611080956955,0"
+              Start="0,0"
+              End="-38.8611080956955,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-38.8611080956955,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.6719017040977,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="134,42.6666666666667"
+          Id="Package\5-Cleansing"
+          TopLeft="253.958329549059,394.172217021618" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="319.645829566134,355.116661091546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0555559300714"
+              Start="0,0"
+              End="0,31.5555559300714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5555559300714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="149.333333333334,42.6666666666667"
+          Id="Package\Error cleansing"
+          TopLeft="49.3055548208455,391.240735148832" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="253.958329549059,414.039809418558">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.3194413948804,0"
+              Start="0,0"
+              End="-47.8194413948804,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-47.8194413948804,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.1510683536902,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158.666666666667,42.6666666666667"
+          Id="Package\6- Mover a Carpeta procesado\Create directory"
+          TopLeft="47.5833275777599,18.8944400057858" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\6- Mover a Carpeta procesado\Move file"
+          TopLeft="69.4583333240208,89.5166652835408" />
+        <EdgeLayout
+          Id="Package\6- Mover a Carpeta procesado.PrecedenceConstraints[Constraint]"
+          TopLeft="128.52083045089,61.5611066724524">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.9555586110884"
+              Start="0,0"
+              End="0,20.4555586110884">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4555586110884" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="272,187.333333333334"
+          Size="243.333333333334,42.6666666666667"
+          Id="Package\6- Mover a Carpeta procesado"
+          TopLeft="200.486108123635,491.061106013821" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="321.555552169681,436.838883688284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.2222223255366"
+              Start="0,0"
+              End="0,46.7222223255366">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.7222223255366" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\4-Carga Int">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\4-Carga Int\Excel Source"
+          TopLeft="124.875000717118,123.800001022816" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\4-Carga Int\OLE DB Destination"
+          TopLeft="336.874994980171,123.499997791648" />
+        <EdgeLayout
+          Id="Package\4-Carga Int.Paths[Excel Source Output]"
+          TopLeft="264.208334050451,144.983332740565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.66666092972,0"
+              Start="0,0"
+              End="65.16666092972,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.16666092972,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\4-Carga Int\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\4-Carga Int\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

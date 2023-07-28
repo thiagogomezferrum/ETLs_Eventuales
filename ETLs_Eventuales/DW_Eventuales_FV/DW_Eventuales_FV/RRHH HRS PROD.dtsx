@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{C3EA95C8-7C44-4B54-9480-EC59895F46E1}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{C5CFC4C3-879C-4B8F-97AE-F18B15B9CBEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,23 +26,6 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\HRS.PROD.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=NO&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
-      DTS:ObjectName="fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=fv-dw-sql2017.fl-0.fv.com.ar;User ID=desarrollo_dw;Initial Catalog=DW_Comercial;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw;Auto Translate=False;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACzf+P7DdxkJyewlYuR3hSQetgdXcCeD4G5wBWzo74W2AAAAAAOgAAAAAIAACAAAACAGO6HLMsXhJh+oRK9dCLLtJSxkA0iFiOuER+kKphrmSAAAAAGz6MnZRoKspIRDD66PfqrfTo9Cxp4XeLGfylhhFDoBkAAAACBUShNpo/ErCIV+CfsFCt004tVZg8BmkhehW/NwvzGYSTSWAYOudyHIuF3dRSFZ//sSRiaopZU1Z/O3RFSz/QS</DTS:Password>
-        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -88,14 +71,23 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
+      DTS:DTSID="{EA30E921-3B0A-4C43-96E5-F04DB3620E3D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderProcesado">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\PROCESADO</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
       DTS:DTSID="{EDEE40BF-8122-4443-8CED-0A06FE6B56EF}"
       DTS:EvaluateAsExpression="True"
-      DTS:Expression="@[User::SourceFolder] + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
+      DTS:Expression="@[User::FolderProcesado]  + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\Procesado_20230728103734</DTS:VariableValue>
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\PROCESADO\Procesado_20230728133655</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1739,8 +1731,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\FileExist\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw]"
-                      connectionManagerRefId="Package.ConnectionManagers[fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw]"
+                      connectionManagerID="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1935,6 +1927,15 @@
               ReadOnlyVariables="User::ExcelFilePath,User::FilePath"
               ReadWriteVariables="User::Existe">
               <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <root>
@@ -2053,35 +2054,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
 </root>]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.Designer.cs"
-                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
-// <auto-generated>
-//     This code was generated by a tool.
-//
-//     Changes to this file may cause incorrect behavior and will be lost if
-//     the code is regenerated.
-// </auto-generated>
-//------------------------------------------------------------------------------
-
-[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c03564e90d9147ce8c16181319cd8585.Properties.Settings.get_Default():ST_c03564e90d9147ce8c16181319cd8585.Properties.Sett" +
-    "ings")]
-
-namespace ST_c03564e90d9147ce8c16181319cd8585.Properties {
-    
-    
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
-        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-        private static Settings defaultInstance = new Settings();
-        
-        public static Settings Default {
-            get {
-                return defaultInstance;
-            }
-        }
-    }
-}]]></ProjectItem>
               <ProjectItem
                 Name="ST_c03564e90d9147ce8c16181319cd8585.csproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2325,6 +2297,35 @@ namespace ST_c03564e90d9147ce8c16181319cd8585
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
               <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_c03564e90d9147ce8c16181319cd8585.Properties.Settings.get_Default():ST_c03564e90d9147ce8c16181319cd8585.Properties.Sett" +
+    "ings")]
+
+namespace ST_c03564e90d9147ce8c16181319cd8585.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
                 Name="Properties\AssemblyInfo.cs"
                 Encoding="UTF8"><![CDATA[using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -2354,15 +2355,6 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 
 [assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
-              <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
