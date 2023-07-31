@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/25/2023 11:35:24 AM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="5"
-  DTS:VersionGUID="{E9658DD9-BE35-4A17-9062-6A83AFB8A179}">
+  DTS:VersionGUID="{88BFCE1C-D79D-493B-B8A5-E3FB22421878}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -488,8 +488,8 @@
               <connections>
                 <connection
                   refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.DWFE.pbi_ferrum]"
+                  connectionManagerID="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}:invalid"
+                  connectionManagerRefId="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

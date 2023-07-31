@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/5/2023 2:02:32 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
   DTS:VersionBuild="93"
-  DTS:VersionGUID="{98A46892-131F-4547-B553-55E2F854A948}">
+  DTS:VersionGUID="{DDDB588C-CB79-4EA3-8A79-BB62A1472D8E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1972,8 +1972,8 @@
               <connections>
                 <connection
                   refId="Package\2-f_web_handel_proyects\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
+                  connectionManagerRefId="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2283,8 +2283,8 @@
               <connections>
                 <connection
                   refId="Package\3-f_web_handel_proyects_products\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
+                  connectionManagerRefId="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3296,8 +3296,8 @@
               <connections>
                 <connection
                   refId="Package\4-f_web_customer_entity\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
+                  connectionManagerRefId="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7103,8 +7103,8 @@
               <connections>
                 <connection
                   refId="Package\5-f_web_catalog_product_flat_1\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
+                  connectionManagerRefId="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -9294,8 +9294,8 @@
               <connections>
                 <connection
                   refId="Package\6-f_web_handel_store_locations\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
+                  connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
+                  connectionManagerRefId="{FCAE9FA0-15E9-492F-8B80-99738302D602}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
