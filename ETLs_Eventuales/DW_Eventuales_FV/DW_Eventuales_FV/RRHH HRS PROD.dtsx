@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/16/2023 2:18:04 PM"
@@ -12,7 +12,7 @@
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="54"
-  DTS:VersionGUID="{C5CFC4C3-879C-4B8F-97AE-F18B15B9CBEF}">
+  DTS:VersionGUID="{AECEFBDB-50A7-421B-9E44-AF701B999C59}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -87,7 +87,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\PROCESADO\Procesado_20230728133655</DTS:VariableValue>
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\PROCESADO\Procesado_20230731102118</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1731,8 +1731,8 @@
                   <connections>
                     <connection
                       refId="Package\Foreach Loop Container\FileExist\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw]"
+                      connectionManagerID="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}:invalid"
+                      connectionManagerRefId="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}:invalid"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1921,20 +1921,41 @@
           <DTS:ObjectData>
             <ScriptProject
               Name="ST_c03564e90d9147ce8c16181319cd8585"
-              VSTAMajorVersion="16"
+              VSTAMajorVersion="14"
               VSTAMinorVersion="0"
               Language="CSharp"
               ReadOnlyVariables="User::ExcelFilePath,User::FilePath"
               ReadWriteVariables="User::Existe">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_c03564e90d9147ce8c16181319cd8585")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_c03564e90d9147ce8c16181319cd8585")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2326,35 +2347,14 @@ namespace ST_c03564e90d9147ce8c16181319cd8585.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_c03564e90d9147ce8c16181319cd8585")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_c03564e90d9147ce8c16181319cd8585")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------

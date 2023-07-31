@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MYSPOT05</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAABi3us8b/mETGP3AIrYSMdnwguE7i2gUGbgqLgukjkVSgAAAAAOgAAAAAIAACAAAABIZDZTp9LGHFzyaOB62c0ZPPHdX8JgXkqx2HxjggPIOpAAAABicv5w2M7OypYb0Zh3g2izf47x2yaHUtDX/4KRFz56add4wKMJPOzuCy5fhDxfQHafVQhHM4vswTn3b8reOhDkfuYGEwXD83ZG73s/O3C36/Fras3gtX0myr5OfHd2vL7WgQp7NlLtgkJBw3asBE3ByBbrr0aYI1TpGZmozziFRaqjKP44sc1XSdlwRBDlMThAAAAAQxgJD0AwGrQIa0yHHoMNaIT24wB5JBgJMWIph83caKgVleXYTdgyIgoFM1zrqGxtph/jKWKgwLojzuEhF7JlpA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAAqMutxYn174dq039jWKINGUK2/+ElEquZ4SJgy3jLPRAAAAAAOgAAAAAIAACAAAACW/Vw2vyijxEHqKkj1PaHAl7XxU1PKKMixgVLJgQMLLJAAAABSCmBQXAgkS+8YBq9v3SQKEeiCXRLEJrqd06nC9K6tIy40oQEWJTswWdNTSySuNCMkAWes+XKDI1znGLcM7KRfNhkdIBim45el53Aud/LH7f2hUi8A77Ns/dRPLl9hQRjlx2DxPV7GMLwXIw/Zpe0iZ4Kkb4NvIuvV9uoQvNIEB6WVRFquu/0CR1Wgh+8A8jNAAAAAETyjpSlsy7EMbaCqu2sWzndpimMtxrtyKMUdv4+AxgX1cihTZXNgoaFVMDLCxWyXhvi8G1wMhq7Ufr6HTUE+pQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -518,8 +518,6 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">
-                    </SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
@@ -721,7 +719,7 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <TargetServerVersion>SQLServer2022</TargetServerVersion>
+        <TargetServerVersion>SQLServer2017</TargetServerVersion>
         <AzureMode>false</AzureMode>
         <LinkedAzureTenantId />
         <LinkedAzureAccountId />
