@@ -26,14 +26,13 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MYSPOT05</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAADcHO7tiFtmpbG3TNGENlJGEpunTEqQbFcyqRdThd0QAAAAAAOgAAAAAIAACAAAAB0SN67zjmqbPts2Vsz2mmxJ5XGMvGj02ldanH7EGdqppAAAACfO/ZZ8R2dYkCmCRV2YaMF2yHIUqdWTYkZR2w5ZLSd+8DDRJoSPSPHa7ZZaf048UY28pN3GR24jTeYckEv1AEgVVeHqZZ7+Uj8woxMxNB6TAzy74M04CTixNMl2Vr7bU0/lvz020ZKT+u/H0RMvohxfhFPw1isBZA+kp/mJ+146COA50zXSgudQnM69T6NQV5AAAAA7odbPEWm5WUFIOOsMiQQRWi/XqJJqF26eIwc2NuJtWcrv9SEFim9ruE6r4ytZC06U7e5TG9PqW7eFHA0Hu1lPg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAAdmF5aRRvRBHQzAGeAk78jnoqvOGYt6EtD98GK6qNI6AAAAAAOgAAAAAIAACAAAADTTpxf9fB/aBbcCcK1j+XS8PWhQkJbK9XhapNDKn5aGZAAAAAoWG4dIMr6RQzGrq25C7N7VXmv0Lqlys5eAa9tvHl13QEWwRKv38Xgx3NykIsibuAWkegGn82wooYwVY+wfWui75UVEzn+HgIynoCSoC6HfTPwSavVbZ7FjRxbWmWVc0AqByIWILo9BEk9RvA0YcKKdl60HTTj2vSVkXuD2i4B4zZ7wMm1aXMpoXJvZ80q04ZAAAAAzypOFz2I4lBU0OO3vfF6cqc6H/SZ0ywry+ILrRQ0QuhHZp/jVkhjbFEjQxssOIHvz0wlYPBh6XUESPxnej6qYQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="RRHH HRS PROD.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="CO_Fact_Facturacion_sap.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Horas_PRD_Meta4.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="fv-dw-sql2017.fl-0.fv.com.ar.DW_Comercial.desarrollo_dw.conmgr" />
@@ -556,14 +555,14 @@
             </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="Horas_PRD_Meta4.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{01CB9E0D-6896-4663-8CA7-7A4A24767BF4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{64FC41C3-D1E6-46A5-BE48-966EAB847047}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">56</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A295E1B7-5BE7-418F-A162-9DF3A7C063EB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{11A85B9E-2994-496E-B091-99CABCF6117A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -702,54 +701,6 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.HRS.PROD.xlsx.ConnectByProxy">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.HRS.PROD.xlsx.ConnectionString">
-                  <SSIS:Properties>
-                    <SSIS:Property SSIS:Name="ID">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="CreationName">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="Description">
-                    </SSIS:Property>
-                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\HRS.PROD.xlsx</SSIS:Property>
-                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
-                  </SSIS:Properties>
-                </SSIS:Parameter>
-              </SSIS:Parameters>
-            </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{64FC41C3-D1E6-46A5-BE48-966EAB847047}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">12</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BCAA95A4-73D4-4E18-8BE4-284C437D2EAF}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters>
                 <SSIS:Parameter SSIS:Name="CM.HRS.PROD.xlsx.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
