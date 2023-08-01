@@ -1,0 +1,882 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/25/2023 11:35:24 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYSPOT05"
+  DTS:CreatorName="MYSPOT05\Thiago"
+  DTS:DTSID="{C7C8105E-5B42-4021-9A05-73D95882ABD0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{88BFCE1C-D79D-493B-B8A5-E3FB22421878}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{F8FC32C7-2265-48B7-8127-9D81D0F31400}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\dw_lotes_info.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AA0BE648-59B1-4E23-ADE4-1FAA2B43D0E2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="Exec SP_Actualizar_Estados_Procesos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tabla DW_Lotes_Info"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FCD9FFDD-9ADA-4785-A64D-AF3E2F0C5DE7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tabla DW_Lotes_Info"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Tabla DW_Lotes_Info\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Ferrum$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tabla DW_Lotes_Info\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Nombre_Job]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nombre_Job]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Nombre_Job]"
+                      name="Nombre_Job"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Descripción]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Descripción]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Descripción]"
+                      name="Descripción"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Frecuencia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Frecuencia]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Frecuencia]"
+                      name="Frecuencia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Tipo_Proceso]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo_Proceso]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Tipo_Proceso]"
+                      name="Tipo_Proceso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Hora]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Hora]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Hora]"
+                      name="Hora"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[id_job]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[id_job]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[id_job]"
+                      name="id_job"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Base]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Base]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Base]"
+                      name="Base"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Tablas]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tablas]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Tablas]"
+                      name="Tablas"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Stored_Procedure]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Stored_Procedure]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Stored_Procedure]"
+                      name="Stored_Procedure"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Ubicacion_dtsx]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ubicacion_dtsx]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Ubicacion_dtsx]"
+                      name="Ubicacion_dtsx"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Proceso_dtsx]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Proceso_dtsx]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Proceso_dtsx]"
+                      name="Proceso_dtsx"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fuente]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]"
+                      name="Fuente"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Documentacion]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Documentacion]"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Documentacion]"
+                      name="Documentacion"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[id]"
+                      dataType="r8"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nombre_Job]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Job" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Descripción]"
+                      dataType="wstr"
+                      length="255"
+                      name="Descripción" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Frecuencia]"
+                      dataType="wstr"
+                      length="255"
+                      name="Frecuencia" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo_Proceso]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tipo_Proceso" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Hora]"
+                      dataType="date"
+                      name="Hora" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[id_job]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_job" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Base]"
+                      dataType="wstr"
+                      length="255"
+                      name="Base" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tablas]"
+                      dataType="wstr"
+                      length="255"
+                      name="Tablas" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Stored_Procedure]"
+                      dataType="wstr"
+                      length="255"
+                      name="Stored_Procedure" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ubicacion_dtsx]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ubicacion_dtsx" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Proceso_dtsx]"
+                      dataType="wstr"
+                      length="255"
+                      name="Proceso_dtsx" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fuente]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fuente" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Documentacion]"
+                      dataType="wstr"
+                      length="255"
+                      name="Documentacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      dataType="r8"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Nombre_Job]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Nombre_Job]"
+                      name="Nombre_Job" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Descripción]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Descripción]"
+                      name="Descripción" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Frecuencia]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Frecuencia]"
+                      name="Frecuencia" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo_Proceso]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo_Proceso]"
+                      name="Tipo_Proceso" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Hora]"
+                      dataType="date"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Hora]"
+                      name="Hora" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[id_job]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[id_job]"
+                      name="id_job" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Base]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Base]"
+                      name="Base" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Tablas]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Tablas]"
+                      name="Tablas" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Stored_Procedure]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Stored_Procedure]"
+                      name="Stored_Procedure" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Ubicacion_dtsx]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Ubicacion_dtsx]"
+                      name="Ubicacion_dtsx" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Proceso_dtsx]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Proceso_dtsx]"
+                      name="Proceso_dtsx" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Fuente]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Fuente]"
+                      name="Fuente" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Documentacion]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Documentacion]"
+                      name="Documentacion" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tabla DW_Lotes_Info\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DW_Lotes_Info]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.DWFE.pbi_ferrum]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                      cachedDataType="r8"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nombre_Job]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Job"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_job]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Nombre_Job]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Frecuencia]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Frecuencia"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[frecuencia]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Frecuencia]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo_Proceso]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tipo_Proceso"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tipo_proceso]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Tipo_Proceso]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Base]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Base"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[base]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Base]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tablas]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Tablas"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tablas]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Tablas]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Stored_Procedure]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Stored_Procedure"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stored_procedure]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Stored_Procedure]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Proceso_dtsx]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Proceso_dtsx"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[proceso_dtsx]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Proceso_dtsx]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fuente]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fuente"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fuente]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Documentacion]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Documentacion"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[documentacion]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Documentacion]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Descripción]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Descripción"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Descripción]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Hora]"
+                      cachedDataType="date"
+                      cachedName="Hora"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hora_ejecucion]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Hora]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_job]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_job"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_id]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[id_job]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Ubicacion_dtsx]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ubicacion_dtsx"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ubicacion]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Ubicacion_dtsx]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre_job]"
+                      dataType="wstr"
+                      length="50"
+                      name="nombre_job" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
+                      dataType="wstr"
+                      length="999"
+                      name="descripcion" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[frecuencia]"
+                      dataType="wstr"
+                      length="50"
+                      name="frecuencia" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tipo_proceso]"
+                      dataType="wstr"
+                      length="50"
+                      name="tipo_proceso" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[hora_ejecucion]"
+                      dataType="dbTimeStamp"
+                      name="hora_ejecucion" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[job_id]"
+                      dataType="wstr"
+                      length="255"
+                      name="job_id" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[base]"
+                      dataType="wstr"
+                      length="50"
+                      name="base" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tablas]"
+                      dataType="wstr"
+                      length="999"
+                      name="tablas" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[stored_procedure]"
+                      dataType="wstr"
+                      length="999"
+                      name="stored_procedure" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ubicacion]"
+                      dataType="wstr"
+                      length="999"
+                      name="ubicacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[proceso_dtsx]"
+                      dataType="wstr"
+                      length="50"
+                      name="proceso_dtsx" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fuente]"
+                      dataType="wstr"
+                      length="255"
+                      name="fuente" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[documentacion]"
+                      dataType="wstr"
+                      length="255"
+                      name="documentacion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tabla DW_Lotes_Info.Paths[Excel Source Output]"
+              endId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Excel Source Output"
+              startId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Lotes_Info"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D5656BFD-3EBC-4829-B316-C51F0B2D9AD2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Lotes_Info"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="truncate table DW_Lotes_Info;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DEC5FD1F-B3AB-44FD-9EC5-85613457375A}"
+      DTS:From="Package\Truncate Lotes_Info"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Tabla DW_Lotes_Info" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D02BBB8-44E2-44F8-BDC0-111B1D59AE04}"
+      DTS:From="Package\Tabla DW_Lotes_Info"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute SQL Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Execute SQL Task"
+          TopLeft="144.999997839332,272.99999511838" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Tabla DW_Lotes_Info"
+          TopLeft="136.249997969716,196.299996489883" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Truncate Lotes_Info"
+          TopLeft="131.874998034908,114.366666457454" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="223.062498002312,157.033333124121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.2666633657615"
+              Start="0,0"
+              End="0,31.7666633657615">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.7666633657615" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="226.958331237857,238.966663156549">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.0333319618303"
+              Start="0,0"
+              End="0,26.5333319618303">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5333319618303" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Tabla DW_Lotes_Info">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Tabla DW_Lotes_Info\Excel Source"
+          TopLeft="86.2499987147749,175.499996861816" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Tabla DW_Lotes_Info\OLE DB Destination"
+          TopLeft="308.749995399267,181.349996757209" />
+        <EdgeLayout
+          Id="Package\Tabla DW_Lotes_Info.Paths[Excel Source Output]"
+          TopLeft="225.583332048108,199.758330142846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.1666633511583,0"
+              Start="0,0"
+              End="75.6666633511583,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75.6666633511583,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tabla DW_Lotes_Info\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tabla DW_Lotes_Info\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

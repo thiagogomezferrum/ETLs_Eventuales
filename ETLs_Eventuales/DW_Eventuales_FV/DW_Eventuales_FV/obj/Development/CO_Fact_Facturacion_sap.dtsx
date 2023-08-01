@@ -11,7 +11,7 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="CO_Fact_Facturacion_sap"
   DTS:VersionBuild="83"
-  DTS:VersionGUID="{DF6AC075-A603-4746-927B-ED4AD8AE6636}">
+  DTS:VersionGUID="{BBFEFE69-0CDC-49FD-BE9F-23A37E4936AE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -601,7 +601,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
