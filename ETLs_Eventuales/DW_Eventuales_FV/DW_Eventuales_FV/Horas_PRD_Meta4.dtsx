@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{B5133178-B55C-444F-BDB6-843D22DE4424}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{D5BEE0E1-7222-49F7-A9B6-E4DB56418D0F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -76,7 +76,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\PROCESADO\Procesado_20230802085951</DTS:VariableValue>
+        DTS:DataType="8">\\fv-usuarios-fl.fl-0.fv.com.ar\powerBI\Data\B_Office\RRHH\HRS PROD\PROCESADO\Procesado_20230802142826</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2513,7 +2513,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{DE72FA22-8A76-4F4D-B702-2E0E9A07D815}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 14" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 6" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -2742,89 +2742,89 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="188,42.6666666666667"
           Id="Package\1-Existencia de archivo"
-          TopLeft="211.874997736886,232.483338203331" />
+          TopLeft="263.660711250933,256.62619491448" />
         <NodeLayout
           Size="153.333333333334,42.6666666666667"
           Id="Package\2-Truncate STA"
-          TopLeft="236.249997373671,349.116668723922" />
+          TopLeft="283.571425239955,360.259525667529" />
         <NodeLayout
           Size="182.666666666667,42.6666666666667"
           Id="Package\3-Comienza Ejecución"
-          TopLeft="214.99999679625,443.683327068587" />
+          TopLeft="262.321424662534,436.254755772849" />
         <NodeLayout
           Size="133.333333333334,42.6666666666667"
           Id="Package\4-Carga Int"
-          TopLeft="239.861107536902,553.949993611277" />
+          TopLeft="294.325392439607,528.87856548816" />
         <NodeLayout
           Size="134,42.6666666666667"
           Id="Package\5-Cleansing"
-          TopLeft="242.15277416942,635.672216208015" />
+          TopLeft="297.509916201677,615.243645144735" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\6-Move file"
-          TopLeft="240.986111277715,726.111906516964" />
+          TopLeft="296.343253309972,705.683335453684" />
         <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Error cleansing"
-          TopLeft="37.4999994412064,632.740734335229" />
+          TopLeft="92.8571414734637,612.312163271949" />
         <NodeLayout
           Size="156,42.6666666666667"
           Id="Package\Finaliza en error"
-          TopLeft="36.8749994505196,553.499993607402" />
+          TopLeft="92.2321414827769,533.071422544122" />
         <NodeLayout
           Size="131.333333333334,44.6666666666667"
           Id="Package\Finalizo Ok"
-          TopLeft="428.373009489761,724.857133758069" />
+          TopLeft="483.730151522018,704.428562694789" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Genera número de proceso"
-          TopLeft="223.83928237882,65.2166730941333" />
+          TopLeft="267.589281726894,83.7881013334788" />
         <NodeLayout
           Size="234.666666666667,42.6666666666667"
           Id="Package\Selecciono el número de proceso"
-          TopLeft="184.374997252599,144.544455126079" />
+          TopLeft="235.267853637094,170.544454661163" />
         <NodeLayout
           Size="131.333333333334,42.6666666666667"
           Id="Package\Sin archivo"
-          TopLeft="1.87499997206032,230.866664016644" />
+          TopLeft="72.4107132067106,253.152377903859" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="211.874997736886,253.008334443321">
+          TopLeft="263.660711250933,276.222619742503">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-78.6666644314927,0"
+              EndConnector="-59.9166647108891,0"
               Start="0,0"
-              End="-71.1666644314927,0">
+              End="-52.4166647108891,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-71.1666644314927,0" />
+                    End="-52.4166647108891,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-43.5833322157464,5,16,16"
+              BoundingBox="-34.2083323554446,5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="309.624997084961,391.783335390588">
+          TopLeft="356.946424951245,402.926192334196">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.8999916779991"
+              EndConnector="0,33.3285634386528"
               Start="0,0"
-              End="0,44.3999916779991">
+              End="0,25.8285634386528">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.3999916779991" />
+                    End="0,25.8285634386528" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2835,31 +2835,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="309.395830888612,275.150004869997">
+          TopLeft="358.949401578778,299.292861581147">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73.9666638539242"
+              EndConnector="0,60.9666640863824"
               Start="0,0"
-              End="0,66.4666638539242">
+              End="0,53.4666640863824">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.4666638539242" />
+                    End="0,53.4666640863824" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,25.2333319269621,16,16"
+              BoundingBox="-8,18.7333320431912,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="372.986111277715,747.31785347085">
+          TopLeft="428.343253309972,726.88928240757">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2881,18 +2881,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="306.430552166576,486.349993735254">
+          TopLeft="357.323408551071,478.921422439515">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,67.599999876023"
+              EndConnector="0,49.9571430486449"
               Start="0,0"
-              End="0,60.099999876023">
+              End="0,42.4571430486449">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,60.099999876023" />
+                    End="0,42.4571430486449" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2903,18 +2903,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="303.773806482376,107.8833397608">
+          TopLeft="351.095234348661,126.454768000146">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.6611153652787"
+              EndConnector="0,44.0896866610172"
               Start="0,0"
-              End="0,29.1611153652787">
+              End="0,36.5896866610172">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.1611153652787" />
+                    End="0,36.5896866610172" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2925,42 +2925,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="239.861107536902,575.058326942673">
+          TopLeft="294.325392439607,552.308327349474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-46.9861080863822,0"
+              EndConnector="-46.0932509568299,0"
               Start="0,0"
-              End="-39.4861080863822,0">
+              End="-38.5932509568299,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-39.4861080863822,0" />
+                    End="-38.5932509568299,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.9844016994411,5,30.4826953125,9.7490234375"
+              BoundingBox="-34.537973134665,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="307.840274186495,596.616660277943">
+          TopLeft="362.750987653975,571.545232154827">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.0555559300714"
+              EndConnector="0,43.6984129899079"
               Start="0,0"
-              End="0,31.5555559300714">
+              End="0,36.1984129899079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5555559300714" />
+                    End="0,36.1984129899079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2971,7 +2971,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="242.15277416942,655.539808604955">
+          TopLeft="297.509916201677,635.111237541675">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2995,7 +2995,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="308.069442723568,678.338882874682">
+          TopLeft="363.426584755825,657.910311811402">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3017,18 +3017,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="303.791664161409,187.211121792745">
+          TopLeft="355.13094911068,213.211121327829">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.2722164105854"
+              EndConnector="0,43.4150735866509"
               Start="0,0"
-              End="0,37.7722164105854">
+              End="0,35.9150735866509">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.7722164105854" />
+                    End="0,35.9150735866509" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3037,6 +3037,48 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="A"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="37.3333333333334,60"
+          Id="be6ecb55-651b-4b0f-ac88-e8b0714f9495"
+          TopLeft="226.785710906344,82.6428556650877" />
+        <AnnotationLayout
+          Text="B"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="35.3333333333334,60"
+          Id="7eefe1c3-1685-4abd-ba5c-91a707fb7a82"
+          TopLeft="202.678568408425,170.857139801979" />
+        <AnnotationLayout
+          Text="C"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="36.6666666666667,60"
+          Id="e815059e-11aa-4f88-be2c-8ab585fba4a0"
+          TopLeft="41.0714279594166,246.999995583296" />
+        <AnnotationLayout
+          Text="D"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="37.3333333333334,60"
+          Id="79d72e91-4ca7-4467-a2e3-3a339d457ce7"
+          TopLeft="61.6071419391249,530.166661801651" />
+        <AnnotationLayout
+          Text="E"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="34.6666666666667,60"
+          Id="36ec22e2-dde6-4fc9-ad19-4305f5e26c80"
+          TopLeft="61.6071419391249,610.023803230837" />
+        <AnnotationLayout
+          Text="F"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="34.6666666666667,60"
+          Id="5814d272-b2e9-4a61-8050-16e588311f22"
+          TopLeft="618.749990779907,708.452372899368" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
