@@ -1,0 +1,2922 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/16/2012 1:01:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JSC"
+  DTS:CreatorName="FL-0\jsc"
+  DTS:DTSID="{92024B93-D001-4437-A33E-F3B63AE1371B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="CO_Fact_Facturacion_sap"
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{BBFEFE69-0CDC-49FD-BE9F-23A37E4936AE}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Facturacion]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{894E6656-FFA5-4246-8DE3-70932D257917}"
+      DTS:ObjectName="Facturacion">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\sapfs\DWSAP\FVSA\PRD\MI_Facturas.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fecha de Alta"
+              DTS:DTSID="{9C86EE80-3C78-48E1-A727-0BF788D1688F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fecha Factura"
+              DTS:DTSID="{F199DD75-030E-4ED0-B7AE-B24C74F42A61}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo de Factura"
+              DTS:DTSID="{45758C2C-3416-42D0-A5E4-91507C9C080E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Localizacion"
+              DTS:DTSID="{220AB3A5-2CB1-4250-B379-07D02E2C98FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Numero Factura comercial"
+              DTS:DTSID="{FDDF5831-4F2C-4A3D-8169-2ECB5052A009}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Articulo"
+              DTS:DTSID="{76E7AE07-8C26-48E7-A2D7-65720F106F8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cliente"
+              DTS:DTSID="{666590C5-3623-4C6B-9BEE-FE8AEC3A788E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vendedor"
+              DTS:DTSID="{C73BB35A-9B72-4E78-AE04-76DA6172632D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gerencia"
+              DTS:DTSID="{BC180A91-BB47-43B9-9FE2-4D551B17834A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sucursal"
+              DTS:DTSID="{2483CF85-B162-4DCD-9D03-A1118A1CF0A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sucursal Cliente"
+              DTS:DTSID="{E3999EBD-A598-4493-B6EA-94735B950C3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cantidad"
+              DTS:DTSID="{92B16AAB-E8C1-481D-B635-89BF5E3ACE0D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Precio Unitario"
+              DTS:DTSID="{E1A2ECF1-DD39-4C98-8EBD-E5E3AB43F895}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Importe Neto"
+              DTS:DTSID="{0930158C-8326-4933-B7FB-B59CF92CEA2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Bonificacion Vendedor"
+              DTS:DTSID="{F4662A65-93DB-4B31-B381-2DED3F924156}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Bonificacion Cliente"
+              DTS:DTSID="{98142CE9-9779-43FC-BE31-304B941118ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Bonificacion L  Precios"
+              DTS:DTSID="{C2FEE583-D128-4547-A0F0-2C128D508802}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Bonificacion Matriz"
+              DTS:DTSID="{E1C33868-8654-4AF1-BD05-A867D8D70806}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Bonificacion Excepcional"
+              DTS:DTSID="{F03946C8-4E8D-4D23-9E1B-488E3D41040A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Descuento OB   ST"
+              DTS:DTSID="{2E4647CD-E858-46B6-9252-803DAE1C4D5E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Descuento Obra   Stock"
+              DTS:DTSID="{7A575B07-3053-4304-9579-6934A2362328}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% Descuento Caja"
+              DTS:DTSID="{F7AA68FA-40F1-4993-B375-5D9FE7B72333}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Condicion de Venta"
+              DTS:DTSID="{55233184-6BA7-4373-9761-2AE1FC5C5ACF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo de Pedido"
+              DTS:DTSID="{8AADBF3B-CECA-429E-B9EA-A906532659FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Numero de Pedido"
+              DTS:DTSID="{082EF1EB-55EA-4959-A2BF-399ED589645D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Posicion de Pedido"
+              DTS:DTSID="{E40F718F-83BB-47FC-BAC2-6E65E4F175D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="% IVA"
+              DTS:DTSID="{E7A20F47-FA3F-4643-9B25-DFF057AE0947}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Clase de Factura"
+              DTS:DTSID="{30C3DDBC-8B15-4AE6-A672-664245FC471A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Oficina de Ventas Factura"
+              DTS:DTSID="{1F7B7360-BA25-4FDB-9485-05394CCF1A12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Centro"
+              DTS:DTSID="{C2411730-ADDA-40D7-8CC8-456B78E6D706}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Almacen"
+              DTS:DTSID="{039A8463-FEFA-4197-9BBF-3E518C519450}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Numero de factura SAP"
+              DTS:DTSID="{BB0A83E9-3591-4473-9B98-90940C6B31D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Posicion de factura"
+              DTS:DTSID="{456CFAE8-B3D8-40EB-8669-8FA27313195F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tipo Documento Comercial"
+              DTS:DTSID="{FC35DC51-D713-4CE4-94B9-F167B68F1C1F}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CE7351B3-E266-4200-9048-3D3EBB93B478}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Existe">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A23DE455-1B5E-467C-8F16-8F473441D4D6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Proceso">
+      <DTS:VariableValue
+        DTS:DataType="3">30533</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\1 Control de Lotes a Procesar"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Control de Lotes a Procesar"
+      DTS:DTSID="{0DB12AAF-5210-4F9B-8C3E-1F8C8FCDDE5C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="1 Control de Lotes a Procesar"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="declare @var int&#xA;&#xA;SELECT @var=count(Proceso_key)&#xA;FROM dbo.DW_Procesos&#xA;WHERE Lote_Key = 21 AND Estado_key = 0&#xA;&#xA;if @var &gt; 0&#xA;&#x9;Print 'Hay registro para procesar facturas'&#xA;else&#xA;&#x9;RAISERROR (N'No hay lotes a Procesar', 16, 1)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\2 Elegir el Proceso_Key"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Elegir el Proceso_Key"
+      DTS:DTSID="{40F4A99E-F7D1-49D3-B455-72A10BF87948}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="2 Elegir el Proceso_Key"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="SELECT     MIN(Proceso_key) AS Proceso&#xA;FROM         dbo.DW_Procesos&#xA;WHERE     Lote_key = 21 AND Estado_key = 0"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Proceso" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\3- existencia archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="paradas"
+      DTS:DTSID="{04338A52-45B6-47CD-B129-804650E50301}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="3- existencia archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4310604B-5FF2-4664-8915-7C8B80CB7BCD}"
+          SQLTask:SqlStatementSource="declare @result int&#xA;EXEC @result = master..xp_cmdshell 'dir \\sapfs\DWSAP\fvsa\prd\MI_Facturas.txt', NO_OUTPUT&#xA;select @result"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Existe" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\4 Borro tabla intermedia"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Borro tabla intermedia"
+      DTS:DTSID="{89EDA8C3-E8E9-429B-85E6-AF83695B19D3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="4 Borro tabla intermedia"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="Truncate table int_factura&#xA;truncate table int_fact_factura" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\5 Comienzo de ejecucion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Comienzo de ejecucion"
+      DTS:DTSID="{33F96B72-0887-450F-B567-C3A4E1C465A8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="5 Comienzo de ejecucion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\6 Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A72E934D-41DA-421F-81A9-09F93417F4A7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="6 Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\6 Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\6 Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\6 Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Proceso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Proceso]"
+                      name="Proceso"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Proceso]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Proceso]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Flag]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Flag]"
+                      name="Flag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\6 Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\6 Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Int_Factura]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\6 Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{58ABA66D-CC59-46DB-8416-34312B29E27F}:invalid"
+                  connectionManagerRefId="{58ABA66D-CC59-46DB-8416-34312B29E27F}:invalid"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flag]"
+                      cachedDataType="i4"
+                      cachedName="Flag"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag]"
+                      lineageId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Flag]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Localizacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Localizacion"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Localizacion]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Localizacion]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cliente"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cliente]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Proceso]"
+                      cachedDataType="i4"
+                      cachedName="Proceso"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Proceso_Key]"
+                      lineageId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[Proceso]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cantidad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Cantidad"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cantidad]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cantidad]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Almacen]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Almacen"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Almacen]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Almacen]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha de Alta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Fecha de Alta"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fecha_Computador]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Fecha de Alta]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha Factura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Fecha Factura"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Fecha Factura]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de Factura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Tipo de Factura"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo de Factura]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Numero Factura comercial]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Numero Factura comercial"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Factura]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero Factura comercial]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Articulo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="18"
+                      cachedName="Articulo"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Articulo]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Vendedor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vendedor"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lista]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Vendedor]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gerencia]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Gerencia"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ger_Cli_sap]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Gerencia]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sucursal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sucursal"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sucursal]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sucursal]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Sucursal Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sucursal Cliente"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suc_Cliente]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sucursal Cliente]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precio Unitario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Precio Unitario"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Precio]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Precio Unitario]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Bonificacion Vendedor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Bonificacion Vendedor"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Lista]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Vendedor]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Importe Neto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Importe Neto"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Importe_Neto]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Importe Neto]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Bonificacion Cliente]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Bonificacion Cliente"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Cliente]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Cliente]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Bonificacion L  Precios]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Bonificacion L  Precios"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Lpr]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion L  Precios]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Bonificacion Matriz]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Bonificacion Matriz"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Matriz]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Matriz]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Bonificacion Excepcional]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Bonificacion Excepcional"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bonif_Excepcional]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Excepcional]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo Descuento OB   ST]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Tipo Descuento OB   ST"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Bonif]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo Descuento OB   ST]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Descuento Obra   Stock]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Descuento Obra   Stock"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bonif_Obra_Stock]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Descuento Obra   Stock]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% Descuento Caja]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% Descuento Caja"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descuento_Caja]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Descuento Caja]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de Pedido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Tipo de Pedido"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Pedido]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo de Pedido]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Numero de Pedido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Numero de Pedido"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nro_Pedido]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero de Pedido]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Posicion de Pedido]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Posicion de Pedido"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item_Pedido]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Posicion de Pedido]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[% IVA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="% IVA"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Iva]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% IVA]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Oficina de Ventas Factura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Oficina de Ventas Factura"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ger_Doc_sap]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Oficina de Ventas Factura]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Centro]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Centro"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Centro]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Centro]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Numero de factura SAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Numero de factura SAP"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Factura_Sap]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero de factura SAP]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Posicion de factura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Posicion de factura"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Posicion]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Posicion de factura]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Condicion de Venta]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Condicion de Venta"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cvta_sap]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Condicion de Venta]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Clase de Factura]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Clase de Factura"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cod_Factura_Sap]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Clase de Factura]" />
+                    <inputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo Documento Comercial]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Tipo Documento Comercial"
+                      externalMetadataColumnId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Documento]"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo Documento Comercial]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Fecha" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Tipo" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Localizacion]"
+                      dataType="i2"
+                      name="Localizacion" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Factura]"
+                      dataType="i4"
+                      name="Factura" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="26"
+                      name="Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Medida]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="Medida" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[terminacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="terminacion" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Letra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Letra" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cliente]"
+                      dataType="numeric"
+                      name="Cliente"
+                      precision="5" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Lista]"
+                      dataType="i2"
+                      name="Lista" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gerencia]"
+                      dataType="i2"
+                      name="Gerencia" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sucursal]"
+                      dataType="i2"
+                      name="Sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suc_Cliente]"
+                      dataType="i2"
+                      name="Suc_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cantidad]"
+                      dataType="i4"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Precio]"
+                      dataType="numeric"
+                      name="Precio"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Importe_Neto]"
+                      dataType="numeric"
+                      name="Importe_Neto"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Lista]"
+                      dataType="numeric"
+                      name="Bon_Lista"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Cliente]"
+                      dataType="numeric"
+                      name="Bon_Cliente"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Lpr]"
+                      dataType="numeric"
+                      name="Bon_Lpr"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bon_Matriz]"
+                      dataType="numeric"
+                      name="Bon_Matriz"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bonif_Excepcional]"
+                      dataType="numeric"
+                      name="Bonif_Excepcional"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Bonif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Tipo_Bonif" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Bonif_Obra_Stock]"
+                      dataType="numeric"
+                      name="Bonif_Obra_Stock"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Descuento_Caja]"
+                      dataType="numeric"
+                      name="Descuento_Caja"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Condicion_Venta]"
+                      dataType="i4"
+                      name="Condicion_Venta" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Tipo_Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Nro_Pedido]"
+                      dataType="i4"
+                      name="Nro_Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fecha_Computador]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Fecha_Computador" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Proceso_Key]"
+                      dataType="i4"
+                      name="Proceso_Key" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Flag]"
+                      dataType="i4"
+                      name="Flag" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rowid]"
+                      dataType="i4"
+                      name="Rowid" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Iva]"
+                      dataType="numeric"
+                      name="Iva"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Centro]"
+                      dataType="i2"
+                      name="Centro" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Almacen]"
+                      dataType="i2"
+                      name="Almacen" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Factura_Sap]"
+                      dataType="i4"
+                      name="Factura_Sap" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Posicion]"
+                      dataType="i2"
+                      name="Posicion" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cod_Factura_Sap]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Cod_Factura_Sap" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ger_Cli_sap]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Ger_Cli_sap" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ger_Doc_sap]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Ger_Doc_sap" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Cvta_sap]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Cvta_sap" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Item_Pedido]"
+                      dataType="i2"
+                      name="Item_Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ger_Doc]"
+                      dataType="i2"
+                      name="Ger_Doc" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tipo_Documento]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Tipo_Documento" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\6 Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\6 Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\6 Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\6 Data Flow Task\Origen de archivo plano"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="Origen de archivo plano"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\6 Data Flow Task\Origen de archivo plano.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Facturacion]"
+                  connectionManagerRefId="Package.ConnectionManagers[Facturacion]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Fecha de Alta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Fecha de Alta]"
+                      length="10"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Fecha de Alta]"
+                      name="Fecha de Alta"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Fecha Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Fecha Factura]"
+                      length="10"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Fecha Factura]"
+                      name="Fecha Factura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo de Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo de Factura]"
+                      length="1"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo de Factura]"
+                      name="Tipo de Factura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Localizacion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Localizacion]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Localizacion]"
+                      name="Localizacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero Factura comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Numero Factura comercial]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero Factura comercial]"
+                      name="Numero Factura comercial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Articulo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Articulo]"
+                      length="18"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Articulo]"
+                      name="Articulo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Cliente]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cliente]"
+                      name="Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Vendedor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Vendedor]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Vendedor]"
+                      name="Vendedor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Gerencia]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Gerencia]"
+                      length="4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Gerencia]"
+                      name="Gerencia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sucursal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Sucursal]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sucursal]"
+                      name="Sucursal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sucursal Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Sucursal Cliente]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Sucursal Cliente]"
+                      name="Sucursal Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cantidad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Cantidad]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Cantidad]"
+                      name="Cantidad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Precio Unitario]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Precio Unitario]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Precio Unitario]"
+                      name="Precio Unitario"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Importe Neto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Importe Neto]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Importe Neto]"
+                      name="Importe Neto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Vendedor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Vendedor]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Vendedor]"
+                      name="% Bonificacion Vendedor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Cliente]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Cliente]"
+                      name="% Bonificacion Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion L  Precios]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion L  Precios]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion L  Precios]"
+                      name="% Bonificacion L  Precios"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Matriz]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Matriz]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Matriz]"
+                      name="% Bonificacion Matriz"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Excepcional]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Excepcional]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Bonificacion Excepcional]"
+                      name="% Bonificacion Excepcional"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo Descuento OB   ST]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo Descuento OB   ST]"
+                      length="2"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo Descuento OB   ST]"
+                      name="Tipo Descuento OB   ST"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Descuento Obra   Stock]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Descuento Obra   Stock]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Descuento Obra   Stock]"
+                      name="% Descuento Obra   Stock"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Descuento Caja]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Descuento Caja]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% Descuento Caja]"
+                      name="% Descuento Caja"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Condicion de Venta]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Condicion de Venta]"
+                      length="4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Condicion de Venta]"
+                      name="Condicion de Venta"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo de Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo de Pedido]"
+                      length="4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo de Pedido]"
+                      name="Tipo de Pedido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero de Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Numero de Pedido]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero de Pedido]"
+                      name="Numero de Pedido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Posicion de Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Posicion de Pedido]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Posicion de Pedido]"
+                      name="Posicion de Pedido"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% IVA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% IVA]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[% IVA]"
+                      name="% IVA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Oficina de Ventas Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Oficina de Ventas Factura]"
+                      length="4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Oficina de Ventas Factura]"
+                      name="Oficina de Ventas Factura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Centro]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Centro]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Centro]"
+                      name="Centro"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Almacen]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Almacen]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Almacen]"
+                      name="Almacen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero de factura SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Numero de factura SAP]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Numero de factura SAP]"
+                      name="Numero de factura SAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Posicion de factura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Posicion de factura]"
+                      length="50"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Posicion de factura]"
+                      name="Posicion de factura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Clase de Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Clase de Factura]"
+                      length="4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Clase de Factura]"
+                      name="Clase de Factura"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo Documento Comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo Documento Comercial]"
+                      length="1"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Tipo Documento Comercial]"
+                      name="Tipo Documento Comercial"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Fecha de Alta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fecha de Alta" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Fecha Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fecha Factura" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo de Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tipo de Factura" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Localizacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Localizacion" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Numero Factura comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Numero Factura comercial" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Articulo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Articulo" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Vendedor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Gerencia]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gerencia" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Sucursal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sucursal" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Sucursal Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sucursal Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Cantidad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Cantidad" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Precio Unitario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Precio Unitario" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Importe Neto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Importe Neto" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Vendedor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Bonificacion Vendedor" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Cliente]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Bonificacion Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion L  Precios]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Bonificacion L  Precios" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Matriz]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Bonificacion Matriz" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Bonificacion Excepcional]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Bonificacion Excepcional" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo Descuento OB   ST]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tipo Descuento OB   ST" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Descuento Obra   Stock]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Descuento Obra   Stock" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% Descuento Caja]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% Descuento Caja" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Condicion de Venta]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Condicion de Venta" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo de Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tipo de Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Numero de Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Numero de Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Posicion de Pedido]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Posicion de Pedido" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[% IVA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="% IVA" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Oficina de Ventas Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Oficina de Ventas Factura" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Centro]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Centro" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Almacen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Almacen" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Numero de factura SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Numero de factura SAP" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Posicion de factura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Posicion de factura" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Clase de Factura]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Clase de Factura" />
+                    <externalMetadataColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Tipo Documento Comercial]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Tipo Documento Comercial" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\6 Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\6 Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\6 Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\6 Data Flow Task.Paths[Salida de origen de archivo plano]"
+              endId="Package\6 Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Salida de origen de archivo plano"
+              startId="Package\6 Data Flow Task\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\7 Carga Fact_Factura"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Carga Fact_Factura"
+      DTS:DTSID="{7D178350-9893-4281-9EAD-97132981BBCD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="7 Carga Fact_Factura"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Carga_Fact_Factura_sap ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\8  Muevo archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="indices.txt"
+      DTS:DTSID="{2A01CCF2-6038-4BB1-9378-718AA390EA61}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="8  Muevo archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4310604B-5FF2-4664-8915-7C8B80CB7BCD}"
+          SQLTask:SqlStatementSource="EXEC master..xp_cmdshell 'move  \\sapfs\DWSAP\FVSA\PRD\MI_Facturas.txt  \\FV-SQL2008\BOE\FTP\PROCESADO\MI_Facturas.txt',  NO_OUTPUT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z1 Salida por control de procesos"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Salida por control de procesos"
+      DTS:DTSID="{8E95C427-9AF2-4136-8A9C-2CC27A1A29B6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z1 Salida por control de procesos"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="iNSERT &#xA;INTO DW_Procesos  (Lote_key, Fecha_inicio_ejecucion, Fecha_fin_ejecucion, Estado_Key)&#xA;SELECT     21 Lote_key,GETDATE() Fecha_inicio_ejecucion, GETDATE() Fecha_fin_ejecucion, 17 Estado_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z2 - sin archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="indices.txt"
+      DTS:DTSID="{4B5186F3-7FF5-4E0B-8643-3F201E439DF7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z2 - sin archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z2 Finaliza en Error"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Finaliza en Error"
+      DTS:DTSID="{47392EC9-5783-4674-AD58-2C67A8A7BEB4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z2 Finaliza en Error"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 15" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\z3 finaliza en error"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Finaliza en Error"
+      DTS:DTSID="{5B518420-304D-4414-8684-79576520A01B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="z3 finaliza en error"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{58ABA66D-CC59-46DB-8416-34312B29E27F}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualiza_Estado_Procesos ?, 14" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{89873A59-FFF6-4BB7-A2F2-D361A178244A}"
+      DTS:From="Package\5 Comienzo de ejecucion"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\6 Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{545C6D8B-BB61-4F6F-B34B-08A64DD26F01}"
+      DTS:From="Package\6 Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\7 Carga Fact_Factura" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{18DA1FE4-E258-423A-A17C-CEE03656AE8C}"
+      DTS:From="Package\6 Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\z2 Finaliza en Error"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{1AB65D22-E595-4443-AD20-0B8D03381DDC}"
+      DTS:From="Package\7 Carga Fact_Factura"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\8  Muevo archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2EBB3DCB-DCD8-4547-BBE8-3DBA0DE0F2E4}"
+      DTS:From="Package\2 Elegir el Proceso_Key"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\3- existencia archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2D9049F1-F76A-4B33-9D1D-F1D0D2B9504B}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe == 0"
+      DTS:From="Package\3- existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\4 Borro tabla intermedia" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{CAEAA6DA-1664-4B5B-9D73-27EB9B3B976F}"
+      DTS:EvalOp="3"
+      DTS:Expression="@Existe &gt; 0"
+      DTS:From="Package\3- existencia archivo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\z2 - sin archivo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{01349840-A0D4-4DBE-A224-2A4C443D9CE0\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{01349840-A0D4-4DBE-A224-2A4C443D9CE0}"
+      DTS:From="Package\1 Control de Lotes a Procesar"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{01349840-A0D4-4DBE-A224-2A4C443D9CE0}"
+      DTS:To="Package\2 Elegir el Proceso_Key" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{1E88A0B9-4C3C-486F-8822-C8B9D97CA415\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{1E88A0B9-4C3C-486F-8822-C8B9D97CA415}"
+      DTS:From="Package\1 Control de Lotes a Procesar"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{1E88A0B9-4C3C-486F-8822-C8B9D97CA415}"
+      DTS:To="Package\z1 Salida por control de procesos"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{75AB3545-BF79-43C3-8975-8370D6234B25\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{75AB3545-BF79-43C3-8975-8370D6234B25}"
+      DTS:From="Package\7 Carga Fact_Factura"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{75AB3545-BF79-43C3-8975-8370D6234B25}"
+      DTS:To="Package\z3 finaliza en error"
+      DTS:Value="1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{AA02DC9D-E0AF-47DC-B5C8-72B3B2219CD1\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{AA02DC9D-E0AF-47DC-B5C8-72B3B2219CD1}"
+      DTS:From="Package\4 Borro tabla intermedia"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{AA02DC9D-E0AF-47DC-B5C8-72B3B2219CD1}"
+      DTS:To="Package\5 Comienzo de ejecucion" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="218,42"
+          Id="Package\1 Control de Lotes a Procesar"
+          TopLeft="197.311320754717,5.7641509433962" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\2 Elegir el Proceso_Key"
+          TopLeft="209.858490566038,83.4245283018868" />
+        <NodeLayout
+          Size="174.666666666667,42"
+          Id="Package\3- existencia archivo"
+          TopLeft="216.320754754234,165" />
+        <NodeLayout
+          Size="193.333333333334,42"
+          Id="Package\4 Borro tabla intermedia"
+          TopLeft="200.858490566038,228.745283018868" />
+        <NodeLayout
+          Size="196.666666666667,42.6666666666667"
+          Id="Package\5 Comienzo de ejecucion"
+          TopLeft="211.858490566038,298.405660377358" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\6 Data Flow Task"
+          TopLeft="199.38679245283,389.084905660377" />
+        <NodeLayout
+          Size="178.666666666667,42"
+          Id="Package\7 Carga Fact_Factura"
+          TopLeft="203.330188679245,460.764150943396" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\8  Muevo archivo"
+          TopLeft="467,475" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\z1 Salida por control de procesos"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\z2 - sin archivo"
+          TopLeft="34.5,168.524528255395" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\z2 Finaliza en Error"
+          TopLeft="10.7075471698113,391.877358490566" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\z3 finaliza en error"
+          TopLeft="9.61320754716981,463.537735849057" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="310.191823899371,341.072327044025">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-42.8050314465413,48.0125786163523"
+              Start="0,0"
+              End="-42.8050314465413,40.5125786163523">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0062893081762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0062893081762"
+                    Point2="0,24.0062893081762"
+                    Point3="-4,24.0062893081762" />
+                  <mssgle:LineSegment
+                    End="-38.8050314465413,24.0062893081762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-38.8050314465413,24.0062893081762"
+                    Point2="-42.8050314465413,24.0062893081762"
+                    Point3="-42.8050314465413,28.0062893081762" />
+                  <mssgle:LineSegment
+                    End="-42.8050314465413,40.5125786163523" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="267.38679245283,433.084905660377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.443396226415,27.679245283019"
+              Start="0,0"
+              End="25.443396226415,20.179245283019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.83962264150949" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.83962264150949"
+                    Point2="0,13.8396226415095"
+                    Point3="4,13.8396226415095" />
+                  <mssgle:LineSegment
+                    End="21.443396226415,13.8396226415095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.443396226415,13.8396226415095"
+                    Point2="25.443396226415,13.8396226415095"
+                    Point3="25.443396226415,17.8396226415095" />
+                  <mssgle:LineSegment
+                    End="25.443396226415,20.179245283019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="199.38679245283,411.047169811321">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-52.9056603773585,2.79245283018867"
+              Start="0,0"
+              End="-45.4056603773585,2.79245283018867">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-39.9245283018868,0" />
+                  <mssgle:LineSegment
+                    End="-39.9245283018868,2.79245283018867" />
+                  <mssgle:LineSegment
+                    End="-45.4056603773585,2.79245283018867" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.1658759581368,-19.7490234375,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="382.330188679245,481.764150943396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.669811320755,14.235849056604"
+              Start="0,0"
+              End="77.169811320755,14.235849056604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="38.3349056603775,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.3349056603775,0"
+                    Point2="42.3349056603775,0"
+                    Point3="42.3349056603775,4" />
+                  <mssgle:LineSegment
+                    End="42.3349056603775,10.235849056604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="42.3349056603775,10.235849056604"
+                    Point2="42.3349056603775,14.235849056604"
+                    Point3="46.3349056603775,14.235849056604" />
+                  <mssgle:LineSegment
+                    End="77.169811320755,14.235849056604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="277.858490566038,127.424528301887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25.9622641881961,37.5754716981132"
+              Start="0,0"
+              End="25.9622641881961,30.0754716981132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7877358490566" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7877358490566"
+                    Point2="0,18.7877358490566"
+                    Point3="4,18.7877358490566" />
+                  <mssgle:LineSegment
+                    End="21.9622641881961,18.7877358490566" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.9622641881961,18.7877358490566"
+                    Point2="25.9622641881961,18.7877358490566"
+                    Point3="25.9622641881961,22.7877358490566" />
+                  <mssgle:LineSegment
+                    End="25.9622641881961,30.0754716981132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="391.320754754234,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="2.53773581180394,63.745283018868"
+              Start="0,0"
+              End="10.0377358118039,63.745283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.0377358118039,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.0377358118039,0"
+                    Point2="25.0377358118039,0"
+                    Point3="25.0377358118039,4" />
+                  <mssgle:LineSegment
+                    End="25.0377358118039,59.745283018868" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.0377358118039,59.745283018868"
+                    Point2="25.0377358118039,63.745283018868"
+                    Point3="21.0377358118039,63.745283018868" />
+                  <mssgle:LineSegment
+                    End="10.0377358118039,63.745283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="17.0377358118039,-22,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="216.320754754234,187.762264127698">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-31.820754754234,0"
+              Start="0,0"
+              End="-24.320754754234,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-24.320754754234,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.160377377117,5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{01349840-A0D4-4DBE-A224-2A4C443D9CE0\}]"
+          TopLeft="306.311320754717,47.7641509433962">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-28.4528301886791,35.6603773584906"
+              Start="0,0"
+              End="-28.4528301886791,28.1603773584906">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.8301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.8301886792453"
+                    Point2="0,17.8301886792453"
+                    Point3="-4,17.8301886792453" />
+                  <mssgle:LineSegment
+                    End="-24.4528301886791,17.8301886792453" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.4528301886791,17.8301886792453"
+                    Point2="-28.4528301886791,17.8301886792453"
+                    Point3="-28.4528301886791,21.8301886792453" />
+                  <mssgle:LineSegment
+                    End="-28.4528301886791,28.1603773584906" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{75AB3545-BF79-43C3-8975-8370D6234B25\}]"
+          TopLeft="203.330188679245,483.650943396226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.7169811320752,0"
+              Start="0,0"
+              End="-50.2169811320752,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-50.2169811320752,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-36.6371819722876,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{AA02DC9D-E0AF-47DC-B5C8-72B3B2219CD1\}]"
+          TopLeft="297.525157232705,270.745283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.6666666666667,27.66037735849"
+              Start="0,0"
+              End="12.6666666666667,20.16037735849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.830188679245" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.830188679245"
+                    Point2="0,13.830188679245"
+                    Point3="4,13.830188679245" />
+                  <mssgle:LineSegment
+                    End="8.66666666666669,13.830188679245" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.66666666666669,13.830188679245"
+                    Point2="12.6666666666667,13.830188679245"
+                    Point3="12.6666666666667,17.830188679245" />
+                  <mssgle:LineSegment
+                    End="12.6666666666667,20.16037735849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{1E88A0B9-4C3C-486F-8822-C8B9D97CA415\}]"
+          TopLeft="197.311320754717,27.1320754716981">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-55.811320754717,0"
+              Start="0,0"
+              End="-48.311320754717,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-48.311320754717,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.6843517836085,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\6 Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="191,42"
+          Id="Package\6 Data Flow Task\Origen de archivo plano"
+          TopLeft="112,15" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\6 Data Flow Task\Derived Column"
+          TopLeft="142.5,118.349056603774" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\6 Data Flow Task\OLE DB Destination"
+          TopLeft="139.443396226415,231.216981132075" />
+        <EdgeLayout
+          Id="Package\6 Data Flow Task.Paths[Salida de origen de archivo plano]"
+          TopLeft="209,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.349056603774"
+              Start="0,0"
+              End="0,53.849056603774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.849056603774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\6 Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="208.971698113208,162.349056603774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.867924528301"
+              Start="0,0"
+              End="0,61.367924528301">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.367924528301" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\6 Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

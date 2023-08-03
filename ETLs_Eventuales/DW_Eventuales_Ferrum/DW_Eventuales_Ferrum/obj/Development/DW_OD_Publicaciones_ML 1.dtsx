@@ -5,21 +5,21 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="MYSPOT05"
   DTS:CreatorName="MYSPOT05\Thiago"
-  DTS:DTSID="{5EB200EC-D54C-46B2-BD2F-779DA81B5D2F}"
+  DTS:DTSID="{D9438510-3817-4AB9-A4C8-DE67CB0EEFB4}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="269"
-  DTS:VersionGUID="{5A6C75B9-9F12-48AE-9BD5-D486FA69B31F}">
+  DTS:VersionBuild="277"
+  DTS:VersionGUID="{6585451E-3CAA-4138-9210-D44C3D7A957F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{C813702A-5A78-4924-8D45-EB002A5A1F48}"
+      DTS:DTSID="{BE6C0707-F82B-4321-8FE0-F779D79C2E03}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -33,7 +33,7 @@
     <DTS:PackageParameter
       DTS:CreationName=""
       DTS:DataType="8"
-      DTS:DTSID="{5D62B4A8-0349-412F-B767-93B92F876867}"
+      DTS:DTSID="{BC66B241-F72D-4A78-AF41-FC306A2074CE}"
       DTS:ObjectName="ExcelConnectionManager_ConnectionString">
       <DTS:Property
         DTS:DataType="8"
@@ -43,7 +43,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{01ADC9E1-AC7B-42D9-8408-849EA1AF740B}"
+      DTS:DTSID="{9BB9AF93-AD6D-47EB-80D5-FC6CD4730537}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ExcelFilePath">
@@ -52,7 +52,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{6A29C5C9-F67E-44FA-ACEE-4334855E68D1}"
+      DTS:DTSID="{E040FB23-C664-4E41-BDE2-883EB06FD345}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="Existe_int">
@@ -61,7 +61,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A652F0E7-C3E6-4DA9-AF91-50C537CF3932}"
+      DTS:DTSID="{4B9A9548-3037-4E2C-B5BC-20B97240994F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="FolderProcesado">
@@ -70,18 +70,27 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{0EFB5594-5AC9-4BCE-A079-602E7CA71A78}"
+      DTS:DTSID="{6313EB37-96AB-42F9-A7A9-4709C0353FA0}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="@[User::FolderProcesado] + &quot;\\&quot; + &quot;Procesado_&quot; + (DT_WSTR, 4) YEAR(GETDATE()) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hour&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;minute&quot;, GETDATE()), 2) + RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;second&quot;, GETDATE()), 2)"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\PROCESADOS\Procesado_20230803102115</DTS:VariableValue>
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Publicaciones ML\PROCESADOS\Procesado_20230803113915</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{49AD2189-53D7-4147-BCE9-B105C9FC785D}"
+      DTS:DTSID="{90B9C829-6F46-4BAA-8F97-335F0152C8B7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Proceso">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{578A29D8-1EA9-4E7D-9B49-D7563AF57041}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFolder">
@@ -94,14 +103,14 @@
       DTS:refId="Package\Carpeta procesado"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{0F1FE0AB-446A-4D7F-894F-ED4A274B64B8}"
+      DTS:DTSID="{2211AD26-F854-436B-83A9-D6E484467E03}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carpeta procesado">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{196E090A-56B5-4FC3-8490-2AAD94DAEBFF}"
-        DTS:ObjectName="{196E090A-56B5-4FC3-8490-2AAD94DAEBFF}">
+        DTS:DTSID="{8B9B502B-AB22-459D-A887-6D2DBB342374}"
+        DTS:ObjectName="{8B9B502B-AB22-459D-A887-6D2DBB342374}">
         <DTS:PropertyExpression
           DTS:Name="Directory">@[User::SourceFolder]</DTS:PropertyExpression>
         <DTS:ObjectData>
@@ -123,12 +132,12 @@
           DTS:refId="Package\Carpeta procesado\Create directory"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
-          DTS:DTSID="{45FBCC6A-EC1F-4C43-B0A4-131380F87C4C}"
+          DTS:DTSID="{EB101A0C-1828-457B-9BD6-82AA17FE40E3}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Create directory"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -142,12 +151,12 @@
           DTS:refId="Package\Carpeta procesado\Move file"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
-          DTS:DTSID="{D5B4B948-3495-47BF-8C4B-37A6F5808D6A}"
+          DTS:DTSID="{5FE8C7EB-9658-4806-86B6-F045B54F976D}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Move file"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -163,7 +172,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Carpeta procesado.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{F1B24506-6215-4A3E-A869-D47EA849A510}"
+          DTS:DTSID="{79FAD49C-DF5B-40B4-A395-56BB6AEA1626}"
           DTS:From="Package\Carpeta procesado\Create directory"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -172,8 +181,8 @@
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{CAED0F8E-B71B-4C11-AA23-D6C836264C3E}"
-          DTS:ObjectName="{CAED0F8E-B71B-4C11-AA23-D6C836264C3E}"
+          DTS:DTSID="{A988269E-7B9C-4F19-97D6-E8F8331FFEFF}"
+          DTS:ObjectName="{A988269E-7B9C-4F19-97D6-E8F8331FFEFF}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::FileName" />
       </DTS:ForEachVariableMappings>
@@ -182,12 +191,12 @@
       DTS:refId="Package\Cleansing"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{22A7C199-EE69-44EB-AA4A-2E3A1AFB7D08}"
+      DTS:DTSID="{4C2F8F06-D289-4934-AC3C-27F9369B7E63}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Cleansing"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -196,14 +205,173 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Existe"
+      DTS:refId="Package\Comienza Ejecución"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c0903996-5bcc-4b83-b990-951495f76764}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Comienza Ejecución"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finaliza en error"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{856f1cf5-168f-448b-888e-3f4e7012dc2f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finaliza en error"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finaliza en error 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e059fda0-9e78-49c9-b12f-fedecbec1c76}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finaliza en error 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="4">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 10" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finaliza en error 2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0f5c0b85-32e2-429f-90b7-f2e76cdbc9b8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finaliza en error 2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="5">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 5&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finaliza en error 3"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{355ff5e8-581b-43b3-b676-c35f2528af7e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finaliza en error 3"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 11&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Finalizo Ok"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7851b14d-6aa6-40d5-893b-3e766e440050}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Finalizo Ok"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Genera número de proceso"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a6f967b5-806c-4d68-8027-ba5caec198c0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Genera número de proceso"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="declare @nMaxCodProceso int&#xA;SELECT @nMaxCodProceso = MAX(proceso_key) &#xA;FROM DW_Procesos_Info&#xA;IF @nMaxCodProceso is null&#xA;SET @nMaxCodProceso = 0&#xA;DBCC CHECKIDENT ('DW_Procesos_Info', RESEED, @nMaxCodProceso)&#xA; &#xA;Insert Into DW_Procesos_Info (lote_key, &#xA;&#x9;inicio_ejecucion, &#xA;&#x9;fin_ejecucion, &#xA;&#x9;Estado_Key)&#xA;SELECT 201,getdate() inicio_ejecucion, getdate() fin_ejecucion, &#xA;&#x9;0 Estado_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Procesamiento"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{EC343B48-E6E3-45BB-B9A1-DDA02D827526}"
+      DTS:DTSID="{E2B5D3E6-57DC-4810-9691-DC103E738F83}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Existe"
+      DTS:ObjectName="Procesamiento"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -211,7 +379,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Existe\Excel Source"
+              refId="Package\Procesamiento\Excel Source"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Excel Source"
@@ -252,7 +420,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Existe\Excel Source.Connections[OleDbConnection]"
+                  refId="Package\Procesamiento\Excel Source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
                   connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
@@ -260,232 +428,232 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Existe\Excel Source.Outputs[Excel Source Output]"
+                  refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output]"
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]"
                       name="Distribuidor"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Fecha]"
                       name="Fecha"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]"
                       name="Tienda oficial"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]"
                       name="Nro# publicación"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Título]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Título]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Título]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Título]"
                       name="Título"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]"
                       name="Tipo de publicación"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]"
                       name="Unidades vendidas"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
                       dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]"
                       name="Precio por unidad"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Total]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Total]"
                       dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Total]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Total]"
                       name="Total"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[F10]"
                       dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      externalMetadataColumnId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[F10]"
                       name="F10"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distribuidor]"
                       dataType="wstr"
                       length="255"
                       name="Distribuidor" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fecha]"
                       dataType="wstr"
                       length="255"
                       name="Fecha" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tienda oficial]"
                       dataType="wstr"
                       length="255"
                       name="Tienda oficial" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Nro# publicación]"
                       dataType="wstr"
                       length="255"
                       name="Nro# publicación" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Título]"
                       dataType="wstr"
                       length="255"
                       name="Título" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Tipo de publicación]"
                       dataType="wstr"
                       length="255"
                       name="Tipo de publicación" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Unidades vendidas]"
                       dataType="r8"
                       name="Unidades vendidas" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Precio por unidad]"
                       dataType="cy"
                       name="Precio por unidad" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total]"
                       dataType="cy"
                       name="Total" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
                       dataType="cy"
                       name="F10" />
                     <externalMetadataColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
                       dataType="wstr"
                       length="255"
                       name="F11" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output]"
+                  refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output]"
                   isErrorOut="true"
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Distribuidor]"
                       name="Distribuidor" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Fecha]"
                       name="Fecha" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Tienda oficial]"
                       name="Tienda oficial" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Nro# publicación]"
                       name="Nro# publicación" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Título]"
                       name="Título" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Tipo de publicación]"
                       name="Tipo de publicación" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
                       dataType="r8"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Unidades vendidas]"
                       name="Unidades vendidas" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
                       dataType="cy"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Precio por unidad]"
                       name="Precio por unidad" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
                       dataType="cy"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[Total]"
                       name="Total" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
                       dataType="cy"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
                       name="F10" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -494,7 +662,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Existe\OLE DB Destination"
+              refId="Package\Procesamiento\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -551,7 +719,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Existe\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Procesamiento\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{FCAE9FA0-15E9-492F-8B80-99738302D602}:external"
                   connectionManagerRefId="Project.ConnectionManagers[SQLServer-ferrumdba.STA.pbi_ferrum]"
                   description="The OLE DB runtime connection used to access the database."
@@ -559,130 +727,130 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Distribuidor]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Distribuidor"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Distribuidor]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Total]"
                       cachedDataType="cy"
                       cachedName="Total"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Total]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Total]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fecha]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Fecha"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Fecha]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Fecha]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tienda oficial]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tienda oficial]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Tienda oficial"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Tienda oficial]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nro# publicación]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nro# publicación]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Nro# publicación"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Nro# publicación]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Título]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Título]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Título"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Título]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Título]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de publicación]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tipo de publicación]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Tipo de publicación"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Tipo de publicación]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unidades vendidas]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Unidades vendidas]"
                       cachedDataType="r8"
                       cachedName="Unidades vendidas"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Unidades vendidas]" />
                     <inputColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precio por unidad]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Precio por unidad]"
                       cachedDataType="cy"
                       cachedName="Precio por unidad"
-                      externalMetadataColumnId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
-                      lineageId="Package\Existe\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]" />
+                      externalMetadataColumnId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
+                      lineageId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output].Columns[Precio por unidad]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
                       dataType="i4"
                       name="row_id" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distribuidor]"
                       dataType="wstr"
                       length="100"
                       name="distribuidor" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha_publicacion]"
                       dataType="wstr"
                       length="50"
                       name="fecha_publicacion" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tienda_oficial]"
                       dataType="wstr"
                       length="100"
                       name="tienda_oficial" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nro_publicacion]"
                       dataType="wstr"
                       length="50"
                       name="nro_publicacion" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[titulo]"
                       dataType="wstr"
                       length="255"
                       name="titulo" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[destaque]"
                       dataType="wstr"
                       length="50"
                       name="destaque" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[unidades_vendidas]"
                       dataType="wstr"
                       length="50"
                       name="unidades_vendidas" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[precio_por_unidad]"
                       dataType="wstr"
                       length="50"
                       name="precio_por_unidad" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total]"
                       dataType="wstr"
                       length="50"
                       name="total" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
                       dataType="dbTimeStamp"
                       name="fecha" />
                     <externalMetadataColumn
-                      refId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[identificador]"
+                      refId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[identificador]"
                       dataType="wstr"
                       length="100"
                       name="identificador" />
@@ -691,22 +859,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Procesamiento\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Procesamiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Procesamiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Procesamiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Existe\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Procesamiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -717,120 +885,24 @@
           </components>
           <paths>
             <path
-              refId="Package\Existe.Paths[Excel Source Output]"
-              endId="Package\Existe\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Procesamiento.Paths[Excel Source Output]"
+              endId="Package\Procesamiento\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Excel Source Output"
-              startId="Package\Existe\Excel Source.Outputs[Excel Source Output]" />
+              startId="Package\Procesamiento\Excel Source.Outputs[Excel Source Output]" />
           </paths>
         </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Fallo carga sta"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{E040F927-6E17-4705-9029-A6AB947DB14F}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Fallo carga sta"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 7&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Fallo cleansing"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{5354BAC8-46B2-433B-839D-4AC59C4EAC93}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Fallo cleansing"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 10&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Fallo Mover archivo"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4A0194D5-A7D3-4C47-8545-DC03D6056F9B}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Fallo Mover archivo"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 11&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Fallo SP"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{403533D3-7043-49F8-9163-520762A46F8D}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Fallo SP"
-      DTS:ThreadHint="3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 5&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Finalizo OK"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{743F328A-E169-408A-91DA-CCE5BFF73034}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Finalizo OK"
-      DTS:ThreadHint="4">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 2&#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\No Existe"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D1120034-2EBC-4C34-9616-89566267B173}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="No Existe"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="update DW_Procesos_Info&#xA;set estado_Key = 8 &#xA;WHERE job_key = 201 and fecha_ejecucion = getdate()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Publicacione_hits_old"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D10D30CB-4791-4E60-9FDD-C3799B16DA59}"
+      DTS:DTSID="{50D7A4D0-F8F3-41C8-A7AA-D0A4ACE6BEA3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Publicacione_hits_old"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -839,13 +911,75 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Script Task"
+      DTS:refId="Package\Selecciono el número de proceso"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{296b48e4-4982-43a3-9df2-d646a188c4ae}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Selecciono el número de proceso"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="SELECT     MIN(proceso_key) AS Proceso&#xA;FROM dbo.DW_Procesos_Info&#xA;WHERE lote_Key = 201 AND Estado_key = 0"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::Proceso" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sin archivo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ae14f1cd-24f2-4c54-a803-e9a440ffbbe5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sin archivo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 8" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="Proceso"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate STA"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E394FC2C-3C5C-4511-BD5E-5563227B0F52}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate STA"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{FCAE9FA0-15E9-492F-8B80-99738302D602}"
+          SQLTask:SqlStatementSource="truncate table publicaciones_internet;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Validacion existencia de archivo"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
-      DTS:DTSID="{D9F56242-C03F-4E4F-9C33-6D6FE234FE3F}"
+      DTS:DTSID="{7E82EF44-5563-49D3-86EC-5A46A44BEA16}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Script Task"
+      DTS:ObjectName="Validacion existencia de archivo"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -1229,7 +1363,7 @@ namespace ST_4b9b74f66c3d4e25b4b407bc870b5129
     <msb:CodeName>ST_4b9b74f66c3d4e25b4b407bc870b5129</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_4b9b74f66c3d4e25b4b407bc870b5129</msb:DisplayName>
-    <msb:ProjectId>{DB05D0C4-CE87-4B85-9876-87B0A22D81E3}</msb:ProjectId>
+    <msb:ProjectId>{AA2C05AA-C509-4E57-9708-07B7C7B3E202}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_4b9b74f66c3d4e25b4b407bc870b5129.csproj" />
@@ -1371,7 +1505,7 @@ namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
           <BinaryItem
             Name="ST_4b9b74f66c3d4e25b4b407bc870b5129.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAAOgy2QAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAXi4A
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAKmly2QAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAXi4A
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAAwuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1400,7 +1534,7 @@ AFYEBgCBAFYEBgCpAFYEFQC5AFYEBgBxAFAFGwDBACgFIADJALcDJQDRAOICKwCJABYDLwDZAFYE
 EADZADYFMwDRAOwCOgDBAHkFAQBxAFYEBgCJAFYEBgDxAJkAPwDxAIgFRgCRAFYETACxAFYEBgAI
 ABQAZgAIABgAawApAHMA0wAuAAsAqwAuABMAtAAuABsA0wAuACMA3AAuACsABQEuADMABQEuADsA
 BQEuAEMA3AAuAEsACwEuAFMABQEuAFsAIgFDAGMAawBJAHMA0wBhAHsAawBjAGsAawADAAEABAAD
-AAAARgScAAAA+AChAAAAcQWmAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAApyHpQwAA
+AAAARgScAAAA+AChAAAAcQWmAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAABAAAApyG8RgAA
 AAAAAAcAAAAEAAAAAAAAAAAAAABUAGUAAAAAAA4AAAAAAAAAAAAAAF0AHwMAAAAABAAAAAAAAAAA
 AAAAVADAAwAAAAAOAAAAAAAAAAAAAABdAD4AAAAAAAAAAAABAAAApwQAAAUAAgAAAAAAAEludDMy
 AFNUXzRiOWI3NGY2NmMzZDRlMjViNGI0MDdiYzg3MGI1MTI5ADxNb2R1bGU+AFN5c3RlbS5JTwBN
@@ -1431,7 +1565,7 @@ UmVzdWx0cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0X1Rhc2tSZXN1bHQAZ2V0X0Fzc2VtYmx5AAAA
 AAAZUwBvAHUAcgBjAGUARgBvAGwAZABlAHIAAA0qAC4AeABsAHMAeAAAFUUAeABpAHMAdABlAF8A
 aQBuAHQAAHFTAFQAXwA0AGIAOQBiADcANABmADYANgBjADMAZAA0AGUAMgA1AGIANABiADQAMAA3
 AGIAYwA4ADcAMABiADUAMQAyADkALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIA
-YwBlAHMAAAAAACybxvUIyUlCo+B5CAHjWOsABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEEIAAS
+YwBlAHMAAAAAAOuIBxCFiMJCkOBmu5mJgXEABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEEIAAS
 YQQgABJlBSABEmkcAyAAHAMgAA4GIAEdEnEOBCABARwGAAESeRF9BSAAEoCBByACAQ4SgIEIt3pc
 Vhk04IkIiYRdzYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEB
 Ek0EAAASEAMAAAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRp
@@ -1452,14 +1586,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQDpQ6chAAABAOlDpyE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQC8RqchAAABALxGpyE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcAYgBj
 ADgANwAwAGIANQAxADIAOQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADYAMQA1AC4AMQA3ADMAOAA1AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA4ADYAMQA1AC4AMQA4ADEAMAA4AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcAYgBjADgA
 NwAwAGIANQAxADIAOQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -1468,8 +1602,8 @@ AGEAbQBlAAAAUwBUAF8ANABiADkAYgA3ADQAZgA2ADYAYwAzAGQANABlADIANQBiADQAYgA0ADAA
 NwBiAGMAOAA3ADAAYgA1ADEAMgA5AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADQAYgA5AGIANwA0AGYANgA2AGMAMwBkADQAZQAyADUAYgA0AGIANAAwADcA
 YgBjADgANwAwAGIANQAxADIAOQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOAA2ADEANQAuADEANwAzADgANQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA2ADEANQAuADEANwAzADgANQAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOAA2ADEANQAuADEAOAAxADAAOAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA2ADEANQAuADEAOAAxADAAOAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -1489,55 +1623,62 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </ScriptProject>
       </DTS:ObjectData>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Truncate"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{74F81459-6912-4E59-A91E-173FCDDDF19A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{FCAE9FA0-15E9-492F-8B80-99738302D602}"
-          SQLTask:SqlStatementSource="truncate table publicaciones_internet;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{3B93E358-C7DE-48BE-AD4B-7B6E1E3C4ED8}"
+      DTS:DTSID="{2D744133-B3EC-402F-954E-3742C66D007A}"
       DTS:EvalOp="3"
       DTS:Expression="@Existe_int &gt; 0"
-      DTS:From="Package\Script Task"
+      DTS:From="Package\Validacion existencia de archivo"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\No Existe" />
+      DTS:To="Package\Sin archivo" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{9FB20A8C-A3BA-4313-B5A8-282945B5AFA9}"
-      DTS:From="Package\Existe"
+      DTS:DTSID="{4FB6E56B-8EF4-40C1-9E81-8B7AA2CE3494}"
+      DTS:From="Package\Procesamiento"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Cleansing" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{7AD841D7-689C-4D41-99E3-F8ABBF0C5B62}"
+      DTS:DTSID="{40024D98-FB19-436C-9BC1-97158CF6C3F2}"
       DTS:From="Package\Carpeta procesado"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
-      DTS:To="Package\Finalizo OK" />
+      DTS:To="Package\Finalizo Ok" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{C6E272DC-9339-4147-A623-3635F870A930}"
+      DTS:From="Package\Genera número de proceso"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Selecciono el número de proceso" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{356922FA-7E44-4D34-9AE1-9609EDB0BD5E}"
+      DTS:From="Package\Truncate STA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Comienza Ejecución" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9CFDDDB-FD34-4DAE-9EE0-62126C73F509}"
+      DTS:From="Package\Comienza Ejecución"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\Procesamiento" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{B3385B29-E000-4D1C-8839-46A4A4F59D03}"
+      DTS:DTSID="{1553B719-2BDE-4719-8B3E-EA2E36832CA9}"
       DTS:From="Package\Cleansing"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1545,7 +1686,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{8834C84C-2390-491F-8F2F-7080272EB279}"
+      DTS:DTSID="{0209B0E0-7288-45DB-BFF4-438CA4E9B047}"
       DTS:From="Package\Publicacione_hits_old"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -1553,56 +1694,56 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{0D03B6C1-4D4D-4B34-95D4-5488C783E3C8}"
+      DTS:DTSID="{0454059A-D3CF-45EC-8800-1BEDB4454289}"
       DTS:EvalOp="3"
       DTS:Expression="@Existe_int == 0"
-      DTS:From="Package\Script Task"
+      DTS:From="Package\Validacion existencia de archivo"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Existe" />
+      DTS:To="Package\Truncate STA" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{2EBDF442-BC57-4912-9988-FAAF9809FDDC}"
-      DTS:From="Package\Truncate"
+      DTS:DTSID="{E9C69FE9-2A3B-42FB-8F0E-8AC23519CA18}"
+      DTS:From="Package\Selecciono el número de proceso"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Script Task" />
+      DTS:To="Package\Validacion existencia de archivo" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{201B3D85-460B-467A-81A2-761F59C62C5A}"
+      DTS:DTSID="{E1A136E5-DEBF-48D2-981B-ACD43743D223}"
       DTS:From="Package\Cleansing"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Fallo cleansing"
+      DTS:To="Package\Finaliza en error 1"
       DTS:Value="1" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{B9F5C18A-368D-40CF-A0FF-1B3341BE77FE}"
+      DTS:DTSID="{40A5C128-88B2-402A-AEC4-314FAB01D088}"
       DTS:From="Package\Publicacione_hits_old"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
-      DTS:To="Package\Fallo SP"
+      DTS:To="Package\Finaliza en error 2"
       DTS:Value="1" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{AC592E54-C5F1-4A36-B210-F65CA2F13A70}"
+      DTS:DTSID="{DBA68CA3-77FB-4EB6-A8CA-36383E468AB8}"
       DTS:From="Package\Carpeta procesado"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Fallo Mover archivo"
+      DTS:To="Package\Finaliza en error 3"
       DTS:Value="1" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{203DAF80-6A2C-4EC2-9A5C-4F1D97AD6D76}"
-      DTS:From="Package\Existe"
+      DTS:DTSID="{AEAFA86A-1DF4-4CC8-BB68-58557B8A421B}"
+      DTS:From="Package\Procesamiento"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Fallo carga sta"
+      DTS:To="Package\Finaliza en error"
       DTS:Value="1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -1655,123 +1796,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="272,187.333333333334"
           Size="272,43.3333333333334"
           Id="Package\Carpeta procesado"
-          TopLeft="303.520826994353,608.792653108041" />
+          TopLeft="322.312497712273,749.84265058587" />
         <NodeLayout
           Size="125.333333333334,42.6666666666667"
           Id="Package\Cleansing"
-          TopLeft="370.199893012267,436.90058711576" />
-        <NodeLayout
-          Size="106.666666666667,42.6666666666667"
-          Id="Package\Existe"
-          TopLeft="377.791658871497,338.14523846219" />
+          TopLeft="397.116563609114,579.250584570343" />
         <NodeLayout
           Size="148,42.6666666666667"
-          Id="Package\Fallo carga sta"
-          TopLeft="575.168143618298,337.911707418561" />
-        <NodeLayout
-          Size="148,42.6666666666667"
-          Id="Package\Fallo cleansing"
-          TopLeft="614.476178746849,430.040471702375" />
-        <NodeLayout
-          Size="170.666666666667,42.6666666666667"
-          Id="Package\Fallo Mover archivo"
-          TopLeft="645.726178281187,607.873804853062" />
-        <NodeLayout
-          Size="116,42.6666666666667"
-          Id="Package\Fallo SP"
-          TopLeft="627.869035690137,521.969041487135" />
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Finalizo OK"
-          TopLeft="370.249992605299,689.783327736074" />
-        <NodeLayout
-          Size="124,42.6666666666667"
-          Id="Package\No Existe"
-          TopLeft="166.261899711476,341.219044882684" />
+          Id="Package\Procesamiento"
+          TopLeft="389.124996079132,486.345235812167" />
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Publicacione_hits_old"
-          TopLeft="355.018841353157,520.602773678123" />
+          TopLeft="373.810512071077,661.652771155952" />
         <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Script Task"
-          TopLeft="251.874997736886,243.816667003732" />
+          Size="228,42.6666666666667"
+          Id="Package\Validacion existencia de archivo"
+          TopLeft="345.166665586333,241.216667050223" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Truncate"
-          TopLeft="251.353169188791,166.298409843975" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="317.874997736886,286.483333670398">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-89.6130980254106,54.7357112122858"
-              Start="0,0"
-              End="-89.6130980254106,47.2357112122858">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.3678556061429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.3678556061429"
-                    Point2="0,27.3678556061429"
-                    Point3="-4,27.3678556061429" />
-                  <mssgle:LineSegment
-                    End="-85.6130980254106,27.3678556061429" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-85.6130980254106,27.3678556061429"
-                    Point2="-89.6130980254106,27.3678556061429"
-                    Point3="-89.6130980254106,31.3678556061429" />
-                  <mssgle:LineSegment
-                    End="-89.6130980254106,47.2357112122858" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-52.8065490127053,32.3678556061429,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Truncate STA"
+          TopLeft="390.269836358372,333.348406856888" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="431.995775941882,380.811905128857">
+          TopLeft="461.454113177456,529.011902478833">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.0886819869036"
+              EndConnector="0,50.2386820915098"
               Start="0,0"
-              End="0,48.5886819869036">
+              End="0,42.7386820915098">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5886819869036" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="437.885409799827,652.125986441374">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.6573412946997"
-              Start="0,0"
-              End="0,30.1573412946997">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.1573412946997" />
+                    End="0,42.7386820915098" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1782,18 +1841,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="434.942700516046,479.567253782427">
+          TopLeft="457.796871173429,621.91725123701">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.0355198956963"
+              EndConnector="0,39.7355199189423"
               Start="0,0"
-              End="0,33.5355198956963">
+              End="0,32.2355199189423">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5355198956963" />
+                    End="0,32.2355199189423" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1804,7 +1863,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="438.269834173756,563.26944034479">
+          TopLeft="457.061504891675,704.319437822619">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1824,56 +1883,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Genera número de proceso"
+          TopLeft="379.999994337557,70.3166739940776" />
+        <NodeLayout
+          Size="234.666666666667,42.6666666666667"
+          Id="Package\Selecciono el número de proceso"
+          TopLeft="339.553566368829,155.106360678341" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="338.541664403552,286.483333670398">
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="459.443447019859,112.316673994078">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="92.5833278012772,51.6619047917918"
+              EndConnector="0,42.7896866842635"
               Start="0,0"
-              End="92.5833278012772,44.1619047917918">
+              End="0,35.2896866842635">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.0359851846817" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.0359851846817"
-                    Point2="0,21.0359851846817"
-                    Point3="4,21.0359851846817" />
-                  <mssgle:LineSegment
-                    End="88.5833278012772,21.0359851846817" />
-                  <mssgle:CubicBezierSegment
-                    Point1="88.5833278012772,21.0359851846817"
-                    Point2="92.5833278012772,21.0359851846817"
-                    Point3="92.5833278012772,25.0359851846817" />
-                  <mssgle:LineSegment
-                    End="92.5833278012772,44.1619047917918" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="38.2916639006386,26.0359851846817,16,16"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="314.947416796172,208.965076510642">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.8515904930895"
-              Start="0,0"
-              End="0,27.3515904930895">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.3515904930895" />
+                    End="0,35.2896866842635" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1883,98 +1914,262 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="495.533226345601,454.803862742401">
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="458.026782644247,197.773027345008">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.942952401248,0"
+              EndConnector="0,43.4436397052152"
               Start="0,0"
-              End="111.442952401248,0">
+              End="0,35.9436397052152">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="111.442952401248,0" />
+                    End="0,35.9436397052152" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="40.480128544374,5,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="519.018841353158,542.619240915963">
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="460.384917639019,283.88333371689">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.850194336978,0"
+              EndConnector="0,49.4650731399979"
               Start="0,0"
-              End="101.350194336978,0">
+              End="0,41.9650731399979">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="101.350194336978,0" />
+                    End="0,41.9650731399979" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="35.433749512239,5,30.4826953125,9.7490234375"
+              BoundingBox="-8,12.982536569999,16,16"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Comienza Ejecución"
+          TopLeft="373.749996665865,408.183329741855" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="461.009916512119,376.015073523554">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.1682562183011"
+              Start="0,0"
+              End="0,24.6682562183011">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.6682562183011" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="575.520826994354,629.833228980552">
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="461.770829705832,450.849996408522">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="70.2053512868335,0"
+              EndConnector="0,35.4952394036447"
               Start="0,0"
-              End="62.7053512868335,0">
+              End="0,27.9952394036447">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="62.7053512868335,0" />
+                    End="0,27.9952394036447" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="16.1113279871668,5,30.4826953125,9.7490234375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Finaliza en error"
+          TopLeft="610.999994263053,489.749997501075" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="484.458325538164,359.361806273709">
+          TopLeft="537.124996079132,509.380949989954">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="90.7098180801344,0"
+              EndConnector="73.8749981839212,0"
               Start="0,0"
-              End="83.2098180801344,0">
+              End="66.3749981839212,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="83.2098180801344,0" />
+                    End="66.3749981839212,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="26.3635613838172,5,30.4826953125,9.7490234375"
+              BoundingBox="17.9461514357106,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Finaliza en error 1"
+          TopLeft="602.999993517995,581.74999936074" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="522.449896942447,601.833625298875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.5500965755474,0"
+              Start="0,0"
+              End="73.0500965755474,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.0500965755474,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="21.2837006315237,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Finaliza en error 2"
+          TopLeft="589.511896265582,664.675987289846" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="537.810512071077,684.497712556233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.7013841945048,0"
+              Start="0,0"
+              End="44.2013841945048,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.2013841945048,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.85934444100242,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\Finaliza en error 3"
+          TopLeft="665.136895585716,750.475985755623" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="594.312497712273,771.659318170746">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.8243978734431,0"
+              Start="0,0"
+              End="63.3243978734431,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.3243978734431,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="16.4208512804716,5,30.4826953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.333333333334,42.6666666666667"
+          Id="Package\Finalizo Ok"
+          TopLeft="387.636899273754,843.425984093547" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="455.808031826347,793.175983919203">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.2500001743435"
+              Start="0,0"
+              End="0,42.7500001743435">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7500001743435" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.333333333334,42.6666666666667"
+          Id="Package\Sin archivo"
+          TopLeft="143.928569283869,239.542663394312" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="345.166665586333,261.712998555601">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-69.9047629691309,0"
+              Start="0,0"
+              End="-62.4047629691309,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-62.4047629691309,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-39.2023814845655,5,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1982,20 +2177,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Existe">
+    design-time-name="Package\Procesamiento">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="172,42.6666666666667"
-          Id="Package\Existe\OLE DB Destination"
+          Id="Package\Procesamiento\OLE DB Destination"
           TopLeft="434.471153985853,143.523077341502" />
         <NodeLayout
           Size="139.333333333334,42.6666666666667"
-          Id="Package\Existe\Excel Source"
+          Id="Package\Procesamiento\Excel Source"
           TopLeft="226.45192301173,151.026923042054" />
         <EdgeLayout
-          Id="Package\Existe.Paths[Excel Source Output]"
+          Id="Package\Procesamiento.Paths[Excel Source Output]"
           TopLeft="365.785256345063,168.608333525111">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2020,7 +2215,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Existe\Excel Source">
+    design-time-name="Package\Procesamiento\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2033,7 +2228,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Existe\OLE DB Destination">
+    design-time-name="Package\Procesamiento\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
