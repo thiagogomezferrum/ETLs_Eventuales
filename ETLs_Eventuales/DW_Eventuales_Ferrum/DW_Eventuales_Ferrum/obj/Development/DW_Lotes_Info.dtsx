@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{88BFCE1C-D79D-493B-B8A5-E3FB22421878}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{7EFF907C-81E5-45A5-A8EE-D3B301994DA8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,28 +25,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\dw_lotes_info.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\fe-files01\DW_OnDemand\BI\dw_lotes_info.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{AA0BE648-59B1-4E23-ADE4-1FAA2B43D0E2}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="Exec SP_Actualizar_Estados_Procesos" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Tabla DW_Lotes_Info"
       DTS:CreationName="Microsoft.Pipeline"
@@ -234,11 +218,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]"
-                      dataType="wstr"
+                      dataType="nText"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fuente]"
-                      length="255"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]"
                       name="Fuente"
                       truncationRowDisposition="FailComponent" />
@@ -251,6 +234,15 @@
                       length="255"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Documentacion]"
                       name="Documentacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[step]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[step]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[step]"
+                      name="step"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -315,14 +307,17 @@
                       name="Proceso_dtsx" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fuente]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="nText"
                       name="Fuente" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Documentacion]"
                       dataType="wstr"
                       length="255"
                       name="Documentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[step]"
+                      dataType="r8"
+                      name="step" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -377,6 +372,11 @@
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Base]"
                       name="Base" />
                     <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[step]"
+                      dataType="r8"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[step]"
+                      name="step" />
+                    <outputColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Tablas]"
                       dataType="wstr"
                       length="255"
@@ -402,8 +402,7 @@
                       name="Proceso_dtsx" />
                     <outputColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Fuente]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="nText"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Fuente]"
                       name="Fuente" />
                     <outputColumn
@@ -558,8 +557,7 @@
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Proceso_dtsx]" />
                     <inputColumn
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fuente]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      cachedDataType="nText"
                       cachedName="Fuente"
                       externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fuente]"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]" />
@@ -597,6 +595,12 @@
                       cachedName="Ubicacion_dtsx"
                       externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ubicacion]"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Ubicacion_dtsx]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[step]"
+                      cachedDataType="r8"
+                      cachedName="step"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[step]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[step]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -660,14 +664,21 @@
                       name="proceso_dtsx" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fuente]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="nText"
                       name="fuente" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[documentacion]"
                       dataType="wstr"
                       length="255"
                       name="documentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_key]"
+                      dataType="dbTimeStamp"
+                      name="tiempo_key" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[step]"
+                      dataType="i4"
+                      name="step" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -734,14 +745,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Tabla DW_Lotes_Info" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{4D02BBB8-44E2-44F8-BDC0-111B1D59AE04}"
-      DTS:From="Package\Tabla DW_Lotes_Info"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute SQL Task" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -754,11 +757,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Execute SQL Task"
-          TopLeft="144.999997839332,272.99999511838" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="181.333333333334,42.6666666666667"
           Id="Package\Tabla DW_Lotes_Info"
@@ -781,28 +780,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,31.7666633657615" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="226.958331237857,238.966663156549">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34.0333319618303"
-              Start="0,0"
-              End="0,26.5333319618303">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5333319618303" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

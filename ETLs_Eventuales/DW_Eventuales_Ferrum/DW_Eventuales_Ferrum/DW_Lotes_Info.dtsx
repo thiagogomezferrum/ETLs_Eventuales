@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{A798CD47-CADC-40C1-AB19-E68A4C0B7800}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{7EFF907C-81E5-45A5-A8EE-D3B301994DA8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -218,11 +218,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]"
-                      dataType="wstr"
+                      dataType="nText"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fuente]"
-                      length="255"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]"
                       name="Fuente"
                       truncationRowDisposition="FailComponent" />
@@ -235,6 +234,15 @@
                       length="255"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Documentacion]"
                       name="Documentacion"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[step]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[step]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[step]"
+                      name="step"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -299,14 +307,17 @@
                       name="Proceso_dtsx" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Fuente]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="nText"
                       name="Fuente" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[Documentacion]"
                       dataType="wstr"
                       length="255"
                       name="Documentacion" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].ExternalColumns[step]"
+                      dataType="r8"
+                      name="step" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -361,6 +372,11 @@
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Base]"
                       name="Base" />
                     <outputColumn
+                      refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[step]"
+                      dataType="r8"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[step]"
+                      name="step" />
+                    <outputColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Tablas]"
                       dataType="wstr"
                       length="255"
@@ -386,8 +402,7 @@
                       name="Proceso_dtsx" />
                     <outputColumn
                       refId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Fuente]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="nText"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Error Output].Columns[Fuente]"
                       name="Fuente" />
                     <outputColumn
@@ -542,8 +557,7 @@
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Proceso_dtsx]" />
                     <inputColumn
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fuente]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
+                      cachedDataType="nText"
                       cachedName="Fuente"
                       externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fuente]"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Fuente]" />
@@ -581,6 +595,12 @@
                       cachedName="Ubicacion_dtsx"
                       externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ubicacion]"
                       lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[Ubicacion_dtsx]" />
+                    <inputColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[step]"
+                      cachedDataType="r8"
+                      cachedName="step"
+                      externalMetadataColumnId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[step]"
+                      lineageId="Package\Tabla DW_Lotes_Info\Excel Source.Outputs[Excel Source Output].Columns[step]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -644,8 +664,7 @@
                       name="proceso_dtsx" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fuente]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="nText"
                       name="fuente" />
                     <externalMetadataColumn
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[documentacion]"
@@ -656,6 +675,10 @@
                       refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tiempo_key]"
                       dataType="dbTimeStamp"
                       name="tiempo_key" />
+                    <externalMetadataColumn
+                      refId="Package\Tabla DW_Lotes_Info\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[step]"
+                      dataType="i4"
+                      name="step" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
