@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package3"
   DTS:PackageType="5"
-  DTS:VersionBuild="113"
-  DTS:VersionGUID="{8E2C827A-01E3-4D46-94C3-43DA290BE38C}">
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{9C9996D2-1B75-43E3-A108-C4ED27A31F91}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9599,7 +9599,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="7-Insert en Fact"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -9621,7 +9621,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 1, 'Comienza'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9645,7 +9645,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7, 'f_web_handel_proyects'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9669,7 +9669,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7,'f_web_handel_proyects_products'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9688,12 +9688,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 1 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7, 'f_web_catalog_product_flat_1'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9712,12 +9712,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 1 1 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7,'f_web_customer_entity'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9736,12 +9736,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 1 1 1 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 7,'f_web_handel_store_locations'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9760,12 +9760,12 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 2"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 5&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 5, 'Insert en Fact'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -9783,12 +9783,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Finalizo Ok"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 2" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="exec dbo.SP_Actualizar_Estados_Procesos ?, 2, 'Ok'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="Proceso"
@@ -10076,7 +10076,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="305.614580701571,343.963687130038">
+          TopLeft="305.614580701571,343.963687130039">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10102,21 +10102,21 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="75.0014835578123,0"
+              EndConnector="75.001483557812,0"
               Start="0,0"
-              End="67.5014835578123,0">
+              End="67.501483557812,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="67.5014835578123,0" />
+                    End="67.501483557812,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="18.5093941226562,5,30.4826953125,9.7490234375"
+              BoundingBox="18.509394122656,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10126,45 +10126,45 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="49.2673569199016,0"
+              EndConnector="49.2673569199011,0"
               Start="0,0"
-              End="41.7673569199016,0">
+              End="41.7673569199011,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="41.7673569199016,0" />
+                    End="41.7673569199011,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="5.6423308037008,5,30.4826953125,9.7490234375"
+              BoundingBox="5.64233080370055,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="383.788191797677,724.437103062478">
+          TopLeft="383.788191797678,724.437103062478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="51.8368017110041,0"
+              EndConnector="51.8368017110033,0"
               Start="0,0"
-              End="44.3368017110041,0">
+              End="44.3368017110033,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="44.3368017110041,0" />
+                    End="44.3368017110033,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.92705319925203,5,30.4826953125,9.7490234375"
+              BoundingBox="6.92705319925163,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10218,14 +10218,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.2500001743435"
+              EndConnector="0,50.2500001743443"
               Start="0,0"
-              End="0,42.7500001743435">
+              End="0,42.7500001743443">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.7500001743435" />
+                    End="0,42.7500001743443" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10236,18 +10236,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="306.787199729233,429.358925534113">
+          TopLeft="306.787199729234,429.358925534114">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.1857147473096"
+              EndConnector="0,34.1857147473094"
               Start="0,0"
-              End="0,26.6857147473096">
+              End="0,26.6857147473094">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6857147473096" />
+                    End="0,26.6857147473094" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10262,14 +10262,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.2642862638832"
+              EndConnector="0,29.2642862638833"
               Start="0,0"
-              End="0,21.7642862638832">
+              End="0,21.7642862638833">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.7642862638832" />
+                    End="0,21.7642862638833" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10284,14 +10284,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.4007876742215"
+              EndConnector="0,35.4007876742214"
               Start="0,0"
-              End="0,27.9007876742215">
+              End="0,27.9007876742214">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.9007876742215" />
+                    End="0,27.9007876742214" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10306,14 +10306,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.2357212522629"
+              EndConnector="0,47.2357212522624"
               Start="0,0"
-              End="0,39.7357212522629">
+              End="0,39.7357212522624">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.7357212522629" />
+                    End="0,39.7357212522624" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10370,7 +10370,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="430.343747344954,408.435517578861">
+          TopLeft="430.343747344955,408.435517578861">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10398,21 +10398,21 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="53.686007456476,0"
+              EndConnector="53.6860074564759,0"
               Start="0,0"
-              End="46.186007456476,0">
+              End="46.1860074564759,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="46.186007456476,0" />
+                    End="46.1860074564759,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.85165607198802,5,30.4826953125,9.7490234375"
+              BoundingBox="7.85165607198796,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

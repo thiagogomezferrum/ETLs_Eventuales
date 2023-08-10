@@ -10,7 +10,7 @@
       DTS:ConnectionString="Data Source=SQLServer-ferrumdba;User ID=pbi_ferrum;Initial Catalog=DWFE;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-DW_Eventuales_Ferrum-{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}SQLServer-ferrumdba.DWFE.pbi_ferrum;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAADW9beYAYcaLmlJ5ytxe5XxkMBCkA50jo0vg69GZ+wHGQAAAAAOgAAAAAIAACAAAACQbFCC4xYlpyLKS9l8D7bxm2RS663b0XJWK+e5isIYZYAAAAAPr56f6nlIVT6ZKJAjFhs6134QQzimwjoouHzjPRUaZITUJeu23GDY9AbKuyDNZ0Zwsowcsyp0IX0w0IQcDzIorleZBT68KhOZVQhvrn5PddzTR9aVAgtNhX/o48Mj4lI23Sl9VvCLwHzwc9WITysizIMuMI7LMtRGXxr5L0GP+EAAAACUnbCcnShoZLGJ5lYETwKYvGs+TlWK/lxzNfmBQENUP/NvzcviwJNp94egoFD0NX2IQdLC6dVZd4cZWvbYK3oW</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAAzBfjnAJxh5Swk3lCVmilukiPH2Slx5kTYTyP7YpcAGQAAAAAOgAAAAAIAACAAAADVlr7dnG3PC2/lpvPPuRDAFea9m5YCgFmR1Bq6LfIO/YAAAADxIUXLgkzEwB0emVID4rJ9UWFmqFt6Rssyft+HkrWh14Wvz/BHo4Q/uxx1R2qzehsXIqaWfDf1DH46Loqif4ebED5KqYH2/2IDpdcD+ai3QBbE23e542uc4WqrM8kNnc7YPQlcTjjjuTtskqElEZL7WFXUJkIA9LeTJtvckUVQZUAAAADvl2NryYe5oFoKeNPODZ6+YrQE8PHEgtT+l6l0yHtYmvQKB7eE0PdrocDy8h+mePlLgEpQKt1gI9mzD9rgq8dP</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

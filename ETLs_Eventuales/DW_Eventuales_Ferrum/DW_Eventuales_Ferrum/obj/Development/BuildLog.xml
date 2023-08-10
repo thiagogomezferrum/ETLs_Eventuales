@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-08-04T15:14:55.8166582Z</LastWriteTime>
+    <LastWriteTime>2023-08-09T17:46:57.1260824Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,22 +18,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Lotes_Info.dtsx</Name>
-      <LastWriteTime>2023-08-07T14:38:08.2090367Z</LastWriteTime>
+      <LastWriteTime>2023-08-09T17:01:20.9806582Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_OD_Importaciones.dtsx</Name>
-      <LastWriteTime>2023-08-04T15:06:14.7268786Z</LastWriteTime>
+      <LastWriteTime>2023-08-09T17:46:57.0342803Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_OD_Publicaciones_ML 1.dtsx</Name>
-      <LastWriteTime>2023-08-09T14:13:09.4351057Z</LastWriteTime>
+      <LastWriteTime>2023-08-10T14:21:40.148686Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Ferrum_Web 1.dtsx</Name>
-      <LastWriteTime>2023-08-09T13:11:30.6007786Z</LastWriteTime>
+      <LastWriteTime>2023-08-10T14:22:53.2232011Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
