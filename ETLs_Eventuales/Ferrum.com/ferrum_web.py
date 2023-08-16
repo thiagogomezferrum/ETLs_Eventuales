@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 ssh_host = '44.205.103.70'
 ssh_port = 22
 ssh_user = 'ferrumcom_ro'
-private_key_path = "C:/Users/thiag/F.V.S.A/Equipo BI - General/Proyectos Visual Studio/ETLs_Eventuales/ETLs_Eventuales/Ferrum.com/ferrumcom.key"
+private_key_path = "//fe-files01/DW_OnDemand/Ferrum.com/Key/ferrumcom.key"
 
 # Datos de conexión a la base de datos MySQL
 mysql_host = '127.0.0.1'
