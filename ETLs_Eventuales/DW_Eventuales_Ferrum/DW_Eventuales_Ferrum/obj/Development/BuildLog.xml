@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-08-11T14:23:35.0409974Z</LastWriteTime>
+    <LastWriteTime>2023-08-29T17:54:33.1114556Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Lotes_Info.dtsx</Name>
-      <LastWriteTime>2023-08-14T14:57:23.3586863Z</LastWriteTime>
+      <LastWriteTime>2023-08-23T17:39:24.0671804Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -27,13 +27,18 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>DW_OD_Publicaciones_ML 1.dtsx</Name>
-      <LastWriteTime>2023-08-15T18:23:08.9776372Z</LastWriteTime>
+      <Name>DW_B2B_Cencosud_Ventas.dtsx</Name>
+      <LastWriteTime>2023-08-29T18:11:54.5115903Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>DW_Ferrum_Web 1.dtsx</Name>
-      <LastWriteTime>2023-08-15T18:24:05.3230655Z</LastWriteTime>
+      <Name>DW_OD_Publicaciones_ML.dtsx</Name>
+      <LastWriteTime>2023-08-29T17:42:29.7316764Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_Ferrum_Web.dtsx</Name>
+      <LastWriteTime>2023-08-17T18:37:12.5590063Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
