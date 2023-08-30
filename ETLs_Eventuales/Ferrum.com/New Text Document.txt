@@ -1,0 +1,1 @@
+"C:\Users\etl\AppData\Local\Microsoft\WindowsApps\python.exe" "C:\Users\etl\Documents\ETLs_Eventuales\ETLs_Eventuales\Ferrum.com\ferrum_web.py" > error_log.txt 2>&1
