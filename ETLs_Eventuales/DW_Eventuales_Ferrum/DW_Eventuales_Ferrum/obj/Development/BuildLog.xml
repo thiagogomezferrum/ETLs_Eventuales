@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-08-29T17:54:33.1114556Z</LastWriteTime>
+    <LastWriteTime>2023-09-06T16:41:52.9189528Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>DW_Clasificación_Roturas.dtsx</Name>
-      <LastWriteTime>2023-08-04T15:06:14.7179092Z</LastWriteTime>
+      <LastWriteTime>2023-09-05T17:50:02.8839529Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,7 +28,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_B2B_Cencosud_Ventas.dtsx</Name>
-      <LastWriteTime>2023-08-29T18:11:54.5115903Z</LastWriteTime>
+      <LastWriteTime>2023-09-06T14:51:53.6500786Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -39,6 +39,36 @@
     <ProjectBuildItemInfo>
       <Name>DW_Ferrum_Web.dtsx</Name>
       <LastWriteTime>2023-08-17T18:37:12.5590063Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_B2B_Cencosud_Sucursales.dtsx</Name>
+      <LastWriteTime>2023-08-31T18:58:52.292093Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Costo Reposición v1.dtsx</Name>
+      <LastWriteTime>2023-09-05T17:18:19.4995413Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Costo Reposición v2.dtsx</Name>
+      <LastWriteTime>2023-09-05T17:18:30.6266849Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Costo Gestión MEP.dtsx</Name>
+      <LastWriteTime>2023-09-05T17:39:57.3368381Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_Finanzas_Stock.dtsx</Name>
+      <LastWriteTime>2023-09-06T16:41:52.8734712Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_Finanzas_Costo_Prom.dtsx</Name>
+      <LastWriteTime>2023-09-06T16:46:29.8186668Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

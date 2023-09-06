@@ -1,31 +1,31 @@
 <?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="6/13/2023 9:36:39 AM"
+  DTS:CreationDate="8/27/2020 9:59:51 AM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="MYSPOT05"
-  DTS:CreatorName="MYSPOT05\Thiago"
-  DTS:DTSID="{0900026E-877E-44C0-B2E3-3DA6C1D4EFAA}"
+  DTS:CreatorComputerName="NTBK-PCCONNON"
+  DTS:CreatorName="NTFERRUM\pconnon"
+  DTS:DTSID="{80EE0585-417D-410E-B594-964B58E541FE}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5270.0"
   DTS:LocaleID="11274"
-  DTS:ObjectName="Package2"
+  DTS:ObjectName="Stocks"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{71C81B56-4449-440B-A5AA-7C2DA563CF0C}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{859D857D-D932-48F2-9D47-761137E81209}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{9560C76C-4464-40B4-8ECC-5DA65560B174}"
+      DTS:DTSID="{7663DD08-AB8E-4B42-9E02-A48A74B8D2AA}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\thiag\OneDrive - F.V.S.A\Ferrum\Mantis\Ferrum\0024850 - Roturas\eClasificación Rotura (2023-01-16).xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=\\fe-files01\DW_OnDemand\Finanzas\Stock.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -35,11 +35,10 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{04470EA1-19D8-4400-BBBA-B0A2B0E628D1}"
+      DTS:DTSID="{F2D7FE1F-C4E1-432D-BEB6-66317B7704E7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="Data Flow Task">
       <DTS:Variables />
       <DTS:ObjectData>
         <pipeline
@@ -61,7 +60,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Materiales$</property>
+                  name="OpenRowset">'Stocks IFRS$'</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -99,83 +98,94 @@
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material                                ]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Centro]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material                                ]"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Centro]"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material                                ]"
-                      name="Material                                "
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Centro]"
+                      name="Centro"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material_Descripción]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material_Descripción]"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material]"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material_Descripción]"
-                      name="Material_Descripción"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material]"
+                      name="Material"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material Categoría]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Stock de cierre]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material Categoría]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material Categoría]"
-                      name="Material Categoría"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Stock de cierre]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Stock de cierre]"
+                      name="Stock de cierre"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material SubCategoría]"
-                      dataType="wstr"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Importe Stock]"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material SubCategoría]"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material SubCategoría]"
-                      name="Material SubCategoría"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Importe Stock]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Importe Stock]"
+                      name="Importe Stock"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material Tipo]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Periodo]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material Tipo]"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Periodo]"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material Tipo]"
-                      name="Material Tipo"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Periodo]"
+                      name="Periodo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      name="F6"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material                                ]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Centro]"
                       dataType="wstr"
                       length="255"
-                      name="Material                                " />
+                      name="Centro" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material_Descripción]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material]"
                       dataType="wstr"
                       length="255"
-                      name="Material_Descripción" />
+                      name="Material" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material Categoría]"
-                      dataType="wstr"
-                      length="255"
-                      name="Material Categoría" />
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Stock de cierre]"
+                      dataType="r8"
+                      name="Stock de cierre" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material SubCategoría]"
-                      dataType="wstr"
-                      length="255"
-                      name="Material SubCategoría" />
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Importe Stock]"
+                      dataType="r8"
+                      name="Importe Stock" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Material Tipo]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Periodo]"
                       dataType="wstr"
                       length="255"
-                      name="Material Tipo" />
+                      name="Periodo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
+                      dataType="wstr"
+                      length="255"
+                      name="F6" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -184,35 +194,39 @@
                   name="Excel Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material                                ]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Centro]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material                                ]"
-                      name="Material                                " />
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Centro]"
+                      name="Centro" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material_Descripción]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material_Descripción]"
-                      name="Material_Descripción" />
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material]"
+                      name="Material" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material Categoría]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material Categoría]"
-                      name="Material Categoría" />
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Stock de cierre]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Stock de cierre]"
+                      name="Stock de cierre" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material SubCategoría]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material SubCategoría]"
-                      name="Material SubCategoría" />
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Importe Stock]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Importe Stock]"
+                      name="Importe Stock" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material Tipo]"
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Periodo]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Material Tipo]"
-                      name="Material Tipo" />
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Periodo]"
+                      name="Periodo" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[F6]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[F6]"
+                      name="F6" />
                     <outputColumn
                       refId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -246,7 +260,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[clasificacion_roturas]</property>
+                  name="OpenRowset">[dbo].[stock_mensual]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -303,68 +317,70 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Material                                ]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Centro]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Material                                "
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material                                ]" />
+                      cachedName="Centro"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CENTRO]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Centro]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Material_Descripción]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Periodo]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Material_Descripción"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_descripcion]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material_Descripción]" />
+                      cachedName="Periodo"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PERIODO]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Periodo]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Material Categoría]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Material]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Material Categoría"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_categoria]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material Categoría]" />
+                      cachedName="Material"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MATERIAL]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Material SubCategoría]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Material SubCategoría"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_subcategoria]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material SubCategoría]" />
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Importe Stock]"
+                      cachedDataType="r8"
+                      cachedName="Importe Stock"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IMPORTE]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Importe Stock]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Material Tipo]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Material Tipo"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_tipo]"
-                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Material Tipo]" />
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Stock de cierre]"
+                      cachedDataType="r8"
+                      cachedName="Stock de cierre"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD]"
+                      lineageId="Package\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Stock de cierre]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CENTRO]"
+                      dataType="wstr"
+                      length="10"
+                      name="CENTRO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MATERIAL]"
                       dataType="wstr"
                       length="50"
-                      name="material" />
+                      name="MATERIAL" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_descripcion]"
-                      dataType="wstr"
-                      length="100"
-                      name="material_descripcion" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_categoria]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CANTIDAD]"
                       dataType="wstr"
                       length="50"
-                      name="material_categoria" />
+                      name="CANTIDAD" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_subcategoria]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[IMPORTE]"
                       dataType="wstr"
                       length="50"
-                      name="material_subcategoria" />
+                      name="IMPORTE" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[material_tipo]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      dataType="dbTimeStamp"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PERIODO]"
                       dataType="wstr"
                       length="50"
-                      name="material_tipo" />
+                      name="PERIODO" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -405,20 +421,35 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncate"
+      DTS:refId="Package\insert DWFE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Limpieza de la BD"
-      DTS:DTSID="{6671A37C-7957-41AE-AB2B-81C47B488BB2}"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3DB631C7-A54E-4CDB-9B97-61BDD682D007}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ObjectName="insert DWFE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="exec DW_STOCK_MENSUAL&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D49E620B-BDCA-4861-8B08-E68406E8998D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{FCAE9FA0-15E9-492F-8B80-99738302D602}"
-          SQLTask:SqlStatementSource="truncate table clasificacion_roturas;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table stock_mensual" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -426,11 +457,19 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{4E4C01D9-777A-45E4-ABD0-8D997AEB355C}"
-      DTS:From="Package\Truncate"
+      DTS:DTSID="{32AA36A0-ACAF-4C63-8098-B85F28DD6B94}"
+      DTS:From="Package\truncate"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{DF603FB6-35BA-4500-88BA-19A7746CD123}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\insert DWFE" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -443,41 +482,55 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="154.666666666667,42"
           Id="Package\Data Flow Task"
-          TopLeft="288.124995706604,131.299997652173" />
+          TopLeft="119.00000204891,138.699999209642" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Truncate"
-          TopLeft="88.749998677522,140.399997489452" />
+          Size="141.333333333334,42"
+          Id="Package\insert DWFE"
+          TopLeft="127.62500632368,237.64999836117" />
+        <NodeLayout
+          Size="118.666666666667,42"
+          Id="Package\truncate"
+          TopLeft="130.124998984858,32.7999998605251" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="210.083332010855,161.733330822786">
+          TopLeft="192.895833850217,74.7999998605251">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.0416636957483,-9.09999983727931"
+              EndConnector="0,63.8999993491173"
               Start="0,0"
-              End="70.5416636957483,-9.09999983727931">
+              End="0,56.3999993491173">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.0208318478741,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.0208318478741,0"
-                    Point2="39.0208318478741,0"
-                    Point3="39.0208318478741,-4" />
+                    End="0,56.3999993491173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="197.312504186295,180.699999209642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.9499991515279"
+              Start="0,0"
+              End="0,49.4499991515279">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="39.0208318478741,-5.09999983727931" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39.0208318478741,-5.09999983727931"
-                    Point2="39.0208318478741,-9.09999983727931"
-                    Point3="43.0208318478741,-9.09999983727931" />
-                  <mssgle:LineSegment
-                    End="70.5416636957483,-9.09999983727931" />
+                    End="0,49.4499991515279" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -495,27 +548,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="172,42.6666666666667"
+          Size="177.333333333334,42"
           Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="301.874995501712,118.299997884631" />
+          TopLeft="320.625003641471,96.1000014644861" />
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
+          Size="144,42"
           Id="Package\Data Flow Task\Excel Source"
-          TopLeft="74.3749988917262,124.149997780025" />
+          TopLeft="88,93" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="213.70833222506,142.558331165661">
+          TopLeft="232,115.550000732243">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88.1666632766525,0"
+              EndConnector="88.6250036414712,0"
               Start="0,0"
-              End="80.6666632766525,0">
+              End="81.1250036414712,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="80.6666632766525,0" />
+                    End="81.1250036414712,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
