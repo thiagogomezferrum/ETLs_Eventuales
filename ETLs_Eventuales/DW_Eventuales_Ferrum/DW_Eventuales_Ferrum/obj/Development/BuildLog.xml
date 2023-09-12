@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-09-07T12:37:59.783248Z</LastWriteTime>
+    <LastWriteTime>2023-09-12T12:06:18.75886Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -52,28 +52,33 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Costo Reposición v2.dtsx</Name>
-      <LastWriteTime>2023-09-05T17:18:30.6266849Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>Costo Gestión MEP.dtsx</Name>
-      <LastWriteTime>2023-09-05T17:39:57.3368381Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>DW_Finanzas_Stock.dtsx</Name>
-      <LastWriteTime>2023-09-07T13:46:15.4913302Z</LastWriteTime>
+      <LastWriteTime>2023-09-12T12:06:16.1194115Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Finanzas_Costo_Prom.dtsx</Name>
-      <LastWriteTime>2023-09-07T14:03:51.1762962Z</LastWriteTime>
+      <LastWriteTime>2023-09-07T14:45:39.1429205Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Package1.dtsx</Name>
       <LastWriteTime>2023-09-07T14:03:51.1658593Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_Finanzas_Costo_Repo.dtsx</Name>
+      <LastWriteTime>2023-09-11T17:06:31.804265Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_Finanazas_Costo_Gestion_MEP.dtsx</Name>
+      <LastWriteTime>2023-09-11T16:50:14.6478612Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>DW_OD_Importaciones v1.dtsx</Name>
+      <LastWriteTime>2023-09-08T12:26:34.3045469Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

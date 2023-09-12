@@ -7,10 +7,10 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=SQLServer-ferrumdba;User ID=pbi_ferrum;Initial Catalog=DWFE;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-DW_Eventuales_Ferrum-{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}SQLServer-ferrumdba.DWFE.pbi_ferrum;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=SQLServer-ferrumdba;User ID=pbi_ferrum;Initial Catalog=DWFE;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_Eventuales_Ferrum-{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}SQLServer-ferrumdba.DWFE.pbi_ferrum;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAIqXjDgVII0KJV7pusLWjVQAAAAACAAAAAAAQZgAAAAEAACAAAAC0hZvo3RLa+AQO9ifSbNK7rS761dnRkHoG7xPrZXsZiQAAAAAOgAAAAAIAACAAAAC7zJ0S9kpD3doD4tMsqsFY6Di03tD90ph214ifcmo7oYAAAABDxK99TMRSepqQvvDFXeu60ida6KteqiAJHXQzzIKRqcXO6jBc5QSJ7HXr7ouQKx8zOlQ/bOWv8cpf3ccEUAOY9SEo6gsQ3LniN3oyoVJckeYclVIgBWFbjiH0/1X7GrqWxaVyF/P7gCo0OatJqoMS1XuPfvnBKQ8HedvgAiSapUAAAAD6gZwUQWJ/2TpEdfjb4Mqp1eXRrScH38Ve1v+kiXNo3+zC6PlozM/UobYNFj4CEcxWCnsT/NKegciuEm8NGTVz</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA6+EU2M6IZ0C8UtZNO1qnygAAAAACAAAAAAAQZgAAAAEAACAAAAAoggjv3hIWnR9aifrUFV9kCY0cYh20/TDSWGzDUxEJZQAAAAAOgAAAAAIAACAAAACvE2Ed61QgztVi3LAs0ruAQIWfOYIHVBn4ohP5pLmcu4AAAACsRpdJJwTWuMTfDGAv9MAFHtWrdpI1ePwNg4mi/OJA+EVJiUJX+1Qax+2gkjqR2j4k3L/+67S72E212n6Mv5Yqm3LjvM8SIhQr0YRhdDEAwzMXN/OV8MaKvqKkBSW4lHDPQ3eeQiwD0//jcH0ds+HPK4Bs20ERrsXlqaO1uFEHukAAAAAJevIL5UqhOrZiGU/4BumLL8OYBGDiu1u2FOZCooYtOuRyJkZZaLX/i3ybKoEV3QiwTzgexf6TOifIdIrsfwr4</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
