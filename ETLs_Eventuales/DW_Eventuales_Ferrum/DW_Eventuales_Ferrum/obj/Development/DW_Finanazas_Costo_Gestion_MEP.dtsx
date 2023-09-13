@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="DW_Finanazas_Costo_Gestion_MEP"
   DTS:PackageType="5"
-  DTS:VersionBuild="117"
-  DTS:VersionGUID="{D37A89E5-25F7-4199-95DB-A31FDC491E2A}">
+  DTS:VersionBuild="119"
+  DTS:VersionGUID="{63554792-EF06-4F87-8774-B8140ACDACF3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -99,7 +99,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="copiar a DWFE"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -111,7 +111,6 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{5D911832-D941-4BE4-9849-B448BAFAA19C}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -495,7 +494,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -519,7 +518,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -543,7 +542,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 3"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -562,12 +561,11 @@
       DTS:refId="Package\Finalizo Ok"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{a65b4a1c-8b9e-430a-a4e2-630077f952e9}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Finalizo Ok"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -583,17 +581,33 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Foreach Loop Container"
+      DTS:refId="Package\Genera número de proceso"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{b40fd568-6de5-421e-8014-091cf0e51660}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Genera número de proceso"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
+          SQLTask:SqlStatementSource="declare @nMaxCodProceso int&#xA;SELECT @nMaxCodProceso = MAX(proceso_key) &#xA;FROM DW_Procesos_Info&#xA;IF @nMaxCodProceso is null&#xA;SET @nMaxCodProceso = 0&#xA;DBCC CHECKIDENT ('DW_Procesos_Info', RESEED, @nMaxCodProceso)&#xA; &#xA;Insert Into DW_Procesos_Info (lote_key, &#xA; inicio_ejecucion, &#xA; fin_ejecucion, &#xA; Estado_Key)&#xA;SELECT 10007,getdate() inicio_ejecucion, getdate() fin_ejecucion, &#xA; 0 Estado_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\move and rename"
       DTS:CreationName="STOCK:FOREACHLOOP"
-      DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{74D2944E-D47A-4F39-9A05-C639849F91FA}"
+      DTS:Description="Mueve a la carpeta procesado, renombrando el archivo con el periodo correspondiente"
+      DTS:DTSID="{69e8bfe2-4a95-428b-a1cd-79a5d699a1e9}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Foreach Loop Container">
+      DTS:ObjectName="move and rename">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
-        DTS:DTSID="{908211CC-230A-4422-B0D9-72D85D3D6505}"
-        DTS:ObjectName="{908211CC-230A-4422-B0D9-72D85D3D6505}">
+        DTS:DTSID="{e42acb5b-9d52-46a7-997b-5a318b1523c8}"
+        DTS:ObjectName="{9CD5958B-0D96-4F9C-BAE2-F6685B2C363E}">
         <DTS:ObjectData>
           <ForEachFileEnumeratorProperties>
             <FEFEProperty
@@ -610,14 +624,15 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\File System Task"
+          DTS:refId="Package\move and rename\move"
           DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
           DTS:Description="File System Task"
-          DTS:DTSID="{ED1E31DE-FC55-4C4E-9DD6-33FE67278748}"
+          DTS:DTSID="{d5d05b47-e3b9-4542-bc11-21a344c82030}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="File System Task"
-          DTS:ThreadHint="2">
+          DTS:ObjectName="move"
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -629,14 +644,15 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Foreach Loop Container\rename"
+          DTS:refId="Package\move and rename\rename"
           DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
           DTS:Description="File System Task"
-          DTS:DTSID="{7CD020EB-8D4F-4504-AB50-2B0AC9B973E1}"
+          DTS:DTSID="{3f184806-6b70-447d-9bdc-5f9b4d270b34}"
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="rename"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -650,45 +666,27 @@
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\move and rename.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{7F095C4F-2E90-4674-B66B-1BD5F203361E}"
-          DTS:From="Package\Foreach Loop Container\rename"
+          DTS:DTSID="{49e8e748-ac09-470c-b33c-77516d670b08}"
+          DTS:From="Package\move and rename\rename"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Foreach Loop Container\File System Task" />
+          DTS:To="Package\move and rename\move" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{E0B73636-1EDE-4F4D-8A82-801EB6AFA48F}"
-          DTS:ObjectName="{E0B73636-1EDE-4F4D-8A82-801EB6AFA48F}"
+          DTS:DTSID="{ddaa45ae-ca2c-44fe-9b1a-d0e339ae7787}"
+          DTS:ObjectName="{663DDDE9-7819-4A7C-A1A3-3771B27E6BBD}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::var" />
       </DTS:ForEachVariableMappings>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Genera número de proceso"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{b40fd568-6de5-421e-8014-091cf0e51660}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Genera número de proceso"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}"
-          SQLTask:SqlStatementSource="declare @nMaxCodProceso int&#xA;SELECT @nMaxCodProceso = MAX(proceso_key) &#xA;FROM DW_Procesos_Info&#xA;IF @nMaxCodProceso is null&#xA;SET @nMaxCodProceso = 0&#xA;DBCC CHECKIDENT ('DW_Procesos_Info', RESEED, @nMaxCodProceso)&#xA; &#xA;Insert Into DW_Procesos_Info (lote_key, &#xA; inicio_ejecucion, &#xA; fin_ejecucion, &#xA; Estado_Key)&#xA;SELECT 10007,getdate() inicio_ejecucion, getdate() fin_ejecucion, &#xA; 0 Estado_Key" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Selecciono el número de proceso"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{30d6931a-0373-440c-8b4a-b34c79616602}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -710,13 +708,12 @@
       DTS:refId="Package\Sin archivo"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{3c79e8f7-8172-4d5e-87d0-ea90d05870c7}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sin archivo"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -735,7 +732,6 @@
       DTS:refId="Package\truncate STA"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8CF7BAB8-A38B-491A-9915-0DAA99F44F0C}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -752,7 +748,6 @@
       DTS:refId="Package\Validacion existencia de archivo"
       DTS:CreationName="Microsoft.ScriptTask"
       DTS:Description="Script Task"
-      DTS:Disabled="True"
       DTS:DTSID="{9e613811-9ea2-4e1d-976c-69327af9edcf}"
       DTS:ExecutableType="Microsoft.ScriptTask"
       DTS:LocaleID="-1"
@@ -890,14 +885,35 @@
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1076,35 +1092,14 @@ namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1315,11 +1310,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
       DTS:CreationName=""
-      DTS:DTSID="{E009AB41-EEAE-47D7-B374-44E46CE4D802}"
-      DTS:From="Package\Foreach Loop Container"
+      DTS:DTSID="{6DD87D12-8594-4B52-95EF-5535155CE138}"
+      DTS:From="Package\copiar a DWFE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 10"
-      DTS:To="Package\Finalizo Ok" />
+      DTS:To="Package\move and rename" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -1377,8 +1372,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
       DTS:CreationName=""
-      DTS:DTSID="{903A859F-0E6B-40E7-93CA-414633AD05B6}"
-      DTS:From="Package\Foreach Loop Container"
+      DTS:DTSID="{81D67386-14BC-40CA-9023-F2E94B891F15}"
+      DTS:From="Package\move and rename"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 8"
       DTS:To="Package\Finaliza en error 3"
@@ -1386,11 +1381,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
       DTS:CreationName=""
-      DTS:DTSID="{BF9FECEA-4609-4AF3-912B-77643B950AF1}"
-      DTS:From="Package\copiar a DWFE"
+      DTS:DTSID="{42EC979D-3062-4D0D-B292-AE9251B74BB0}"
+      DTS:From="Package\move and rename"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Foreach Loop Container" />
+      DTS:To="Package\Finalizo Ok" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1427,44 +1422,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="131.333333333334,43.3333333333334"
           Id="Package\Finalizo Ok"
-          TopLeft="245.083330446233,788.166660274069" />
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\Foreach Loop Container\rename"
-          TopLeft="71.041662429149,26.1833306716878" />
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\Foreach Loop Container\File System Task"
-          TopLeft="42.0416633977245,128.033328707417" />
-        <EdgeLayout
-          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="124.87499624677,68.8499973383545">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.1833313690623"
-              Start="0,0"
-              End="0,51.6833313690623">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.6833313690623" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="285.333333333334,225.333333333334"
-          Size="285.333333333334,268.666666666667"
-          Id="Package\Foreach Loop Container"
-          TopLeft="155.624998128042,576.799998233318" />
+          TopLeft="226.33333072563,725.116661401491" />
         <NodeLayout
           Size="159.333333333334,42"
           Id="Package\Genera número de proceso"
@@ -1521,40 +1479,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,50.4999982565641" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="298.291664794709,845.466664899985">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.4583323181911,-57.3000046259158"
-              Start="0,0"
-              End="12.4583323181911,-49.8000046259158">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-24.6500023129579" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-24.6500023129579"
-                    Point2="0,-28.6500023129579"
-                    Point3="4,-28.6500023129579" />
-                  <mssgle:LineSegment
-                    End="8.45833231819114,-28.6500023129579" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.45833231819114,-28.6500023129579"
-                    Point2="12.4583323181911,-28.6500023129579"
-                    Point3="12.4583323181911,-32.6500023129579" />
-                  <mssgle:LineSegment
-                    End="12.4583323181911,-49.8000046259158" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1703,68 +1627,115 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="105.333333333334,42.6666666666667"
+          Id="Package\move and rename\move"
+          TopLeft="72.5833301854633,118.299996024967" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\move and rename\rename"
+          TopLeft="73.2083310702197,34.6499985936283" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="440.958331461375,711.133331566652">
+          Id="Package\move and rename.PrecedenceConstraints[Constraint]"
+          TopLeft="127.895830627842,77.316665260295">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31.4583285929018,-89.9333339842162"
+              EndConnector="0,40.9833307646719"
               Start="0,0"
-              End="23.9583285929018,-89.9333339842162">
+              End="0,33.4833307646719">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="11.7291642964509,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="11.7291642964509,0"
-                    Point2="15.7291642964509,0"
-                    Point3="15.7291642964509,-4" />
+                    End="0,33.4833307646719" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="257.333333333334,216"
+          Size="257.333333333334,42.6666666666667"
+          Id="Package\move and rename"
+          TopLeft="169.374997476116,602.533331380685" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="426.708330809449,622.533331148227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.7083292448278,0"
+              Start="0,0"
+              End="38.2083292448278,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="15.7291642964509,-85.9333339842162" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.7291642964509,-85.9333339842162"
-                    Point2="15.7291642964509,-89.9333339842162"
-                    Point3="19.7291642964509,-89.9333339842162" />
-                  <mssgle:LineSegment
-                    End="23.9583285929018,-89.9333339842162" />
+                    End="38.2083292448278,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0.487816640200876,1,30.4826953125,9.7490234375"
+              BoundingBox="3.86281696616389,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="315.632580735073,552.333327521881">
+          TopLeft="295.02083076754,645.199998047352">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17.3409159403641,24.4666707114375"
+              EndConnector="0,79.916663354139"
               Start="0,0"
-              End="-17.3409159403641,16.9666707114375">
+              End="0,72.416663354139">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.23333535571874" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.23333535571874"
-                    Point2="0,12.2333353557187"
-                    Point3="-4,12.2333353557187" />
+                    End="0,72.416663354139" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="315.632580735073,552.333327521881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5909165922901,50.2000038588044"
+              Start="0,0"
+              End="-17.5909165922901,42.7000038588044">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-13.3409159403641,12.2333353557187" />
+                    End="0,21.1000019294022" />
                   <mssgle:CubicBezierSegment
-                    Point1="-13.3409159403641,12.2333353557187"
-                    Point2="-17.3409159403641,12.2333353557187"
-                    Point3="-17.3409159403641,16.2333353557187" />
+                    Point1="0,21.1000019294022"
+                    Point2="0,25.1000019294022"
+                    Point3="-4,25.1000019294022" />
                   <mssgle:LineSegment
-                    End="-17.3409159403641,16.9666707114375" />
+                    End="-13.5909165922901,25.1000019294022" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5909165922901,25.1000019294022"
+                    Point2="-17.5909165922901,25.1000019294022"
+                    Point3="-17.5909165922901,29.1000019294022" />
+                  <mssgle:LineSegment
+                    End="-17.5909165922901,42.7000038588044" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
