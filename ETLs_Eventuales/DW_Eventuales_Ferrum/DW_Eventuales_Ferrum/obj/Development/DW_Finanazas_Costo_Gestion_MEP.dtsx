@@ -7,12 +7,12 @@
   DTS:CreatorName="NTFERRUM\pconnon"
   DTS:DTSID="{37E41D26-41FF-472A-8DA6-055883ECD0D2}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
   DTS:LocaleID="11274"
   DTS:ObjectName="DW_Finanazas_Costo_Gestion_MEP"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{63554792-EF06-4F87-8774-B8140ACDACF3}">
+  DTS:VersionBuild="122"
+  DTS:VersionGUID="{89C7924C-77CA-4BF1-B914-3ABF645DC64B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -94,7 +94,6 @@
       DTS:refId="Package\copiar a DWFE"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{7163F749-D979-4579-BE8D-22106BE38ADF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -110,6 +109,7 @@
     <DTS:Executable
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{5D911832-D941-4BE4-9849-B448BAFAA19C}"
       DTS:ExecutableType="Microsoft.Pipeline"
@@ -885,35 +885,14 @@
   </resheader>
 </root>]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="ScriptMain.cs"
             Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
@@ -1092,14 +1071,35 @@ namespace ST_4b9b74f66c3d4e25b4b407bc870b5129.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_4b9b74f66c3d4e25b4b407bc870b5129")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1428,6 +1428,45 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Genera número de proceso"
           TopLeft="227.378243365045,31.3181812581691" />
         <NodeLayout
+          Size="105.333333333334,42.6666666666667"
+          Id="Package\move and rename\move"
+          TopLeft="72.5833301854633,118.299996024967" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\move and rename\rename"
+          TopLeft="73.2083310702197,34.6499985936283" />
+        <EdgeLayout
+          Id="Package\move and rename.PrecedenceConstraints[Constraint]"
+          TopLeft="127.895830627842,77.316665260295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.9833307646719"
+              Start="0,0"
+              End="0,33.4833307646719">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4833307646719" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="257.333333333334,216"
+          Size="257.333333333334,42.6666666666667"
+          Id="Package\move and rename"
+          TopLeft="169.374997476116,602.533331380685" />
+        <NodeLayout
           Size="234.666666666667,42.6666666666667"
           Id="Package\Selecciono el número de proceso"
           TopLeft="196.306815256619,116.75786793081" />
@@ -1479,6 +1518,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,50.4999982565641" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="315.632580735073,552.333327521881">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.5909165922901,50.2000038588044"
+              Start="0,0"
+              End="-17.5909165922901,42.7000038588044">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1000019294022" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.1000019294022"
+                    Point2="0,25.1000019294022"
+                    Point3="-4,25.1000019294022" />
+                  <mssgle:LineSegment
+                    End="-13.5909165922901,25.1000019294022" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.5909165922901,25.1000019294022"
+                    Point2="-17.5909165922901,25.1000019294022"
+                    Point3="-17.5909165922901,29.1000019294022" />
+                  <mssgle:LineSegment
+                    End="-17.5909165922901,42.7000038588044" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1627,43 +1700,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="105.333333333334,42.6666666666667"
-          Id="Package\move and rename\move"
-          TopLeft="72.5833301854633,118.299996024967" />
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\move and rename\rename"
-          TopLeft="73.2083310702197,34.6499985936283" />
-        <EdgeLayout
-          Id="Package\move and rename.PrecedenceConstraints[Constraint]"
-          TopLeft="127.895830627842,77.316665260295">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.9833307646719"
-              Start="0,0"
-              End="0,33.4833307646719">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.4833307646719" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="False"
-          PanelSize="257.333333333334,216"
-          Size="257.333333333334,42.6666666666667"
-          Id="Package\move and rename"
-          TopLeft="169.374997476116,602.533331380685" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
           TopLeft="426.708330809449,622.533331148227">
@@ -1710,40 +1746,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="315.632580735073,552.333327521881">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.5909165922901,50.2000038588044"
-              Start="0,0"
-              End="-17.5909165922901,42.7000038588044">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1000019294022" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.1000019294022"
-                    Point2="0,25.1000019294022"
-                    Point3="-4,25.1000019294022" />
-                  <mssgle:LineSegment
-                    End="-13.5909165922901,25.1000019294022" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.5909165922901,25.1000019294022"
-                    Point2="-17.5909165922901,25.1000019294022"
-                    Point3="-17.5909165922901,29.1000019294022" />
-                  <mssgle:LineSegment
-                    End="-17.5909165922901,42.7000038588044" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1757,23 +1759,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="340.000004917383,114.549999221265" />
         <NodeLayout
-          Size="144,42"
+          Size="142.666666666667,42.6666666666667"
           Id="Package\Data Flow Task\Excel Source"
           TopLeft="72.2500017695129,106.949999267757" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="216.250001769513,131.749999244511">
+          TopLeft="214.91666843618,131.916665911178">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="123.75000314787,0"
+              EndConnector="125.083336481203,0"
               Start="0,0"
-              End="116.25000314787,0">
+              End="117.583336481203,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="116.25000314787,0" />
+                    End="117.583336481203,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
