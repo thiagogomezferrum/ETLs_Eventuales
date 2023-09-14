@@ -1,0 +1,193 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/12/2023 11:24:21 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MYSPOT05"
+  DTS:CreatorName="MYSPOT05\Thiago"
+  DTS:DTSID="{1B9284F9-EF46-42F2-821E-C9326B1DCB86}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5270.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{38E49863-BEA4-49E9-B9C1-3D40832F77BB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{44444352-04D3-46A4-A3E5-2D7CD84CD7C2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="moveFile">
+      <DTS:VariableValue
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Finanzas\PROCESADO\Costos Reposición</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{68A31053-0A06-46B8-B1CD-D3464B13D72B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="REPLACE(@[User::var] , &quot;.xlsx&quot;,(&quot;_&quot; +RIGHT(&quot;0&quot; + (DT_STR, 2, 1252) DATEPART(&quot;mm&quot; ,DATEADD(&quot;mm&quot;,-1,GETDATE())), 2) + &quot;_&quot; + (DT_WSTR, 8) YEAR(GETDATE())+&quot;.xlsx&quot;))"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="renameFile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F9CEFF69-5ADE-4D9C-818E-AB6F92068E74}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="var">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\move and rename"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Mueve a la carpeta procesado, renombrando el archivo con el periodo correspondiente"
+      DTS:DTSID="{db716c58-eb7c-40bd-99e5-4b68458b2779}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="move and rename">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{e2183d24-3dc2-49b1-b875-6a890d60dd73}"
+        DTS:ObjectName="{9CD5958B-0D96-4F9C-BAE2-F6685B2C363E}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\fe-files01\DW_OnDemand\Finanzas\A PROCESAR\Costo Gestión MEP" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\move and rename\move"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
+          DTS:Description="File System Task"
+          DTS:DTSID="{16073722-965d-42ce-bf4f-01d885435c28}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="move"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="User::renameFile"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::moveFile"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\move and rename\rename"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:DelayValidation="True"
+          DTS:Description="File System Task"
+          DTS:DTSID="{4f0dac90-f596-4fed-ba8a-c1f3e02c56bd}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="rename"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="RenameFile"
+              TaskSourcePath="User::var"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="User::renameFile"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\move and rename.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{e446acdf-84cd-4d6c-ba4a-a73fb7280278}"
+          DTS:From="Package\move and rename\rename"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\move and rename\move" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{663DDDE9-7819-4A7C-A1A3-3771B27E6BBD}"
+          DTS:ObjectName="{663DDDE9-7819-4A7C-A1A3-3771B27E6BBD}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::var" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="105.333333333334,42.6666666666667"
+          Id="Package\move and rename\move"
+          TopLeft="72.5833301854633,118.299996024967" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\move and rename\rename"
+          TopLeft="73.2083310702197,34.6499985936283" />
+        <EdgeLayout
+          Id="Package\move and rename.PrecedenceConstraints[Constraint]"
+          TopLeft="127.895830627842,77.316665260295">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.9833307646719"
+              Start="0,0"
+              End="0,33.4833307646719">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.4833307646719" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="257.333333333334,216"
+          Size="257.333333333334,258.666666666667"
+          Id="Package\move and rename"
+          TopLeft="158.74999852851,68.4499998489019" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

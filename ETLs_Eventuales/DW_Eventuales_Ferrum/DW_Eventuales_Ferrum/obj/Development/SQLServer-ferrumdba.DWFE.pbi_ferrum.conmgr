@@ -7,10 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=SQLServer-ferrumdba;User ID=pbi_ferrum;Initial Catalog=DWFE;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_Eventuales_Ferrum-{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}SQLServer-ferrumdba.DWFE.pbi_ferrum;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAACZRZ8IGgH0S/zybCA2d5XQAAAAACAAAAAAADZgAAwAAAABAAAAAsa0HcseBeBBgdC1AgIRnkAAAAAASAAACgAAAAEAAAAFI6dOWoHkVEHk2KvM2Be4WAAAAAhnDlEUmBBMY8zZ5CoIRGfSSB5cGCwpACu/QZzoaAWF53zGwT/lAKOU+wFwruOVlA8jrjuiy8kiT62Gs94NJM4E1aQuZrKEr2GQfLx1S9J7JbrowT5nX1+dw7gFJPHcwrl97e0c8ibocQY6b99g1I+VNB27TMyNuMrN5mnupxsWcUAAAAaWx8DD7myqIaEMJNBFOTCQcwVRM=</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=SQLServer-ferrumdba;User ID=pbi_ferrum;Initial Catalog=DWFE;Provider=SQLOLEDB.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_Eventuales_Ferrum-{95E8DDF2-4890-4C6A-A7A1-39BD9CACD516}SQLServer-ferrumdba.DWFE.pbi_ferrum;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

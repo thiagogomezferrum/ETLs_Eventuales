@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-09-13T14:38:42.5080386Z</LastWriteTime>
+    <LastWriteTime>2023-09-14T12:02:51.6948909Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -48,7 +48,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Finanzas_Stock.dtsx</Name>
-      <LastWriteTime>2023-09-13T14:47:09.3206341Z</LastWriteTime>
+      <LastWriteTime>2023-09-14T12:28:50.5811592Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -63,7 +63,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Finanazas_Costo_Gestion_MEP.dtsx</Name>
-      <LastWriteTime>2023-09-13T14:29:02.7492031Z</LastWriteTime>
+      <LastWriteTime>2023-09-14T12:02:51.6948909Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
