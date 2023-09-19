@@ -10,8 +10,20 @@
         <WinAuthDomain />
         <ServerName>SQLServer-ferrumdba</ServerName>
         <PathOnServer>/SSISDB/BI/BI Eventuales</PathOnServer>
-        <UserIDs />
-        <UserPasswords />
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>{FCAE9FA0-15E9-492F-8B80-99738302D602}</Id>
+            <Name>{FCAE9FA0-15E9-492F-8B80-99738302D602}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALUq5K1h3I0KtdgjXNSJx2gAAAABOAAAAewBGAEMAQQBFADkARgBBADAALQAxADUARQA5AC0ANAA5ADIARgAtADgAQgA4ADAALQA5ADkANwAzADgAMwAwADIARAA2ADAAMgB9AAAAA2YAAMAAAAAQAAAAvIz+L65vBcRcsFpIFagNSQAAAAAEgAAAoAAAABAAAAAlfu6TlHdxBRgEYZx4fQTmGAAAAC2V9H9dn2E3ps6m2oLhCAhD0Jg+T3nfIxQAAADBAOCahv750JGJ67pr/SRna/PTdg==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>{FCAE9FA0-15E9-492F-8B80-99738302D602}</Id>
+            <Name>{FCAE9FA0-15E9-492F-8B80-99738302D602}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALUq5K1h3I0KtdgjXNSJx2gAAAABOAAAAewBGAEMAQQBFADkARgBBADAALQAxADUARQA5AC0ANAA5ADIARgAtADgAQgA4ADAALQA5ADkANwAzADgAMwAwADIARAA2ADAAMgB9AAAAA2YAAMAAAAAQAAAAAhh6Nzt4g7R0xph3uyPG8QAAAAAEgAAAoAAAABAAAAATn4fBPpJJtwGQ755X3zqIIAAAAPjvR284zIKDBba3LuDLENK80U2W/vMufzGgjJZ1JdMNFAAAAE2/mv0aV4sNFyZ5yQiYNFBaa8j7</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
         <OfflineMode>false</OfflineMode>
         <ProgressReporting>true</ProgressReporting>
         <ParameterConfigurationSensitiveValues>
