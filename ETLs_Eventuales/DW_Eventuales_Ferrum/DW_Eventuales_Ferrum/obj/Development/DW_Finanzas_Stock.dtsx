@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Stocks"
   DTS:PackageType="5"
-  DTS:VersionBuild="139"
-  DTS:VersionGUID="{19B187F5-E4A9-4CEB-BA16-6328592FD707}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{47236F40-7578-4A45-A25C-517B49F7F4DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -542,7 +542,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="DW_SIPRE"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -559,7 +559,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -583,7 +583,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -607,7 +607,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 3"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -631,7 +631,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Finaliza en error 3 1 1"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -654,7 +654,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Finalizo Ok"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -737,7 +737,7 @@
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="move"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -758,7 +758,7 @@
           DTS:ExecutableType="Microsoft.FileSystemTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="rename"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -819,7 +819,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Sin archivo"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="5">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -1685,9 +1685,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
-          IsExpanded="True"
+          IsExpanded="False"
           PanelSize="257.333333333334,216"
-          Size="257.333333333334,258.666666666667"
+          Size="187.333333333334,42.6666666666667"
           Id="Package\move and rename"
           TopLeft="252.416664822647,625.832454628118" />
         <NodeLayout
@@ -1752,66 +1752,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="509.74999815598,755.165787961451">
+          TopLeft="439.74999815598,647.6412247977">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.2407358440547,-107.049126327503"
+              EndConnector="130.240735844055,0"
               Start="0,0"
-              End="52.7407358440547,-107.049126327503">
+              End="122.740735844055,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="26.1203679220274,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.1203679220274,0"
-                    Point2="30.1203679220274,0"
-                    Point3="30.1203679220274,-4" />
-                  <mssgle:LineSegment
-                    End="30.1203679220274,-103.049126327503" />
-                  <mssgle:CubicBezierSegment
-                    Point1="30.1203679220274,-103.049126327503"
-                    Point2="30.1203679220274,-107.049126327503"
-                    Point3="34.1203679220274,-107.049126327503" />
-                  <mssgle:LineSegment
-                    End="52.7407358440547,-107.049126327503" />
+                    End="122.740735844055,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="14.8790202657774,1,30.4826953125,9.7490234375"
+              BoundingBox="46.1290202657774,5,30.4826953125,9.7490234375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="381.083331489314,884.499121294785">
+          TopLeft="345.249997001141,668.499121294785">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-36.666668976346,-154.199128059316"
+              EndConnector="0,61.8008719406844"
               Start="0,0"
-              End="-36.666668976346,-146.699128059316">
+              End="0,54.3008719406844">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-73.0995640296578" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-73.0995640296578"
-                    Point2="0,-77.0995640296578"
-                    Point3="-4,-77.0995640296578" />
-                  <mssgle:LineSegment
-                    End="-32.666668976346,-77.0995640296578" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-32.666668976346,-77.0995640296578"
-                    Point2="-36.666668976346,-77.0995640296578"
-                    Point3="-36.666668976346,-81.0995640296578" />
-                  <mssgle:LineSegment
-                    End="-36.666668976346,-146.699128059316" />
+                    End="0,54.3008719406844" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2034,9 +2010,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.916660538564,54.2324600211459"
+              EndConnector="10.916660538564,54.2324600211459"
               Start="0,0"
-              End="45.916660538564,46.7324600211459">
+              End="10.916660538564,46.7324600211459">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2047,13 +2023,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     Point2="0,27.116230010573"
                     Point3="4,27.116230010573" />
                   <mssgle:LineSegment
-                    End="41.916660538564,27.116230010573" />
+                    End="6.91666053856397,27.116230010573" />
                   <mssgle:CubicBezierSegment
-                    Point1="41.916660538564,27.116230010573"
-                    Point2="45.916660538564,27.116230010573"
-                    Point3="45.916660538564,31.116230010573" />
+                    Point1="6.91666053856397,27.116230010573"
+                    Point2="10.916660538564,27.116230010573"
+                    Point3="10.916660538564,31.116230010573" />
                   <mssgle:LineSegment
-                    End="45.916660538564,46.7324600211459" />
+                    End="10.916660538564,46.7324600211459" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2069,7 +2045,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177.333333333334,42"
           Id="Package\Data Flow Task\OLE DB Destination"
@@ -2097,7 +2073,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
