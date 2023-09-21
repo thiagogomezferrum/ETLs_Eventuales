@@ -1,1 +1,1 @@
-"C:\Users\etl\AppData\Local\Programs\Python\Python311\python.exe" "C:\Users\etl\Documents\ETLs_Eventuales\ETLs_Eventuales\Ferrum.com\ferrum_web.py" > error_log.txt 2>&1
+"C:\Users\etl\AppData\Local\Programs\Python\Python311\python.exe" "C:\Users\etl\Documents\Proyectos Visual Studio\ETLs_Eventuales\ETLs_Eventuales\Ferrum.com\ferrum_web.py" > error_log.txt 2>&1
