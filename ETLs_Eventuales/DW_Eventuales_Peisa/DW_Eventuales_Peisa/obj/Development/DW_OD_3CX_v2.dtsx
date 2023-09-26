@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/22/2023 10:39:00 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="VM-DESABD-VR"
+  DTS:CreatorName="FERRUM\etl"
+  DTS:DTSID="{796E0A1A-881B-4498-BE7F-864E5C92AD00}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionGUID="{08855116-F43E-44D3-B70A-FC6CD73EA528}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>

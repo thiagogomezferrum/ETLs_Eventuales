@@ -8,6 +8,8 @@
         <UseWinAuth>false</UseWinAuth>
         <WinAuthUserName />
         <WinAuthDomain />
+        <ServerName>pei-sql2019-vr.colonia.peisa.com.ar</ServerName>
+        <PathOnServer>/SSISDB/Peisa/3CX</PathOnServer>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
