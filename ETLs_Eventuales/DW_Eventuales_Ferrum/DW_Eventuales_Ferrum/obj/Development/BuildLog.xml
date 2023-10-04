@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-09-21T13:40:58.0064725Z</LastWriteTime>
+    <LastWriteTime>2023-10-03T17:57:44.8604558Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -78,7 +78,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Pronostico_Ventas.dtsx</Name>
-      <LastWriteTime>2023-09-21T13:40:58.0221047Z</LastWriteTime>
+      <LastWriteTime>2023-10-03T17:57:44.6454492Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
