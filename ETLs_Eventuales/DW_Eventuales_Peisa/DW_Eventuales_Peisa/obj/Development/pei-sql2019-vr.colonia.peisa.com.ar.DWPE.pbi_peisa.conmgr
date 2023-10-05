@@ -7,10 +7,10 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-DW_OD_SPVPEISA-{339E5D3F-7FF0-4205-9F3D-BB9D9A006014}pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_OD_SPVPEISA-{339E5D3F-7FF0-4205-9F3D-BB9D9A006014}pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALUq5K1h3I0KtdgjXNSJx2gAAAAACAAAAAAADZgAAwAAAABAAAADZfrNuDrByMLDryfz3hA1yAAAAAASAAACgAAAAEAAAAKR6J64vLaltYc67LXVOaBh4AAAAgjMGKbhPfbyxVxteWUb8sC05g5YQYj8eHhJ/CCMawcHKoKpIkjMo5WilAcsbsas/arbS4WrSPKVF0OaJ6hrk6kYXVhPdtzlGu8FUKfX6WZ4EJ7FLmbGoWFxYDm1pfn7bEnFptPW2yj8ks/4fWffs8OLuqEs1jVDoFAAAAP34+UCX4EhCOQmjWUa54Mj1+/s+</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlQjrwwPB1EKHlND6bYc9tQAAAAACAAAAAAADZgAAwAAAABAAAACbdj+XDH0PSv29rnsLoTaGAAAAAASAAACgAAAAEAAAAH5pZl4aY3Rz7X3wQnBfCfJ4AAAAqk1QMwEHCtawfdrybxLDpy29maQ1kDvDtd02RPNUN+sNypOCY4UC0evNaRsNyNoTWZnPToV9jlwm3LeRBj3zHx0Nq8mxL/YIaGEF7gVH9jMTpPdgWkfOTap5F6brF+2FBxyQ6xPy7H/A6h0xEq36m34eM5/uxIAqFAAAAK2CT9o/R5qK6mE53LFVIabYglGJ</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

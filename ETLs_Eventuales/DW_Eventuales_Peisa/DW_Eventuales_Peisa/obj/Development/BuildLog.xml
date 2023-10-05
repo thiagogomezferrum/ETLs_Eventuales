@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Peisa</Name>
-    <LastWriteTime>2023-09-28T14:06:24.9006348Z</LastWriteTime>
+    <LastWriteTime>2023-10-04T11:21:28.8280912Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -12,8 +12,8 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>DW_OD_3CX 1.dtsx</Name>
-      <LastWriteTime>2023-09-28T14:06:24.8225217Z</LastWriteTime>
+      <Name>DW_OD_3CX_v2.dtsx</Name>
+      <LastWriteTime>2023-10-04T14:54:02.7328327Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

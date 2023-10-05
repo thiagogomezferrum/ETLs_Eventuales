@@ -26,12 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MYSPOT05</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALUq5K1h3I0KtdgjXNSJx2gAAAAACAAAAAAADZgAAwAAAABAAAAB6ra9Bf0bVttsBweCyJ7sqAAAAAASAAACgAAAAEAAAAFF5cB7+Xv1GhtBMSUwWLuWIAAAAtQbZDV8L/qHSNyghC9RIBpONQ97mKwTAZSXLB7ODBkMI3Yq6ZfmDyTuQ9m2dy7VDYHqygcZAQQeQSccAyt135QqYFiCNk4YPmxHc5NjHBaZK3tgNZehzml12p/DaufnN/tSa1BACp8b2nSoaG2T6DPhnMUXnF6G/IX6alObtnCOcvi4shgXn6RQAAAA9auqvDLkUps03PS+gIeeDjq55Yg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlQjrwwPB1EKHlND6bYc9tQAAAAACAAAAAAADZgAAwAAAABAAAADyC5TrSxj79TD1L1Zjf8QSAAAAAASAAACgAAAAEAAAANmlfA4iF4eej63xjq5gm9OIAAAAuTruzPaOLjCo+EoZh6+LeXUQtmRfipVAt56gadARBDPLqnTdXEAWLXzKP/kmo/+J+VWtq60PcvJk5ISQVOHmypFlb6QFOz/3MIlEC6vlCCZJhHDMyuyHaBdRU3E8iEfeR+ctJ0ydR2KqG/Q3W8MWMMv/LHiNYuRv9MPhbj7HpZvB4tgPrlDvcxQAAACId7OoV9F2NDZElWfUTsF2soZkwQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="DW_OD_3CX.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="DW_OD_3CX 1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DW_OD_3CX_v2.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa.conmgr" />
@@ -65,7 +65,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-DW_OD_SPVPEISA-{339E5D3F-7FF0-4205-9F3D-BB9D9A006014}pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=DWPE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_OD_SPVPEISA-{339E5D3F-7FF0-4205-9F3D-BB9D9A006014}pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -214,7 +214,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=STA;Provider=SQLNCLI11.1;Persist Security Info=True;Application Name=SSIS-DW_OD_SPVPEISA-{0BE591BE-F1EE-4E63-B6D5-116D2C37CAB8}pei-sql2019-vr.colonia.peisa.com.ar.STA.pbi_peisa;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=pei-sql2019-vr.colonia.peisa.com.ar;User ID=pbi_peisa;Initial Catalog=STA;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-DW_OD_SPVPEISA-{0BE591BE-F1EE-4E63-B6D5-116D2C37CAB8}pei-sql2019-vr.colonia.peisa.com.ar.STA.pbi_peisa;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1569,16 +1569,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="DW_OD_3CX 1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DW_OD_3CX_v2.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{06D1E351-5927-4721-B269-DA3265787A37}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">DW_OD_SPVPEISA</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">162</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">164</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{BFADA228-A078-4E2F-A5D2-36212360F4CA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B7FF62DD-BAE8-49F4-9734-6DAFAF7BA8D0}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

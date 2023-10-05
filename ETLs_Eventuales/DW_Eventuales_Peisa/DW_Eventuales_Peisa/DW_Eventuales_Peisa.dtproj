@@ -26,12 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MYSPOT05</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAALUq5K1h3I0KtdgjXNSJx2gAAAAACAAAAAAADZgAAwAAAABAAAACLjnQWmTg3r4uCPJw4I0fGAAAAAASAAACgAAAAEAAAAO74nVgTCK4M1yxJsKZDlfqIAAAAN+5psqW2JUa9QSd5zcSIv6SNkS7mnhP8NS4trPsPW26NDPF2QJDerGWbBYD+lK1+BkNr25ly5W6M2WmDTEntpF3u3usUWaSLG57R8p7icgusefm5+vSPaxvX/Wx4KHq+dw06e1EGkOfKH/ixlKOJbc89V++EgB/Z8axCB4z8xewrVNLoqjmGCBQAAACnTn3iyir0pSU8hz2WjPK6Jv3z1w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAlQjrwwPB1EKHlND6bYc9tQAAAAACAAAAAAADZgAAwAAAABAAAAD56/DYDFir/3k4uq28jkn5AAAAAASAAACgAAAAEAAAAOhW352RfT6xet2Z8jFjubqIAAAA/l2K+06b+xVd1daWxwC18Fuxs8MRT1njvZ0DxxKKXqwzIgILw2YGn/kmrOHOe0/Brx4Ysalz/ieUbs9oLfNazHSoPOEUaFq1xiid7xnGLmrwtNN70/f75GtaOKXEaKhMKPzSSE/rh97KR6M5DrBTbwrolkO+a+iUoRdN1n7UQ1dJUSZ8U3GSNxQAAADhkaztRjYP2YDhdtoS3V0PTw1Pxw==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="DW_OD_3CX.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="DW_OD_3CX 1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DW_OD_3CX_v2.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="pei-sql2019-vr.colonia.peisa.com.ar.DWPE.pbi_peisa.conmgr" />
@@ -1569,7 +1569,7 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="DW_OD_3CX 1.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="DW_OD_3CX_v2.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{06D1E351-5927-4721-B269-DA3265787A37}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">DW_OD_SPVPEISA</SSIS:Property>
