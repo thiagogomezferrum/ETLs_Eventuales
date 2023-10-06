@@ -11,251 +11,251 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{41413B9D-2C1E-4B3B-AF26-0887CAB1F9F7}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{798DDB43-AC05-4E91-B988-29834F4F140A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{06FEA1C0-9AF2-4B14-9C58-36A06C1C0B68}"
+      DTS:DTSID="{16A1CC9C-BE1B-4289-8A0B-E1BF5D955DFB}"
       DTS:ObjectName="Flat File Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
-          DTS:LocaleID="1033"
+          DTS:LocaleID="11274"
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="\\fe-files01.ferrum.local\DW_OnDemand\B2B Cencosud\A Demanda\Cencosud_B2B_Ventas_Con_Stock.csv">
+          DTS:ConnectionString="\\fe-files01\DW_OnDemand\B2B Cencosud\A Demanda\Cencosud_B2B_Ventas_Con_Stock.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName="P"
-              DTS:DTSID="{EA205D01-C6DB-44C4-B623-E4EB0007BF67}"
+              DTS:ObjectName="Periodo"
+              DTS:DTSID="{89BBA35C-77C2-4C39-A6ED-D9B2E282EA8F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{A59668E1-0AF6-4021-A7A5-DA8692F8FD52}"
+              DTS:ObjectName="Cód. Cencosud"
+              DTS:DTSID="{5A20D848-4CF7-47A0-AF40-A0C1450C4FBC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{F3D9E022-8FF1-423E-9777-A2D519768088}"
+              DTS:ObjectName="EAN Principal"
+              DTS:DTSID="{77ADFA11-5ED6-4E96-AA1F-70D46D1E1A23}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{E594DF49-6CB2-4E47-9FD5-88B814D3F144}"
+              DTS:ObjectName="Cód. Proveedor"
+              DTS:DTSID="{BF0FE44D-103C-4355-8AC9-D6DABEBE5935}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descripción Producto"
+              DTS:DTSID="{B100BF4B-5CF7-4DCC-A1D5-D9785A6E5F10}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{D70DB2E5-CFCF-4773-8353-085668B2500B}"
+              DTS:ObjectName="Marca"
+              DTS:DTSID="{E90B544F-A0EF-4685-B472-18FA27455BB4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{94D4E839-C4BF-4CC6-8396-EB376A4B8CC7}"
+              DTS:ObjectName="Estado Producto"
+              DTS:DTSID="{2301B778-2998-4453-B1EF-2FBADF33C084}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{18F52D8B-BE5C-4FEF-9E9A-D4E3F938A697}"
+              DTS:ObjectName="Sector"
+              DTS:DTSID="{550FCD5B-F758-43C4-9DFA-399594C5AA8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{607AFA51-E663-4D21-A64A-86DD3D9CF089}"
+              DTS:ObjectName="Sección"
+              DTS:DTSID="{C77CE758-D38A-4612-A960-95E9B76C53E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gran Familia"
+              DTS:DTSID="{946CB28D-57A2-470D-812A-591F0F8BA7BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{2AFAFD88-CF4F-445B-8296-677EE5873B75}"
+              DTS:ObjectName="Familia"
+              DTS:DTSID="{21F5E9FC-58C8-45C5-9C8F-062A86A163CF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{C739D3D1-BB0E-4DC4-A4E0-F2277654907F}"
+              DTS:ObjectName="Sub Familia"
+              DTS:DTSID="{8328EF2A-B464-4250-B61F-C9937A3EB0C2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{238F2893-B79F-4A70-9C70-B09299CC5D5E}"
+              DTS:ObjectName="Cód. Local"
+              DTS:DTSID="{C94B3F0B-66D0-4075-85DF-BD79F7C6B10B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{D5A0DBD9-8F0D-4062-91FC-681417CBCA0A}"
+              DTS:ObjectName="Tipo"
+              DTS:DTSID="{BC16C493-04B6-4BF2-8A18-334CD4E631B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Descripción Local"
+              DTS:DTSID="{49EB6ADE-E060-4D41-83C4-CCB624636A01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{5414D1DC-F375-48AB-97A8-4EE74B9A38A1}"
+              DTS:ObjectName="Bandera"
+              DTS:DTSID="{9160BDFB-6B89-4AE7-B7B1-FC2E94B99BD7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{9B6C0789-5528-44D1-956D-89E83D576DFA}"
+              DTS:ObjectName="Estado Local"
+              DTS:DTSID="{1666A8D7-0E0E-40BE-A2AA-205A2E65256E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{FC11C808-6DF6-4B3F-9668-1EEB7B5C7F30}"
+              DTS:ObjectName="Región"
+              DTS:DTSID="{B0AFD636-7D91-48AD-9A40-9A99EBA44DBC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{AE9BAFF9-5959-41A1-B21A-76DF939CB04B}"
+              DTS:ObjectName="Venta Q"
+              DTS:DTSID="{EBB7730A-3E65-43F3-A2AD-67D37DEC620B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{53032981-44B2-4828-B489-9A97F8DEA095}"
+              DTS:ObjectName="Venta $"
+              DTS:DTSID="{61AC7C3D-3662-4968-A56A-0EE2EE6927A0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{F255E063-6322-4B00-B5CA-5903786BECBC}"
+              DTS:ObjectName="CMV"
+              DTS:DTSID="{6957B190-DAA6-453B-B103-29BD32BCB6B5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{A0679A18-8DDB-41F3-92CC-D99900B458A0}"
+              DTS:ObjectName="Stock Q"
+              DTS:DTSID="{24426932-2F0E-4592-8C61-698F68EDAAFF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{558B9FD5-C90A-4125-9968-604C664E302E}"
+              DTS:ObjectName="Stock $"
+              DTS:DTSID="{B4580077-E1E4-46B1-9D7C-E71A7E7853D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{F1374859-2FF5-4881-84E6-F8DD9BAE3682}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{323BC43C-B871-4132-892B-01761B1990FD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{3660561C-9E41-4AFA-A8F9-50CCF744DFBC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{0BBF3CA8-3168-44D5-87B9-ECC5D2FB11C0}"
+              DTS:ObjectName="Días de Stock (30)"
+              DTS:DTSID="{5F511432-3E93-4A79-A9E1-C5E913667C3A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000A_"
               DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="130"
               DTS:TextQualified="True"
-              DTS:ObjectName=""
-              DTS:DTSID="{EC83940E-527D-4C7D-BB5E-8F1D3B57131B}"
+              DTS:ObjectName="Locales en Rol"
+              DTS:DTSID="{1DBE8849-EE0A-4EF2-93A4-B1376F59FD32}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -283,7 +283,7 @@
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
-              localeId="1033"
+              localeId="11274"
               name="Flat File Source"
               usesDispositions="true"
               version="1">
@@ -309,27 +309,6 @@
                   refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Período]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Período]"
-                      length="100"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Período]"
-                      name="Período"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
                     <outputColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Cód. Cencosud]"
                       dataType="wstr"
@@ -834,14 +813,30 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Periodo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Periodo]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Periodo]"
+                      name="Periodo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Período]"
-                      dataType="wstr"
-                      length="100"
-                      name="Período" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Cód. Cencosud]"
                       dataType="wstr"
@@ -860,7 +855,7 @@
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Descripción Producto]"
                       dataType="wstr"
-                      length="500"
+                      length="255"
                       name="Descripción Producto" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Marca]"
@@ -962,6 +957,11 @@
                       dataType="wstr"
                       length="50"
                       name="Locales en Rol" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Periodo]"
+                      dataType="wstr"
+                      length="50"
+                      name="Periodo" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1108,12 +1108,12 @@
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CMV]"
                       lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[CMV]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Período]"
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Periodo]"
                       cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Período"
+                      cachedLength="50"
+                      cachedName="Periodo"
                       externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[periodo]"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Período]" />
+                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[Periodo]" />
                     <inputColumn
                       refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Gran Familia]"
                       cachedDataType="wstr"
@@ -1443,13 +1443,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="170.624997457489,94.4210544088211" />
-        <NodeLayout
           Size="174.666666666667,42.6666666666667"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="271.24999595806,221.684214698971" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Data Flow Task\Flat File Source"
+          TopLeft="170.624997457489,94.4210544088211" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output]"
           TopLeft="247.958330790823,137.087721075488">

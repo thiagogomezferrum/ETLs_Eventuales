@@ -1,0 +1,1 @@
+"C:\Users\etl\AppData\Local\Programs\Python\Python311\python.exe" "C:\Users\etl\Documents\Proyectos Visual Studio\ETLs_Eventuales\ETLs_Eventuales\RRHH_API\requests_dinamic.py" 1>error_log.txt 2>&1
