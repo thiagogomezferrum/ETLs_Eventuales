@@ -1,0 +1,10 @@
+Instrucciones:
+
+Tipo de conexión: Standard TCP/IP over SSH
+SSH Hostname: 44.205.103.70
+SSH Username: ferrumcom_ro
+SSH Key File: Equipo BI - Documentos\General\Proyectos Visual Studio\ETLs_Eventuales\ETLs_Eventuales\Ferrum.com\ferrumcom.key
+MySql Hostname: 127.0.0.1
+MySql Server Port: 3336
+username: ferrumcom_ro
+Password: 65$%B#9td!dzSbDd
