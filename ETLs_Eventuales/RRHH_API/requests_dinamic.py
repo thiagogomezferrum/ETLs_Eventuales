@@ -40,7 +40,7 @@ def consulta_api(base_url, username, password, filter, ruta, nombre_archivo, for
         else:
             # Código 500 internal server Error
             # Código 400 Bad request
-            print(f'Error en la solicitud: Código de estado {response.status_code}')
+            print(f'Error en la solicitud: Código de estado {response.status_code} de la URL: {api_url}')
     except requests.exceptions.RequestException as e:
         print(f'Error en la solicitud: {e}')
 
@@ -77,7 +77,7 @@ def consulta_temporary_time_information(username, password, ruta, format):
     
     # Los registros menores o iguales (le) a la fecha actual y mayores o iguales (ge) a la fecha actual - 5 días
     filter_temporary_time_information = (
-        f"&$filter=startDate le datetime'{start_date_format}{hora}' and endDate ge datetime'{end_date}{hora}"
+        f"&$filter=startDate le datetime'{start_date_format}{hora}' and endDate ge datetime'{end_date}{hora}'"
     )
 
     nombre_archivo_temporary_time_information = 'temporary_time_information.json'
@@ -106,12 +106,39 @@ def consulta_employee_time_sheet(username, password, ruta, format):
 
     # Usa "ge" para indicar que son los registros Mayores o iguales a la fecha indicada
     filter_employee_time_sheet = (
-        f"&$filter=employeeTimeValuationResult/bookingDate ge datetime'{start_date}{hora}"
+        f"&$filter=employeeTimeValuationResult/bookingDate ge datetime'{start_date}{hora}'"
     )
 
     nombre_archivo_employee_time_sheet = 'employee_time_sheet.json'
 
     consulta_api(base_url_employee_time_sheet, username, password, filter_employee_time_sheet, ruta, nombre_archivo_employee_time_sheet, format)
+
+def consulta_api_ausencias (username, password, ruta, format):
+    """
+    StarDate = Hoy
+    EndDate	= hoy - 5 días
+    
+    EL formato solicitado por la api para el filtro de fecha es "ISO-8601 date" AAAA-MM-DDT00:00:00.000Z
+    """
+    start_date = datetime.now()
+    start_date_format = start_date.strftime("%Y-%m-%d") # Conversión al formato de fecha solicitado
+    end_date = (start_date - timedelta(days=5)).strftime("%Y-%m-%d")
+    hora = 'T00:00:00Z'
+
+    base_url_ausencias = (
+        'https://api19preview.sapsf.com/odata/v2/EmployeeTime?$select=approvalStatus,endDate,endTime,externalCode,physicalEndDate,physicalStartDate,quantityInDays,quantityInHours,startDate,startTime,timeType,timeTypeNav/externalCode,timeTypeNav/externalName_es_ES,userId&$expand=timeTypeNav'
+    )
+
+
+        # Los registros menores o iguales (le) a la fecha actual y mayores o iguales (ge) a la fecha actual - 5 días
+    filter_ausecias = (
+        
+        f"&$filter=approvalStatus eq 'APPROVED' and (timeType ne 'EX_NOA' and timeType ne 'HE' and timeType ne 'HS_COMP' and timeType ne 'NOAUT' and timeType ne 'RCHE' and timeType ne 'Regular_Working_Hours' and timeType ne 'REC_EX' and timeType ne 'TRABAJO' and timeType ne 'Break') and (startDate le datetime'{start_date_format}{hora}' and endDate ge datetime'{end_date}{hora}')"
+    )
+
+    nombre_archivo_ausencias = 'ausencias.json'
+
+    consulta_api(base_url_ausencias, username, password, filter_ausecias, ruta, nombre_archivo_ausencias, format)
 
 def main():
     # Credenciales de Autenticación BASIC AUTH
@@ -122,11 +149,12 @@ def main():
     ruta = '//fe-files01/sap-ssff/Descargas SSFF/'
     
     # Formato de la API
-    format = "'&$format=json"
+    format = "&$format=json"
 
     consulta_maestro_empleados(username, password, ruta, format)
     consulta_employee_time_sheet(username, password, ruta, format)
     consulta_temporary_time_information(username, password, ruta, format)
+    consulta_api_ausencias(username, password, ruta, format)
 
 if __name__ == "__main__":
     main()
