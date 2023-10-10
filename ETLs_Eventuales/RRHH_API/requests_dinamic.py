@@ -20,7 +20,6 @@ def consulta_api(base_url, username, password, filter, ruta, nombre_archivo, for
     try:
         # Conforma la url de la api, aplicando los filtros necesarios y el formato de salida
         api_url = f'{base_url}{filter}{format}' if filter else base_url
-
         # Guarda la respuesta del pedido GET de la api
         response = requests.get(api_url, auth=HTTPBasicAuth(username, password))
 
