@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>DW_Eventuales_Ferrum</Name>
-    <LastWriteTime>2023-10-10T11:27:28.7335475Z</LastWriteTime>
+    <LastWriteTime>2023-10-12T14:31:42.704682Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -23,7 +23,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_OD_Importaciones.dtsx</Name>
-      <LastWriteTime>2023-09-19T13:55:35.4172016Z</LastWriteTime>
+      <LastWriteTime>2023-10-12T14:58:19.6190927Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -48,7 +48,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_Finanzas_Stock.dtsx</Name>
-      <LastWriteTime>2023-10-05T15:20:26.8245924Z</LastWriteTime>
+      <LastWriteTime>2023-10-12T14:58:19.6520864Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -68,7 +68,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>DW_OD_Importaciones v1.dtsx</Name>
-      <LastWriteTime>2023-10-06T13:11:54.5889474Z</LastWriteTime>
+      <LastWriteTime>2023-10-12T14:59:37.802346Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -84,6 +84,11 @@
     <ProjectBuildItemInfo>
       <Name>DW_B2B_Cencosud_Stock.dtsx</Name>
       <LastWriteTime>2023-10-06T13:57:06.519512Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Presentismo_Guia_Horarios.dtsx</Name>
+      <LastWriteTime>2023-10-12T11:43:50.4611468Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
