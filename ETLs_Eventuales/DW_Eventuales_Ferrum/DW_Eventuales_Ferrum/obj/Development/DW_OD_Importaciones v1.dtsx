@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="DW_OD_Importaciones v1"
   DTS:PackageType="5"
-  DTS:VersionBuild="195"
-  DTS:VersionGUID="{E879D7EF-83D8-4A68-A20B-59D4A867CE10}">
+  DTS:VersionBuild="196"
+  DTS:VersionGUID="{F5808951-E516-4803-AE78-B8398848526A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -78,7 +78,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="NewFolder">
       <DTS:VariableValue
-        DTS:DataType="8">\\fe-files01\DW_OnDemand\Importaciones\PROCESADOS\Procesado_202310121159</DTS:VariableValue>
+        DTS:DataType="8">\\fe-files01\DW_OnDemand\Importaciones\PROCESADOS\Procesado_202310170820</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2457,7 +2457,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Create directory"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -2476,7 +2476,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="Move file"
           DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <FileSystemData
@@ -2551,6 +2551,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9AAAAEF0-460B-4193-875A-D0473DAE0C32}"
+      DTS:From="Package\Update campo material"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Processed Folder" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
@@ -2732,7 +2740,41 @@
           PanelSize="272,228"
           Size="272,272.8"
           Id="Package\Processed Folder"
-          TopLeft="567.499977449577,161.200001281103" />
+          TopLeft="419.16665001048,549.066669917637" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="286.713093790997,529.033326708278">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="132.453556219483,156.433343209359"
+              Start="0,0"
+              End="124.953556219483,156.433343209359">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="62.2267781097415,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="62.2267781097415,0"
+                    Point2="66.2267781097415,0"
+                    Point3="66.2267781097415,4" />
+                  <mssgle:LineSegment
+                    End="66.2267781097415,152.433343209359" />
+                  <mssgle:CubicBezierSegment
+                    Point1="66.2267781097415,152.433343209359"
+                    Point2="66.2267781097415,156.433343209359"
+                    Point3="70.2267781097415,156.433343209359" />
+                  <mssgle:LineSegment
+                    End="124.953556219483,156.433343209359" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
