@@ -22,7 +22,6 @@ def consulta_api(base_url, username, password, filter, ruta, nombre_archivo, for
         api_url = f'{base_url}{filter}{format}' if filter else base_url
         # Guarda la respuesta del pedido GET de la api
         response = requests.get(api_url, auth=HTTPBasicAuth(username, password))
-
         # Valida el estado de la petición, 
         # Código 200 OK
 
